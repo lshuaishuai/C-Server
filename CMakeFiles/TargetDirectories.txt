@@ -1,0 +1,4 @@
+/home/shuaishuai/project/sylar_server/CMakeFiles/server.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/test.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/edit_cache.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/rebuild_cache.dir
