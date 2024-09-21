@@ -145,6 +145,43 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+#=============================================================================
+# Target rules for targets named test_config
+
+# Build rule for target.
+test_config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config
+.PHONY : test_config
+
+# fast build rule for target.
+test_config/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
+.PHONY : test_config/fast
+
+server/config.o: server/config.cc.o
+.PHONY : server/config.o
+
+# target to build an object file
+server/config.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/config.cc.o
+.PHONY : server/config.cc.o
+
+server/config.i: server/config.cc.i
+.PHONY : server/config.i
+
+# target to preprocess a source file
+server/config.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/config.cc.i
+.PHONY : server/config.cc.i
+
+server/config.s: server/config.cc.s
+.PHONY : server/config.s
+
+# target to generate assembly for a file
+server/config.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/config.cc.s
+.PHONY : server/config.cc.s
+
 server/log.o: server/log.cc.o
 .PHONY : server/log.o
 
@@ -217,6 +254,30 @@ tests/test.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.s
 .PHONY : tests/test.cc.s
 
+tests/test_config.o: tests/test_config.cc.o
+.PHONY : tests/test_config.o
+
+# target to build an object file
+tests/test_config.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.o
+.PHONY : tests/test_config.cc.o
+
+tests/test_config.i: tests/test_config.cc.i
+.PHONY : tests/test_config.i
+
+# target to preprocess a source file
+tests/test_config.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.i
+.PHONY : tests/test_config.cc.i
+
+tests/test_config.s: tests/test_config.cc.s
+.PHONY : tests/test_config.s
+
+# target to generate assembly for a file
+tests/test_config.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
+.PHONY : tests/test_config.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -227,6 +288,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... server"
 	@echo "... test"
+	@echo "... test_config"
+	@echo "... server/config.o"
+	@echo "... server/config.i"
+	@echo "... server/config.s"
 	@echo "... server/log.o"
 	@echo "... server/log.i"
 	@echo "... server/log.s"
@@ -236,6 +301,9 @@ help:
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_config.o"
+	@echo "... tests/test_config.i"
+	@echo "... tests/test_config.s"
 .PHONY : help
 
 

@@ -38,6 +38,8 @@
 #define SHUAI_LOG_FMT_ERROR(logger, fmt, ...) SHUAI_LOG_FMT_LEVEL(logger, shuai::LogLevel::ERROR, fmt, __VA_ARGS__)
 #define SHUAI_LOG_FMT_FATAL(logger, fmt, ...) SHUAI_LOG_FMT_LEVEL(logger, shuai::LogLevel::FATAL, fmt, __VA_ARGS__)
 
+#define SHUAI_LOG_ROOT() shuai::LoggerMgr::GetInstance()->getRoot()
+
 namespace shuai
 {
 class Logger;
@@ -64,9 +66,7 @@ public:
     typedef std::shared_ptr<LogEvent> ptr;
     LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t line, uint32_t elapse
             , uint32_t thread_id, uint32_t fiber_id, uint64_t time);
-    ~LogEvent() {
-    std::cout << "~LogEvent()" << std::endl;
-    }
+
     const char* getFile() const { return m_file; }
     int32_t getLine() const { return m_line; }
     uint32_t getElapse() const { return m_elapse; }
@@ -201,6 +201,7 @@ class LoggerManager
 public:
     LoggerManager();
     void init();
+    Logger::ptr getRoot() const { return m_root; }
     Logger::ptr getLogger(const std::string& name);
 
 private:

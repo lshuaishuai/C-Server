@@ -182,7 +182,6 @@ LogEventWrap::LogEventWrap(LogEvent::ptr e)
 LogEventWrap::~LogEventWrap()
 {
     m_event->getLogger()->log(m_event->getLevel(), m_event);
-    std::cout << "~LogEventWrap()" << std::endl;
 }
 
 void LogEvent::format(const char* fmt, ...)
