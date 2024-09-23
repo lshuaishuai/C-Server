@@ -80,6 +80,8 @@ private:
 class Config
 {
 public:
+    // 写了一个子类继承ConfigVarBase，是因为map中存放的必须为确定的数据类型，不能这样写typedef std::map<std::string, ConfigVar<T>> ConfigVarMap;
+    // 这样写值处就可以存放子类和父类对象
     typedef std::map<std::string, ConfigVarBase::ptr> ConfigVarMap;
 
     template <class T>
@@ -99,6 +101,7 @@ public:
         }
 
         typename ConfigVar<T>::ptr v(new ConfigVar<T>(name, default_value, description));
+        // 父类的指针指向子类对象，会发生多态 
         s_datas[name] = v;
         return v;
     }
@@ -112,6 +115,7 @@ public:
         return std::dynamic_pointer_cast<ConfigVar<T>> (it->second);
     }
 private:
+    // 静态的只会存储这一个，所有的键值对都是存放在这里了
     static ConfigVarMap s_datas;
 };
 
