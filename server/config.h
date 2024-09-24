@@ -5,6 +5,7 @@
 #include <string>
 #include <boost/lexical_cast.hpp>
 #include <map>
+#include <yaml-cpp/yaml.h>
 
 #include "log.h"
 
@@ -18,7 +19,9 @@ public:
     ConfigVarBase(const std::string& name, const std::string& description)
         :m_name(name)
         ,m_description(description)
-    {}
+    {
+        std::transform(m_name.begin(), m_name.end(), m_name.begin(), ::tolower);
+    }
     virtual ~ConfigVarBase() {}
 
     const std::string& getName() { return m_name; }
@@ -48,7 +51,7 @@ public:
     {
         try
         {
-            boost::lexical_cast<std::string>(m_val);
+            return boost::lexical_cast<std::string>(m_val);
         }
         catch(const std::exception& e)
         {
@@ -90,11 +93,11 @@ public:
         auto tmp = Lookup<T>(name);
         if(tmp)
         {
-            SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "Lockup name=" << name << " exists";
+            SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "Lookup name=" << name << " exists";
             return tmp;
         }
 
-        if(name.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._0123456789") != std::string::npos)
+        if(name.find_first_not_of("abcdefghijklmnopqrstuvwxyz._0123456789") != std::string::npos)
         {
             SHUAI_LOG_ERROR(SHUAI_LOG_ROOT()) << "Lookup name invalid" << name; 
             throw std::invalid_argument(name); 
@@ -114,6 +117,10 @@ public:
 
         return std::dynamic_pointer_cast<ConfigVar<T>> (it->second);
     }
+
+    static void LoadFromYaml(const YAML::Node& root);
+
+    static ConfigVarBase::ptr LookupBase(const std::string& name);
 private:
     // 静态的只会存储这一个，所有的键值对都是存放在这里了
     static ConfigVarMap s_datas;

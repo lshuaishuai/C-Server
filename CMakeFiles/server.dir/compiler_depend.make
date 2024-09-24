@@ -706,10 +706,61 @@ CMakeFiles/server.dir/server/config.cc.o: server/config.cc \
   /usr/include/c++/4.8.2/bits/stl_tree.h \
   /usr/include/c++/4.8.2/bits/stl_map.h \
   /usr/include/c++/4.8.2/bits/stl_multimap.h \
-  server/log.h \
+  /usr/local/include/yaml-cpp/yaml.h \
+  /usr/local/include/yaml-cpp/parser.h \
+  /usr/local/include/yaml-cpp/dll.h \
+  /usr/local/include/yaml-cpp/emitter.h \
+  /usr/local/include/yaml-cpp/binary.h \
+  /usr/local/include/yaml-cpp/emitterdef.h \
+  /usr/local/include/yaml-cpp/emittermanip.h \
+  /usr/local/include/yaml-cpp/null.h \
+  /usr/local/include/yaml-cpp/ostream_wrapper.h \
+  /usr/local/include/yaml-cpp/emitterstyle.h \
+  /usr/local/include/yaml-cpp/stlemitter.h \
   /usr/include/c++/4.8.2/list \
   /usr/include/c++/4.8.2/bits/stl_list.h \
   /usr/include/c++/4.8.2/bits/list.tcc \
+  /usr/include/c++/4.8.2/set \
+  /usr/include/c++/4.8.2/bits/stl_set.h \
+  /usr/include/c++/4.8.2/bits/stl_multiset.h \
+  /usr/local/include/yaml-cpp/exceptions.h \
+  /usr/local/include/yaml-cpp/mark.h \
+  /usr/local/include/yaml-cpp/noexcept.h \
+  /usr/local/include/yaml-cpp/traits.h \
+  /usr/local/include/yaml-cpp/node/node.h \
+  /usr/local/include/yaml-cpp/node/detail/iterator_fwd.h \
+  /usr/local/include/yaml-cpp/node/ptr.h \
+  /usr/local/include/yaml-cpp/node/type.h \
+  /usr/local/include/yaml-cpp/node/impl.h \
+  /usr/local/include/yaml-cpp/node/detail/memory.h \
+  /usr/local/include/yaml-cpp/node/detail/node.h \
+  /usr/local/include/yaml-cpp/node/detail/node_ref.h \
+  /usr/local/include/yaml-cpp/node/detail/node_data.h \
+  /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
+  /usr/local/include/yaml-cpp/node/iterator.h \
+  /usr/local/include/yaml-cpp/node/detail/iterator.h \
+  /usr/include/c++/4.8.2/atomic \
+  /usr/include/c++/4.8.2/bits/atomic_base.h \
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
+  /usr/local/include/yaml-cpp/node/convert.h \
+  /usr/include/c++/4.8.2/unordered_map \
+  /usr/include/c++/4.8.2/bits/hashtable.h \
+  /usr/include/c++/4.8.2/bits/hashtable_policy.h \
+  /usr/include/c++/4.8.2/bits/unordered_map.h \
+  /usr/include/c++/4.8.2/valarray \
+  /usr/include/c++/4.8.2/bits/valarray_array.h \
+  /usr/include/c++/4.8.2/bits/valarray_array.tcc \
+  /usr/include/c++/4.8.2/bits/valarray_before.h \
+  /usr/include/c++/4.8.2/bits/slice_array.h \
+  /usr/include/c++/4.8.2/bits/valarray_after.h \
+  /usr/include/c++/4.8.2/bits/gslice.h \
+  /usr/include/c++/4.8.2/bits/gslice_array.h \
+  /usr/include/c++/4.8.2/bits/mask_array.h \
+  /usr/include/c++/4.8.2/bits/indirect_array.h \
+  /usr/local/include/yaml-cpp/node/detail/impl.h \
+  /usr/local/include/yaml-cpp/node/parse.h \
+  /usr/local/include/yaml-cpp/node/emit.h \
+  server/log.h \
   /usr/include/c++/4.8.2/fstream \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
@@ -965,9 +1016,51 @@ server/util.h:
 
 /usr/include/c++/4.8.2/fstream:
 
+server/log.h:
+
+/usr/local/include/yaml-cpp/node/emit.h:
+
+/usr/include/c++/4.8.2/bits/gslice_array.h:
+
+/usr/include/c++/4.8.2/bits/slice_array.h:
+
+/usr/include/c++/4.8.2/bits/valarray_array.tcc:
+
+/usr/include/c++/4.8.2/bits/valarray_array.h:
+
+/usr/include/c++/4.8.2/bits/hashtable.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h:
+
+/usr/include/c++/4.8.2/bits/atomic_base.h:
+
+/usr/local/include/yaml-cpp/node/detail/node_ref.h:
+
+/usr/local/include/yaml-cpp/node/detail/node.h:
+
+/usr/local/include/yaml-cpp/node/impl.h:
+
+/usr/local/include/yaml-cpp/node/ptr.h:
+
+/usr/local/include/yaml-cpp/node/node.h:
+
+/usr/local/include/yaml-cpp/traits.h:
+
 /usr/include/c++/4.8.2/bits/stl_list.h:
 
-server/log.h:
+/usr/local/include/yaml-cpp/stlemitter.h:
+
+/usr/local/include/yaml-cpp/ostream_wrapper.h:
+
+/usr/local/include/yaml-cpp/null.h:
+
+/usr/local/include/yaml-cpp/emittermanip.h:
+
+/usr/local/include/yaml-cpp/emitter.h:
+
+/usr/local/include/yaml-cpp/parser.h:
+
+/usr/local/include/yaml-cpp/yaml.h:
 
 /usr/include/c++/4.8.2/bits/stl_multimap.h:
 
@@ -983,6 +1076,10 @@ server/log.h:
 
 /usr/include/boost/preprocessor/seq/enum.hpp:
 
+/usr/include/c++/4.8.2/unordered_map:
+
+/usr/local/include/yaml-cpp/noexcept.h:
+
 /usr/include/boost/preprocessor/seq/size.hpp:
 
 /usr/include/boost/preprocessor/seq/seq.hpp:
@@ -995,6 +1092,8 @@ server/log.h:
 
 /usr/include/boost/next_prior.hpp:
 
+/usr/local/include/yaml-cpp/dll.h:
+
 /usr/include/boost/iterator/reverse_iterator.hpp:
 
 /usr/include/boost/range/reverse_iterator.hpp:
@@ -1002,6 +1101,8 @@ server/log.h:
 /usr/include/boost/utility/enable_if.hpp:
 
 /usr/include/boost/range/difference_type.hpp:
+
+/usr/include/c++/4.8.2/bits/gslice.h:
 
 /usr/include/boost/range/size_type.hpp:
 
@@ -1207,6 +1308,8 @@ server/log.h:
 
 /usr/include/boost/mpl/size_fwd.hpp:
 
+/usr/local/include/yaml-cpp/node/detail/iterator_fwd.h:
+
 /usr/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp:
 
 /usr/include/boost/mpl/list/aux_/size.hpp:
@@ -1218,6 +1321,8 @@ server/log.h:
 /usr/include/boost/mpl/list/aux_/push_back.hpp:
 
 /usr/include/boost/mpl/pop_front_fwd.hpp:
+
+/usr/local/include/yaml-cpp/node/convert.h:
 
 /usr/include/boost/mpl/pop_back_fwd.hpp:
 
@@ -1243,6 +1348,8 @@ server/log.h:
 
 /usr/include/boost/mpl/limits/list.hpp:
 
+/usr/include/c++/4.8.2/bits/unordered_map.h:
+
 /usr/include/boost/mpl/list.hpp:
 
 /usr/include/boost/mpl/aux_/config/pp_counter.hpp:
@@ -1252,6 +1359,8 @@ server/log.h:
 /usr/include/boost/mpl/or.hpp:
 
 /usr/include/boost/math/tools/promotion.hpp:
+
+/usr/include/c++/4.8.2/bits/valarray_after.h:
 
 /usr/include/fenv.h:
 
@@ -1264,6 +1373,10 @@ server/log.h:
 /usr/include/bits/fenv.h:
 
 /usr/include/c++/4.8.2/cfloat:
+
+/usr/local/include/yaml-cpp/node/parse.h:
+
+/usr/local/include/yaml-cpp/mark.h:
 
 /usr/include/boost/iterator/detail/config_def.hpp:
 
@@ -1306,6 +1419,8 @@ server/log.cc:
 /usr/include/boost/type_traits/add_const.hpp:
 
 /usr/include/boost/type_traits/is_enum.hpp:
+
+/usr/include/c++/4.8.2/atomic:
 
 /usr/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp:
 
@@ -1427,9 +1542,13 @@ server/log.cc:
 
 /usr/include/c++/4.8.2/bits/basic_ios.tcc:
 
+/usr/local/include/yaml-cpp/exceptions.h:
+
 /usr/include/c++/4.8.2/cwctype:
 
 /usr/include/boost/preprocessor/detail/is_binary.hpp:
+
+/usr/local/include/yaml-cpp/binary.h:
 
 /usr/include/bits/environments.h:
 
@@ -1475,6 +1594,8 @@ server/log.cc:
 
 /usr/include/boost/numeric/conversion/converter.hpp:
 
+/usr/include/c++/4.8.2/set:
+
 /usr/include/boost/mpl/void.hpp:
 
 /usr/include/boost/type_traits/is_scalar.hpp:
@@ -1503,11 +1624,15 @@ server/log.cc:
 
 /usr/include/bits/stdlib-float.h:
 
+/usr/include/c++/4.8.2/bits/stl_set.h:
+
 /usr/include/alloca.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
 
 /usr/include/boost/mpl/aux_/arity.hpp:
+
+/usr/local/include/yaml-cpp/node/iterator.h:
 
 /usr/include/libintl.h:
 
@@ -1568,6 +1693,8 @@ server/util.cc:
 /usr/include/boost/mpl/vector/vector0.hpp:
 
 /usr/include/c++/4.8.2/random:
+
+/usr/local/include/yaml-cpp/node/detail/node_iterator.h:
 
 /usr/include/boost/mpl/vector.hpp:
 
@@ -1655,6 +1782,8 @@ server/util.cc:
 
 /usr/include/boost/preprocessor/debug/error.hpp:
 
+/usr/local/include/yaml-cpp/emitterdef.h:
+
 /usr/include/boost/config/posix_features.hpp:
 
 /usr/include/boost/type_traits/is_reference.hpp:
@@ -1717,6 +1846,8 @@ server/config.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
 
+/usr/include/c++/4.8.2/bits/hashtable_policy.h:
+
 /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h:
 
 /usr/include/boost/mpl/aux_/lambda_spec.hpp:
@@ -1754,6 +1885,8 @@ server/config.cc:
 /usr/include/c++/4.8.2/ios:
 
 /usr/include/c++/4.8.2/typeinfo:
+
+/usr/local/include/yaml-cpp/emitterstyle.h:
 
 /usr/include/bits/endian.h:
 
@@ -1829,6 +1962,10 @@ server/config.cc:
 
 /usr/include/bits/mathcalls.h:
 
+/usr/include/c++/4.8.2/bits/mask_array.h:
+
+/usr/include/c++/4.8.2/bits/valarray_before.h:
+
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h:
 
 /usr/include/boost/mpl/list/list0.hpp:
@@ -1876,6 +2013,8 @@ server/config.cc:
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h:
 
 /usr/include/c++/4.8.2/ctime:
+
+/usr/include/c++/4.8.2/valarray:
 
 /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
 
@@ -2005,6 +2144,8 @@ server/singleton.h:
 
 /usr/include/boost/mpl/aux_/config/lambda.hpp:
 
+/usr/include/c++/4.8.2/bits/stl_multiset.h:
+
 /usr/include/boost/mpl/vector/aux_/at.hpp:
 
 /usr/include/boost/mpl/int_fwd.hpp:
@@ -2099,6 +2240,8 @@ server/singleton.h:
 
 /usr/include/boost/preprocessor/list/adt.hpp:
 
+/usr/local/include/yaml-cpp/node/detail/node_data.h:
+
 /usr/include/boost/preprocessor/logical/compl.hpp:
 
 /usr/include/boost/preprocessor/list/fold_right.hpp:
@@ -2128,6 +2271,8 @@ server/singleton.h:
 /usr/include/pthread.h:
 
 /usr/include/boost/throw_exception.hpp:
+
+/usr/local/include/yaml-cpp/node/type.h:
 
 /usr/include/boost/exception/detail/attribute_noreturn.hpp:
 
@@ -2211,6 +2356,8 @@ server/singleton.h:
 
 /usr/include/boost/mpl/aux_/arithmetic_op.hpp:
 
+/usr/local/include/yaml-cpp/node/detail/memory.h:
+
 /usr/include/c++/4.8.2/bits/list.tcc:
 
 /usr/include/boost/detail/lcast_precision.hpp:
@@ -2287,6 +2434,8 @@ server/singleton.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/immintrin.h:
 
+/usr/local/include/yaml-cpp/node/detail/iterator.h:
+
 /usr/include/boost/current_function.hpp:
 
 /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/fxsrintrin.h:
@@ -2337,6 +2486,8 @@ server/singleton.h:
 
 /usr/include/boost/mpl/aux_/has_apply.hpp:
 
+/usr/local/include/yaml-cpp/node/detail/impl.h:
+
 /usr/include/bits/timex.h:
 
 /usr/include/boost/mpl/aux_/type_wrapper.hpp:
@@ -2376,6 +2527,8 @@ server/singleton.h:
 /usr/include/c++/4.8.2/cstring:
 
 /usr/include/boost/numeric/conversion/detail/sign_mixture.hpp:
+
+/usr/include/c++/4.8.2/bits/indirect_array.h:
 
 /usr/include/boost/mpl/aux_/has_type.hpp:
 
