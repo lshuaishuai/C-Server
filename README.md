@@ -22,4 +22,14 @@
  使用LoggerManager来管理所有的Logger。并且使用宏来进行日志的打印，不需要自己显式的创建类实例。  
  ## 配置系统
  yaml库的安装、将yaml和配置系统整合
- 复杂类型的支持
+ 配置系统的原则，约定优于配置：
+ '''cpp
+ template<T, FromStr, ToStr>
+ class ConfigVar;
+
+ template<F, T>
+ LexicalCast;
+
+ //容器偏特化 目前实现了vector
+ '''
+ 复杂类型的支持 
