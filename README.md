@@ -31,5 +31,6 @@
  LexicalCast;
    
  // 复杂类型的支持   
- // 容器偏特化 目前实现了vector
+ // 容器偏特化(vector, list, map, set, unordered_map, unirdered_set map只支持key为string类型的数据，) 目的是为了实现STL容器到string的相互转换
+ // Config::Lookup(key), key相同，类型不同的不会报错，但是得解决
 
