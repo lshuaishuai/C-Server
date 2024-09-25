@@ -23,7 +23,7 @@
  ## 配置系统
  yaml库的安装、将yaml和配置系统整合  
  配置系统的原则，约定优于配置：  
- '''cpp
+ ```cpp  
  template<T, FromStr, ToStr>
  class ConfigVar;
 
