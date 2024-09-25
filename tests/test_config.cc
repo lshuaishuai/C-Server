@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 #include "../server/log.h"
 #include "../server/config.h"
@@ -9,8 +10,11 @@
 shuai::ConfigVar<int>::ptr g_int_value_config = 
     shuai::Config::Lookup("system.port", (int)8080, "system port");
 
- shuai::ConfigVar<float>::ptr g_float_value_config = 
+shuai::ConfigVar<float>::ptr g_float_value_config = 
     shuai::Config::Lookup("system.value", (float)10.2f, "system value");
+
+shuai::ConfigVar<std::vector<int>>::ptr g_int_vec_value_config = 
+    shuai::Config::Lookup("system.int_vec", std::vector<int>{1,2}, "system int vec");
 
 void print_yaml(const YAML::Node& node, int level)
 {
@@ -53,14 +57,26 @@ void test_yaml()
 
 void test_config()
 {
-    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "before:" << g_int_value_config->getValue(); 
-    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "before:"  << g_float_value_config->toString();
+    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "before: " << g_int_value_config->getValue(); 
+    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "before: "  << g_float_value_config->toString();
+    auto v = g_int_vec_value_config->getValue();
+    for(auto& i : v)
+    {
+        SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "befor int_vec: " << i;
+    }
 
     YAML::Node root = YAML::LoadFile("/home/shuaishuai/project/sylar_server/bin/conf/log.yml");
     shuai::Config::LoadFromYaml(root);
 
-    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "after:" << g_int_value_config->getValue(); 
-    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "after:"  << g_float_value_config->toString();
+    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "after: " << g_int_value_config->getValue(); 
+    SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "after: "  << g_float_value_config->toString();
+    
+    v = g_int_vec_value_config->getValue();    
+    for(auto& i : v)
+    {
+        SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "int_vec: " << i;
+    }
+
 }
 
 int main(int argc, char** argv)

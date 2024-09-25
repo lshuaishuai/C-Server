@@ -48,13 +48,13 @@ void Config::LoadFromYaml(const YAML::Node& root)
 
         if(var)
         {
-        std::cout << i.second << std::endl;
 
             if(i.second.IsScalar())
             {
                 var->fromString(i.second.Scalar());
             }
             else{
+
                 std::stringstream ss;
                 ss << i.second;
                 var->fromString(ss.str());

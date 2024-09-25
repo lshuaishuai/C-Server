@@ -59,6 +59,7 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "cstddef": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "string": "cpp"
     }
 }

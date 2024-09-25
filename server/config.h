@@ -35,7 +35,54 @@ protected:
     std::string m_description;
 };
 
+// 定义通用的基础类型的解析
+// F from_type T: to_type F到T的转换     若是不能转换为T的F类型，在编译期间就会出错
+template <class F, class T>
+class LexicalCast
+{
+public:
+    T operator()(const F& v) { return boost::lexical_cast<T>(v); }
+};
+
+// 实现了vector的偏特化版本
 template <class T>
+class LexicalCast<std::string, std::vector<T>>
+{
+public:
+    std::vector<T> operator()(const std::string& str)
+    {
+        YAML::Node node = YAML::Load(str);  // 将string类型转为YAML::Node类型
+        typename std::vector<T> vec;
+        std::stringstream ss;
+        for(size_t i = 0; i < node.size(); ++i)
+        {
+            ss.str("");
+            ss << node[i];
+            vec.push_back(LexicalCast<std::string, T>()(ss.str()));
+        }
+        return vec;
+    }
+};
+
+template <class T>
+class LexicalCast<std::vector<T>, std::string>
+{
+public:
+    std::string operator()(const std::vector<T>& v)
+    {
+        YAML::Node node;
+        for(auto& i : v) node.push_back(YAML::Node(LexicalCast<T, std::string>()(i)));
+        std::stringstream ss;
+        ss << node;
+        return ss.str();
+    }
+};
+
+// 序列化反序列化
+// FromStr T operator()(const std::string&) 
+// ToStr std::string operator()(const T&)
+template <class T, class FromStr = LexicalCast<std::string, T>
+                 , class ToStr = LexicalCast<T, std::string>>
 class ConfigVar: public ConfigVarBase
 {
 public:
@@ -51,7 +98,8 @@ public:
     {
         try
         {
-            return boost::lexical_cast<std::string>(m_val);
+            // return boost::lexical_cast<std::string>(m_val);
+            return ToStr()(m_val);
         }
         catch(const std::exception& e)
         {
@@ -65,7 +113,8 @@ public:
     {
         try
         {
-            m_val = boost::lexical_cast<T>(val);
+            // m_val = boost::lexical_cast<T>(val);
+            setValue(FromStr()(val));
         }
         catch(const std::exception& e)
         {
@@ -95,7 +144,7 @@ public:
         {
             SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "Lookup name=" << name << " exists";
             return tmp;
-        }
+        }   
 
         if(name.find_first_not_of("abcdefghijklmnopqrstuvwxyz._0123456789") != std::string::npos)
         {
@@ -103,6 +152,7 @@ public:
             throw std::invalid_argument(name); 
         }
 
+        // 若是不特化 就是从这里有错误
         typename ConfigVar<T>::ptr v(new ConfigVar<T>(name, default_value, description));
         // 父类的指针指向子类对象，会发生多态 
         s_datas[name] = v;
