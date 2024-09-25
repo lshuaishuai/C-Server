@@ -29,7 +29,7 @@
 
  template<F, T>
  LexicalCast;
+   
+ // 复杂类型的支持   
+ // 容器偏特化 目前实现了vector
 
- //容器偏特化 目前实现了vector
- '''
- 复杂类型的支持 
