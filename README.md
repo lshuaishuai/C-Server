@@ -37,3 +37,15 @@
  自定义类型，需要实现偏特化， 实现后就可以支持Config解析自定义类型，自定义类型可以和常规stl容器一起用
 
  配置的事件机制：当一个配置项发生修改的时候，可以反向通知对应的代码(回调)。
+
+ # 日志系统整合配置系统
+ ```yaml
+ logs:
+     - name: root
+       level: (debug, info, warn, error, fatal)
+       formatter：'%d%T%p%T%t%m%n'
+       appender: 
+           - type: (StdoutLogAppender, FileLogAppender)
+             level: (...)
+             file: /logs/xxx.log
+```      
