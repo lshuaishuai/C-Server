@@ -19,7 +19,7 @@
  %l : 行号               LineFormatItem  
  %m : 日志内容           MessageFormatItem  
  %n : 换行符[\r\n]       NewLineFormatItem
-'''
+```
  LogEvent类将要写的日志填充到该类中，然后使用Logger对其进行日志格式的转换。  
  使用LoggerManager来管理所有的Logger。并且使用宏来进行日志的打印，不需要自己显式的创建类实例。  
  ## 配置系统
