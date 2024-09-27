@@ -1,6 +1,6 @@
  # C-server
  
- ## 日志系统
+ # 日志系统
  在这个部分我们仿照log4j的模式实现了日志系统，一共有六个级别(UNKNOW、DEBUG、INFO、WARN、ERROR、FATAL)。主要有三大模块Logger(日志器)、LogAppender(日志输出地)、 
  LogFormat(日志输出格式)。  
  Logger类是对外使用的接口类，只有输入的日志级别大于等于Logger的日志级别才会被输出。可以定义不同的Logger记录不同类型的日志。  
@@ -22,7 +22,7 @@
 ```
  LogEvent类将要写的日志填充到该类中，然后使用Logger对其进行日志格式的转换。  
  使用LoggerManager来管理所有的Logger。并且使用宏来进行日志的打印，不需要自己显式的创建类实例。  
- ## 配置系统
+ # 配置系统
  yaml库的安装、将yaml和配置系统整合  
  配置系统的原则，约定优于配置：  
  ```cpp  
