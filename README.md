@@ -70,4 +70,6 @@
 遗留问题：
 1. appender定义的formatter读取yaml的时候，没有被初始化
 
+下面为简单的日志系统和配置系统的UML类图
+![sylar服务器框架类图](https://github.com/user-attachments/assets/5cc0d558-8701-41ae-b68f-c371ce147374)
 
