@@ -99,7 +99,9 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: \
  /usr/include/c++/4.8.2/bits/stl_uninitialized.h \
  /usr/include/c++/4.8.2/bits/stl_vector.h \
  /usr/include/c++/4.8.2/bits/stl_bvector.h \
- /usr/include/c++/4.8.2/bits/vector.tcc \
+ /usr/include/c++/4.8.2/bits/vector.tcc /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
  /home/shuaishuai/project/sylar_server/tests/../server/log.h \
  /usr/include/string.h /usr/include/c++/4.8.2/memory \
  /usr/include/c++/4.8.2/bits/stl_tempbuf.h \
@@ -126,9 +128,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: \
  /home/shuaishuai/project/sylar_server/tests/../server/util.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /usr/include/unistd.h /usr/include/bits/posix_opt.h \
- /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h \
  /home/shuaishuai/project/sylar_server/tests/../server/singleton.h \
  /home/shuaishuai/project/sylar_server/tests/../server/config.h \
  /usr/include/boost/lexical_cast.hpp /usr/include/boost/config.hpp \

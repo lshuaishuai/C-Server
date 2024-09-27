@@ -138,6 +138,11 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
   /usr/include/c++/4.8.2/bits/stl_vector.h \
   /usr/include/c++/4.8.2/bits/stl_bvector.h \
   /usr/include/c++/4.8.2/bits/vector.tcc \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/getopt.h \
   server/log.h \
   /usr/include/string.h \
   /usr/include/c++/4.8.2/memory \
@@ -175,11 +180,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
   /usr/include/asm/unistd.h \
   /usr/include/asm/unistd_64.h \
   /usr/include/bits/syscall.h \
-  /usr/include/unistd.h \
-  /usr/include/bits/posix_opt.h \
-  /usr/include/bits/environments.h \
-  /usr/include/bits/confname.h \
-  /usr/include/getopt.h \
   server/singleton.h \
   server/config.h \
   /usr/include/boost/lexical_cast.hpp \
@@ -1225,10 +1225,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 
 /usr/include/c++/4.8.2/cstdlib:
 
-/usr/include/bits/confname.h:
-
-/usr/include/unistd.h:
-
 /usr/include/wctype.h:
 
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h:
@@ -1290,6 +1286,10 @@ server/util.h:
 /usr/include/boost/mpl/vector/vector0.hpp:
 
 /usr/include/c++/4.8.2/random:
+
+/usr/include/bits/confname.h:
+
+/usr/include/unistd.h:
 
 /usr/include/boost/concept/detail/backward_compatibility.hpp:
 

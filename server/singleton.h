@@ -9,7 +9,7 @@ class Singleton
 public:
     static T* GetInstance()
     {
-        static T v;
+        static T v;       // 调用
         return &v;
     }
 private:

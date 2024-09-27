@@ -2,70 +2,16 @@ logs:
   - name: root
     level: info
     formatter: "%d%T%m%n"
-    appender:
+    appenders:
       - type: FileLogAppender
-        file: log.txt
+        file: root.txt
       - type: StdoutLogAppender
 
   - name: system
     level: debug
     formatter: "%d%T%m%n"
-    appender:
+    appenders:
       - type: FileLogAppender
-        file: log.txt
+        file: system.txt
+        formatter: '%d%T[%p]%T%m%n'
       - type: StdoutLogAppender
-
-system:
-  port: 9900
-  value: 15
-  int_vec:
-    - 10
-    - 30
-  int_list: [20, 40, 50]
-  int_set: [30, 20, 60, 20]
-  int_uset: [30, 20, 60, 20]
-  str_int_map:
-    k: 30
-    k2: 20
-    k3: 10
-  str_int_umap:
-    k: 30
-    k2: 20
-    k3: 10
-
-class:
-  person:
-    name: shuai
-    age: 23
-    sex: true
-  map:
-    shuai01:
-      name: shuai01
-      age: 18
-      sex: false
-    shuai02:
-      name: shuai02
-      age: 23
-      sex: true
-  vec_map:
-    k1:
-      - name: m11
-        age: 23
-        sex: true
-      - name: m12
-        age: 24
-        sex: false
-    k2:
-      - name: m21
-        age: 23
-        sex: true
-      - name: m22
-        age: 24
-        sex: false
-  vec_p:
-    - name: m21
-      age: 23
-      sex: true
-    - name: m22
-      age: 24
-      sex: false

@@ -6,5 +6,11 @@ CXX_DEFINES = -Dserver_EXPORTS
 
 CXX_INCLUDES = -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp
 
-CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -fPIC
+CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -fPIC
+
+# Custom defines: CMakeFiles/server.dir/server/log.cc.o_DEFINES = __FILE__="server/log.cc"
+
+# Custom defines: CMakeFiles/server.dir/server/util.cc.o_DEFINES = __FILE__="server/util.cc"
+
+# Custom defines: CMakeFiles/server.dir/server/config.cc.o_DEFINES = __FILE__="server/config.cc"
 

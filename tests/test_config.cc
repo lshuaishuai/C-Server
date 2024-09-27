@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unistd.h>
 
 #include "../server/log.h"
 #include "../server/config.h"
@@ -207,14 +208,31 @@ void test_class()
     SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "after: "  << g_person->getValue().toString() << " -  " << g_person->toString();
     XX_PM(g_person_map, "class.map after");
     SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "after: " << g_person_vec_map->toString();
-
-    
 }
+
+void test_log()
+{
+    static shuai::Logger::ptr system_log = SHUAI_LOG_NAME("system");   // 这里会创建一个新的Logger日志器，name为system
+    SHUAI_LOG_INFO(system_log) << "hello system" << std::endl;
+
+    std::cout << shuai::LoggerMgr::GetInstance()->toYamlString() << std::endl;
+    YAML::Node root = YAML::LoadFile("/home/shuaishuai/project/sylar_server/bin/conf/log.yml");
+    shuai::Config::LoadFromYaml(root);
+    std::cout << "=======================" << std::endl;
+    // 这里的输出没有变化，那就是LoggerMgr中的m_loggers没有改变
+    std::cout << shuai::LoggerMgr::GetInstance()->toYamlString() << std::endl;
+    SHUAI_LOG_INFO(system_log) << "hello system" << std::endl;  // 由于这里改了日志打印格式，那么我们这里打印的日志就是新的对应的格式
+    system_log->setFormatter("%d - %m%n");
+    SHUAI_LOG_INFO(system_log) << "hello system" << std::endl;  
+
+}  
 
 int main(int argc, char** argv)
 {
     // test_config();
     // test_yaml();
-    test_class();
+    // test_class();
+    // Logger(root)是最先创建的，在main函数之前就创建了 在发生错误输出日志时，生成的root日志器
+    test_log();
     return 0; 
 }

@@ -266,6 +266,7 @@ public:
 // 序列化反序列化
 // FromStr T operator()(const std::string&) 
 // ToStr std::string operator()(const T&)
+// 若是std::set<LogDefine> -> string的话，会去log.cc中找模板特化版本的LexicalCast
 template <class T, class FromStr = LexicalCast<std::string, T>
                  , class ToStr = LexicalCast<T, std::string>>
 class ConfigVar: public ConfigVarBase
@@ -317,7 +318,7 @@ public:
         if(v == m_val) return;
         for(auto& i : m_cbs)
         {
-            i.second(m_val, v);
+            i.second(m_val, v);  // 在这里执行回调，也就是函数对象on_change_cb  第18节课中T为std::set<LogDefine>类型
         }
         m_val = v;
     }
@@ -352,8 +353,8 @@ public:
     template <class T>
     static typename ConfigVar<T>::ptr Lookup(const std::string& name, const T& default_value, const std::string& description = "")
     {
-        auto it = s_datas.find(name);
-        if(it != s_datas.end())
+        auto it = GetDatas().find(name);
+        if(it != GetDatas().end())
         {
             // 如果找到，尝试将找到的 ConfigVarBase::ptr 类型转换为 ConfigVar<T>::ptr 类型（具体类型的智能指针）。
             // 如果转换成功，则返回该变量；如果失败，记录错误并返回 nullptr
@@ -382,15 +383,15 @@ public:
         // 若是不特化 就是从这里有错误
         typename ConfigVar<T>::ptr v(new ConfigVar<T>(name, default_value, description));
         // 父类的指针指向子类对象，会发生多态 
-        s_datas[name] = v;
+        GetDatas()[name] = v;
         return v;
     }
     
     template <class T>
     static typename ConfigVar<T>::ptr Lookup(const std::string& name)
     {
-        auto it = s_datas.find(name);
-        if(it == s_datas.end()) return nullptr;
+        auto it = GetDatas().find(name);
+        if(it == GetDatas().end()) return nullptr;
 
         return std::dynamic_pointer_cast<ConfigVar<T>> (it->second);
     }
@@ -400,7 +401,10 @@ public:
     static ConfigVarBase::ptr LookupBase(const std::string& name);
 private:
     // 静态的只会存储这一个，所有的键值对都是存放在这里了
-    static ConfigVarMap s_datas;
+    static ConfigVarMap& GetDatas(){
+        static ConfigVarMap s_datas;
+        return s_datas;
+    }
 };
 
 }

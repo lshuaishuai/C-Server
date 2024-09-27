@@ -76,43 +76,43 @@ CMakeFiles/server.dir/server/log.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/log.cc.o: server/log.cc
 CMakeFiles/server.dir/server/log.cc.o: CMakeFiles/server.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/server/log.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/log.cc.o -MF CMakeFiles/server.dir/server/log.cc.o.d -o CMakeFiles/server.dir/server/log.cc.o -c /home/shuaishuai/project/sylar_server/server/log.cc
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/log.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/log.cc.o -MF CMakeFiles/server.dir/server/log.cc.o.d -o CMakeFiles/server.dir/server/log.cc.o -c /home/shuaishuai/project/sylar_server/server/log.cc
 
 CMakeFiles/server.dir/server/log.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/log.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/log.cc > CMakeFiles/server.dir/server/log.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/log.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/log.cc > CMakeFiles/server.dir/server/log.cc.i
 
 CMakeFiles/server.dir/server/log.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/log.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/log.cc -o CMakeFiles/server.dir/server/log.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/log.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/log.cc -o CMakeFiles/server.dir/server/log.cc.s
 
 CMakeFiles/server.dir/server/util.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/util.cc.o: server/util.cc
 CMakeFiles/server.dir/server/util.cc.o: CMakeFiles/server.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/server/util.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/util.cc.o -MF CMakeFiles/server.dir/server/util.cc.o.d -o CMakeFiles/server.dir/server/util.cc.o -c /home/shuaishuai/project/sylar_server/server/util.cc
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/util.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/util.cc.o -MF CMakeFiles/server.dir/server/util.cc.o.d -o CMakeFiles/server.dir/server/util.cc.o -c /home/shuaishuai/project/sylar_server/server/util.cc
 
 CMakeFiles/server.dir/server/util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/util.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/util.cc > CMakeFiles/server.dir/server/util.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/util.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/util.cc > CMakeFiles/server.dir/server/util.cc.i
 
 CMakeFiles/server.dir/server/util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/util.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/util.cc -o CMakeFiles/server.dir/server/util.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/util.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/util.cc -o CMakeFiles/server.dir/server/util.cc.s
 
 CMakeFiles/server.dir/server/config.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/config.cc.o: server/config.cc
 CMakeFiles/server.dir/server/config.cc.o: CMakeFiles/server.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/server/config.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/config.cc.o -MF CMakeFiles/server.dir/server/config.cc.o.d -o CMakeFiles/server.dir/server/config.cc.o -c /home/shuaishuai/project/sylar_server/server/config.cc
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/config.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/config.cc.o -MF CMakeFiles/server.dir/server/config.cc.o.d -o CMakeFiles/server.dir/server/config.cc.o -c /home/shuaishuai/project/sylar_server/server/config.cc
 
 CMakeFiles/server.dir/server/config.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/config.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/config.cc > CMakeFiles/server.dir/server/config.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/config.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/config.cc > CMakeFiles/server.dir/server/config.cc.i
 
 CMakeFiles/server.dir/server/config.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/config.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/config.cc -o CMakeFiles/server.dir/server/config.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/config.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/config.cc -o CMakeFiles/server.dir/server/config.cc.s
 
 # Object files for target server
 server_OBJECTS = \

@@ -2,12 +2,12 @@
 
 namespace shuai
 {
-Config::ConfigVarMap Config::s_datas;
+// Config::ConfigVarMap Config::s_datas;
 
 ConfigVarBase::ptr Config::LookupBase(const std::string& name)
 {
-    auto it = s_datas.find(name);
-    return it == s_datas.end() ? nullptr : it->second;
+    auto it = GetDatas().find(name);
+    return it == GetDatas().end() ? nullptr : it->second;
 }
 
 
@@ -37,18 +37,17 @@ void Config::LoadFromYaml(const YAML::Node& root)
 {
     std::list<std::pair<std::string, const YAML::Node>> all_nodes;
     ListAllMember("", root, all_nodes);
-    
+
     for(auto& i : all_nodes)
     {
         std::string key = i.first;
         if(key.empty()) continue;
 
         std::transform(key.begin(), key.end(), key.begin(), ::tolower);  // 将字符串 key 中的所有字符转换为小写字母。
-        ConfigVarBase::ptr var = LookupBase(key);
+        ConfigVarBase::ptr var = LookupBase(key);   // 这里在第18节课测试的时候var不为空 var为ConfigVar<std::set<LogDefine>>类型的智能指针
 
         if(var)
         {
-
             if(i.second.IsScalar())
             {
                 var->fromString(i.second.Scalar());
