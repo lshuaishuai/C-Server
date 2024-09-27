@@ -51,3 +51,21 @@
              level: (...)
              file: /logs/xxx.log
 ```      
+```cpp
+    shuai::Logger g_logger = 
+    shuai::LoggerMgr::GetInstance()->getLogger(name);
+    SHUAI_LOG_INFO(g_logger) << "xxx log"; 
+```
+
+```cpp
+    static Logger::ptr g_log = SHUAI_LOG_NAME("system");
+    // m_root, m_system->root
+    当logger的appenders为空，使用root写logger
+```
+
+```cpp
+// 定义LogDefine LogAppenderDefine， 偏特化 LexicalCast，
+// 实现日志配置解析
+```
+遗留问题：
+1. appender定义的formatter读取yaml的时候，没有被初始化
