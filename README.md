@@ -1,4 +1,5 @@
  # C-server
+ 本仓库为重新写了sylar的C++高性能服务器框架，并加了必要的注释，感兴趣的小伙伴可以一起交流
  
  # 日志系统
  在这个部分我们仿照log4j的模式实现了日志系统，一共有六个级别(UNKNOW、DEBUG、INFO、WARN、ERROR、FATAL)。主要有三大模块Logger(日志器)、LogAppender(日志输出地)、 
