@@ -69,3 +69,5 @@
 ```
 遗留问题：
 1. appender定义的formatter读取yaml的时候，没有被初始化
+2. ![image](https://github.com/user-attachments/assets/aec2688b-7c93-4668-922b-67b4434c7544)
+
