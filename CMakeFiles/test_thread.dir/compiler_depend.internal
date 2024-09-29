@@ -781,4 +781,5 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o
  /usr/include/c++/4.8.2/ratio
  /usr/include/semaphore.h
  /usr/include/bits/semaphore.h
+ /home/shuaishuai/project/sylar_server/server/macro.h
 

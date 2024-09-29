@@ -675,4 +675,5 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o: \
  /home/shuaishuai/project/sylar_server/./server/thread.h \
  /usr/include/c++/4.8.2/thread /usr/include/c++/4.8.2/chrono \
  /usr/include/c++/4.8.2/ratio /usr/include/semaphore.h \
- /usr/include/bits/semaphore.h
+ /usr/include/bits/semaphore.h \
+ /home/shuaishuai/project/sylar_server/./server/macro.h

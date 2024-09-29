@@ -779,7 +779,8 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o: tests/test_thread.cc \
   /usr/include/c++/4.8.2/chrono \
   /usr/include/c++/4.8.2/ratio \
   /usr/include/semaphore.h \
-  /usr/include/bits/semaphore.h
+  /usr/include/bits/semaphore.h \
+  server/macro.h
 
 
 /usr/include/semaphore.h:
@@ -981,6 +982,8 @@ server/thread.h:
 /usr/include/boost/range/empty.hpp:
 
 /usr/include/boost/mpl/back_fwd.hpp:
+
+server/macro.h:
 
 /usr/include/boost/mpl/vector/aux_/pop_back.hpp:
 

@@ -1,5 +1,6 @@
 /home/shuaishuai/project/sylar_server/CMakeFiles/server.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_config.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_thread.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/test_util.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/edit_cache.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/rebuild_cache.dir

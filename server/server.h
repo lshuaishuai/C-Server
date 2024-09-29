@@ -5,3 +5,4 @@
 #include "server/util.h"
 #include "server/thread.h"
 #include "server/singleton.h"
+#include "server/macro.h"
