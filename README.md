@@ -76,3 +76,23 @@
 ![sylar服务器框架类图](https://github.com/user-attachments/assets/5cc0d558-8701-41ae-b68f-c371ce147374)
 
 ## 线程库
+
+Thread, Mutex
+// 为了区分读写锁减少性能损失，我们使用系统调用来实现Mutex 
+
+互斥量 mutex
+信号量 semaphore
+
+// 该代码实现了一个高效的读写锁机制，允许多个线程同时进行读取，而在写入时则需要独占锁
+
+解决日志代码线程安全的问题 -- 将线程互斥量信号和日志模块 整合
+Logger、Appender、Loggermanger都加上锁
+
+加锁以后，写日志的速度比不加锁要慢很多，进行优化。 ---  经过测试 Mutex比spinlock和CASLock都快
+还做了每个一段时间重新打开文件的操作 -- 周期性reopen
+
+将Config和互斥量结合做到线程安全
+
+## 协程库封装
+定义协程接口
+ucontext
