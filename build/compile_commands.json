@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/log.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/log.cc.o -c /home/shuaishuai/project/sylar_server/server/log.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/log.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/util.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/util.cc.o -c /home/shuaishuai/project/sylar_server/server/util.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/util.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/config.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/config.cc.o -c /home/shuaishuai/project/sylar_server/server/config.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/config.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/thread.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/thread.cc.o -c /home/shuaishuai/project/sylar_server/server/thread.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/thread.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/test_config.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -o CMakeFiles/test_config.dir/tests/test_config.cc.o -c /home/shuaishuai/project/sylar_server/tests/test_config.cc",
+  "file": "/home/shuaishuai/project/sylar_server/tests/test_config.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/test_thread.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -o CMakeFiles/test_thread.dir/tests/test_thread.cc.o -c /home/shuaishuai/project/sylar_server/tests/test_thread.cc",
+  "file": "/home/shuaishuai/project/sylar_server/tests/test_thread.cc"
+}
+]

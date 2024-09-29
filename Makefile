@@ -133,19 +133,6 @@ server/fast:
 .PHONY : server/fast
 
 #=============================================================================
-# Target rules for targets named test
-
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
-
-# fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
-
-#=============================================================================
 # Target rules for targets named test_config
 
 # Build rule for target.
@@ -157,6 +144,19 @@ test_config: cmake_check_build_system
 test_config/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
 .PHONY : test_config/fast
+
+#=============================================================================
+# Target rules for targets named test_thread
+
+# Build rule for target.
+test_thread: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_thread
+.PHONY : test_thread
+
+# fast build rule for target.
+test_thread/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+.PHONY : test_thread/fast
 
 server/config.o: server/config.cc.o
 .PHONY : server/config.o
@@ -206,6 +206,30 @@ server/log.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/log.cc.s
 .PHONY : server/log.cc.s
 
+server/thread.o: server/thread.cc.o
+.PHONY : server/thread.o
+
+# target to build an object file
+server/thread.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/thread.cc.o
+.PHONY : server/thread.cc.o
+
+server/thread.i: server/thread.cc.i
+.PHONY : server/thread.i
+
+# target to preprocess a source file
+server/thread.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/thread.cc.i
+.PHONY : server/thread.cc.i
+
+server/thread.s: server/thread.cc.s
+.PHONY : server/thread.s
+
+# target to generate assembly for a file
+server/thread.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/thread.cc.s
+.PHONY : server/thread.cc.s
+
 server/util.o: server/util.cc.o
 .PHONY : server/util.o
 
@@ -229,30 +253,6 @@ server/util.s: server/util.cc.s
 server/util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/util.cc.s
 .PHONY : server/util.cc.s
-
-tests/test.o: tests/test.cc.o
-.PHONY : tests/test.o
-
-# target to build an object file
-tests/test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.o
-.PHONY : tests/test.cc.o
-
-tests/test.i: tests/test.cc.i
-.PHONY : tests/test.i
-
-# target to preprocess a source file
-tests/test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.i
-.PHONY : tests/test.cc.i
-
-tests/test.s: tests/test.cc.s
-.PHONY : tests/test.s
-
-# target to generate assembly for a file
-tests/test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.s
-.PHONY : tests/test.cc.s
 
 tests/test_config.o: tests/test_config.cc.o
 .PHONY : tests/test_config.o
@@ -278,6 +278,30 @@ tests/test_config.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
 .PHONY : tests/test_config.cc.s
 
+tests/test_thread.o: tests/test_thread.cc.o
+.PHONY : tests/test_thread.o
+
+# target to build an object file
+tests/test_thread.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.o
+.PHONY : tests/test_thread.cc.o
+
+tests/test_thread.i: tests/test_thread.cc.i
+.PHONY : tests/test_thread.i
+
+# target to preprocess a source file
+tests/test_thread.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.i
+.PHONY : tests/test_thread.cc.i
+
+tests/test_thread.s: tests/test_thread.cc.s
+.PHONY : tests/test_thread.s
+
+# target to generate assembly for a file
+tests/test_thread.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.s
+.PHONY : tests/test_thread.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -287,23 +311,26 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... server"
-	@echo "... test"
 	@echo "... test_config"
+	@echo "... test_thread"
 	@echo "... server/config.o"
 	@echo "... server/config.i"
 	@echo "... server/config.s"
 	@echo "... server/log.o"
 	@echo "... server/log.i"
 	@echo "... server/log.s"
+	@echo "... server/thread.o"
+	@echo "... server/thread.i"
+	@echo "... server/thread.s"
 	@echo "... server/util.o"
 	@echo "... server/util.i"
 	@echo "... server/util.s"
-	@echo "... tests/test.o"
-	@echo "... tests/test.i"
-	@echo "... tests/test.s"
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"
+	@echo "... tests/test_thread.o"
+	@echo "... tests/test_thread.i"
+	@echo "... tests/test_thread.s"
 .PHONY : help
 
 

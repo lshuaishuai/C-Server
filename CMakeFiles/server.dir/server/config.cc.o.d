@@ -670,4 +670,8 @@ CMakeFiles/server.dir/server/config.cc.o: \
  /home/shuaishuai/project/sylar_server/server/util.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /home/shuaishuai/project/sylar_server/server/singleton.h
+ /home/shuaishuai/project/sylar_server/server/singleton.h \
+ /home/shuaishuai/project/sylar_server/server/thread.h \
+ /usr/include/c++/4.8.2/thread /usr/include/c++/4.8.2/chrono \
+ /usr/include/c++/4.8.2/ratio /usr/include/semaphore.h \
+ /usr/include/bits/semaphore.h

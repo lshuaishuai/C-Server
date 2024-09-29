@@ -436,3 +436,35 @@ gmake[1]: Leaving directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CM
     Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
     Feature record: CXX_FEATURE:0cxx_return_type_deduction
     Feature record: CXX_FEATURE:0cxx_variable_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3a96d/fast && gmake[1]: Entering directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_3a96d.dir/build.make CMakeFiles/cmTC_3a96d.dir/build
+gmake[2]: Entering directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a96d.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3a96d.dir/CheckIncludeFile.c.o -c /home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_3a96d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a96d.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_3a96d.dir/CheckIncludeFile.c.o -o cmTC_3a96d 
+gmake[2]: Leaving directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6233c/fast && gmake[1]: Entering directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_6233c.dir/build.make CMakeFiles/cmTC_6233c.dir/build
+gmake[2]: Entering directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6233c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_6233c.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6233c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6233c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_6233c.dir/CheckFunctionExists.c.o -o cmTC_6233c  -lpthread 
+gmake[2]: Leaving directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/shuaishuai/project/sylar_server/CMakeFiles/CMakeTmp'
+
+
+

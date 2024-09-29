@@ -181,6 +181,17 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
   /usr/include/asm/unistd_64.h \
   /usr/include/bits/syscall.h \
   server/singleton.h \
+  server/thread.h \
+  /usr/include/c++/4.8.2/thread \
+  /usr/include/c++/4.8.2/chrono \
+  /usr/include/c++/4.8.2/ratio \
+  /usr/include/c++/4.8.2/limits \
+  /usr/include/c++/4.8.2/ctime \
+  /usr/include/c++/4.8.2/atomic \
+  /usr/include/c++/4.8.2/bits/atomic_base.h \
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
+  /usr/include/semaphore.h \
+  /usr/include/bits/semaphore.h \
   server/config.h \
   /usr/include/boost/lexical_cast.hpp \
   /usr/include/boost/config.hpp \
@@ -206,7 +217,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
   /usr/include/bits/xopen_lim.h \
   /usr/include/c++/4.8.2/cstring \
   /usr/include/boost/limits.hpp \
-  /usr/include/c++/4.8.2/limits \
   /usr/include/boost/mpl/if.hpp \
   /usr/include/boost/mpl/aux_/value_wknd.hpp \
   /usr/include/boost/mpl/aux_/static_cast.hpp \
@@ -326,7 +336,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
   /usr/include/boost/type_traits/is_volatile.hpp \
   /usr/include/c++/4.8.2/locale \
   /usr/include/c++/4.8.2/bits/locale_facets_nonio.h \
-  /usr/include/c++/4.8.2/ctime \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/time_members.h \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/messages_members.h \
   /usr/include/libintl.h \
@@ -756,9 +765,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
   /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
   /usr/local/include/yaml-cpp/node/iterator.h \
   /usr/local/include/yaml-cpp/node/detail/iterator.h \
-  /usr/include/c++/4.8.2/atomic \
-  /usr/include/c++/4.8.2/bits/atomic_base.h \
-  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
   /usr/local/include/yaml-cpp/node/convert.h \
   /usr/include/c++/4.8.2/valarray \
   /usr/include/c++/4.8.2/bits/valarray_array.h \
@@ -784,10 +790,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 /usr/include/c++/4.8.2/bits/valarray_array.tcc:
 
 /usr/include/c++/4.8.2/bits/valarray_array.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h:
-
-/usr/include/c++/4.8.2/bits/atomic_base.h:
 
 /usr/local/include/yaml-cpp/node/detail/node_ref.h:
 
@@ -880,8 +882,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 /usr/include/boost/iterator/iterator_categories.hpp:
 
 /usr/include/boost/iterator/detail/facade_iterator_category.hpp:
-
-/usr/include/boost/iterator/detail/config_undef.hpp:
 
 /usr/include/boost/range/iterator_range_core.hpp:
 
@@ -1163,10 +1163,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 
 /usr/include/boost/type_traits/is_enum.hpp:
 
-/usr/include/c++/4.8.2/atomic:
-
-/usr/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp:
-
 /usr/include/boost/type_traits/make_unsigned.hpp:
 
 /usr/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_common.hpp:
@@ -1211,13 +1207,45 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 
 /usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
 
-/usr/include/c++/4.8.2/memory:
+/usr/include/boost/mpl/aux_/config/forwarding.hpp:
 
-/usr/include/boost/mpl/aux_/clear_impl.hpp:
+/usr/include/boost/mpl/aux_/numeric_cast_utils.hpp:
 
-/usr/include/boost/preprocessor/array/size.hpp:
+/usr/include/bits/fenvinline.h:
 
-/usr/include/c++/4.8.2/cstddef:
+/usr/include/boost/mpl/aux_/has_tag.hpp:
+
+/usr/include/c++/4.8.2/set:
+
+/usr/include/boost/mpl/void.hpp:
+
+/usr/include/boost/mpl/tag.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
+
+/usr/include/boost/mpl/list/aux_/item.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
+
+/usr/include/boost/mpl/times.hpp:
+
+/usr/include/boost/preprocessor/stringize.hpp:
+
+/usr/include/semaphore.h:
+
+/usr/include/boost/mpl/arg.hpp:
+
+/usr/include/boost/integer_traits.hpp:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h:
+
+/usr/include/boost/preprocessor/repeat.hpp:
+
+/usr/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp:
+
+/usr/include/c++/4.8.2/atomic:
+
+/usr/include/c++/4.8.2/chrono:
 
 /usr/include/boost/mpl/fold.hpp:
 
@@ -1242,6 +1270,10 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 /usr/include/boost/mpl/push_front.hpp:
 
 /usr/include/c++/4.8.2/bits/exception_defines.h:
+
+/usr/include/c++/4.8.2/limits:
+
+/usr/include/boost/config/user.hpp:
 
 /usr/include/c++/4.8.2/bits/unique_ptr.h:
 
@@ -1273,12 +1305,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 
 /usr/include/c++/4.8.2/ext/concurrence.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h:
-
-/usr/include/boost/config/stdlib/libstdcpp3.hpp:
-
-/usr/include/bits/huge_val.h:
-
 server/util.h:
 
 /usr/include/c++/4.8.2/bits/stl_raw_storage_iter.h:
@@ -1286,6 +1312,12 @@ server/util.h:
 /usr/include/boost/mpl/vector/vector0.hpp:
 
 /usr/include/c++/4.8.2/random:
+
+/usr/include/c++/4.8.2/memory:
+
+/usr/include/boost/mpl/aux_/clear_impl.hpp:
+
+/usr/include/boost/preprocessor/array/size.hpp:
 
 /usr/include/bits/confname.h:
 
@@ -1313,8 +1345,6 @@ server/util.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/mm_malloc.h:
 
-/usr/include/boost/mpl/aux_/numeric_cast_utils.hpp:
-
 /usr/include/boost/mpl/clear_fwd.hpp:
 
 /usr/include/c++/4.8.2/bits/basic_ios.tcc:
@@ -1329,7 +1359,13 @@ server/util.h:
 
 /usr/include/c++/4.8.2/bits/streambuf.tcc:
 
+/usr/include/boost/iterator/detail/config_undef.hpp:
+
+server/thread.h:
+
 /usr/include/c++/4.8.2/fstream:
+
+/usr/include/c++/4.8.2/bits/atomic_base.h:
 
 /usr/include/c++/4.8.2/bits/functional_hash.h:
 
@@ -1345,10 +1381,6 @@ server/util.h:
 
 /usr/include/c++/4.8.2/cerrno:
 
-/usr/include/boost/config/select_platform_config.hpp:
-
-/usr/include/c++/4.8.2/bits/locale_facets.tcc:
-
 /usr/include/boost/mpl/O1_size_fwd.hpp:
 
 /usr/include/boost/preprocessor/tuple/eat.hpp:
@@ -1360,20 +1392,6 @@ server/util.h:
 /usr/include/c++/4.8.2/bits/concept_check.h:
 
 /usr/include/c++/4.8.2/iostream:
-
-/usr/local/include/yaml-cpp/emitterdef.h:
-
-/usr/include/boost/config/posix_features.hpp:
-
-/usr/include/boost/type_traits/is_reference.hpp:
-
-/usr/include/boost/type_traits/is_pod.hpp:
-
-/usr/include/limits.h:
-
-/usr/include/boost/numeric/conversion/detail/sign_mixture.hpp:
-
-/usr/include/c++/4.8.2/cstring:
 
 /usr/include/c++/4.8.2/ext/atomicity.h:
 
@@ -1411,6 +1429,8 @@ server/util.h:
 
 /usr/include/c++/4.8.2/bits/stl_algobase.h:
 
+/usr/include/boost/type_traits/remove_cv.hpp:
+
 /usr/include/c++/4.8.2/bits/char_traits.h:
 
 /usr/include/c++/4.8.2/bits/indirect_array.h:
@@ -1422,10 +1442,6 @@ server/util.h:
 /usr/include/c++/4.8.2/bits/basic_string.h:
 
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_inline.h:
-
-/usr/include/boost/mpl/times.hpp:
-
-/usr/include/boost/preprocessor/stringize.hpp:
 
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_base.h:
 
@@ -1453,6 +1469,12 @@ server/util.h:
 
 /usr/include/c++/4.8.2/bits/stl_iterator.h:
 
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
+
+/usr/include/c++/4.8.2/thread:
+
+/usr/include/c++/4.8.2/ratio:
+
 /usr/include/c++/4.8.2/typeinfo:
 
 /usr/include/c++/4.8.2/bits/fstream.tcc:
@@ -1463,11 +1485,11 @@ server/util.h:
 
 /usr/include/bits/sys_errlist.h:
 
-/usr/include/boost/preprocessor/control/expr_iif.hpp:
-
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h:
 
 /usr/include/c++/4.8.2/ctime:
+
+/usr/include/boost/preprocessor/control/expr_iif.hpp:
 
 /usr/include/boost/range/detail/implementation_help.hpp:
 
@@ -1486,6 +1508,10 @@ server/util.h:
 /usr/include/c++/4.8.2/ext/string_conversions.h:
 
 /usr/include/bits/nan.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/bits/sigset.h:
 
 /usr/include/boost/mpl/bind.hpp:
 
@@ -1543,10 +1569,6 @@ server/config.h:
 
 /usr/include/boost/mpl/aux_/config/msvc.hpp:
 
-/usr/include/c++/4.8.2/set:
-
-/usr/include/boost/mpl/void.hpp:
-
 /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h:
 
 /usr/include/c++/4.8.2/bits/codecvt.h:
@@ -1560,6 +1582,8 @@ server/config.h:
 /usr/include/c++/4.8.2/bits/postypes.h:
 
 /usr/include/boost/mpl/prior.hpp:
+
+/usr/include/bits/semaphore.h:
 
 /usr/include/boost/numeric/conversion/detail/meta.hpp:
 
@@ -1633,10 +1657,6 @@ tests/test_config.cc:
 
 /usr/include/c++/4.8.2/bits/stl_multimap.h:
 
-/usr/include/bits/fenvinline.h:
-
-/usr/include/boost/mpl/aux_/has_tag.hpp:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
 
 /usr/include/boost/config/select_stdlib_config.hpp:
@@ -1644,8 +1664,6 @@ tests/test_config.cc:
 /usr/include/c++/4.8.2/bits/stl_map.h:
 
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h:
-
-/usr/include/boost/mpl/aux_/config/compiler.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp:
 
@@ -1656,10 +1674,6 @@ tests/test_config.cc:
 /usr/include/gnu/stubs.h:
 
 /usr/include/bits/wchar.h:
-
-/usr/include/bits/sigset.h:
-
-/usr/include/bits/typesizes.h:
 
 /usr/include/c++/4.8.2/cstdint:
 
@@ -1674,18 +1688,6 @@ tests/test_config.cc:
 server/log.h:
 
 /usr/include/bits/stdio_lim.h:
-
-/usr/include/c++/4.8.2/bits/stl_relops.h:
-
-/usr/include/c++/4.8.2/bits/stl_tempbuf.h:
-
-/usr/include/boost/config/no_tr1/utility.hpp:
-
-/usr/include/bits/huge_vall.h:
-
-/usr/include/boost/config/platform/linux.hpp:
-
-/usr/include/c++/4.8.2/bits/localefwd.h:
 
 /usr/include/boost/numeric/conversion/numeric_cast_traits.hpp:
 
@@ -1797,10 +1799,6 @@ server/log.h:
 
 /usr/include/c++/4.8.2/initializer_list:
 
-/usr/include/boost/config/user.hpp:
-
-/usr/include/c++/4.8.2/limits:
-
 /usr/include/boost/mpl/eval_if.hpp:
 
 /usr/include/bits/sched.h:
@@ -1851,10 +1849,6 @@ server/singleton.h:
 
 /usr/include/boost/mpl/aux_/nttp_decl.hpp:
 
-/usr/include/c++/4.8.2/valarray:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
-
 /usr/include/boost/type.hpp:
 
 /usr/include/c++/4.8.2/bits/hashtable_policy.h:
@@ -1876,6 +1870,48 @@ server/singleton.h:
 /usr/include/stdlib.h:
 
 /usr/include/bits/waitflags.h:
+
+/usr/include/c++/4.8.2/cstddef:
+
+/usr/include/c++/4.8.2/bits/stl_relops.h:
+
+/usr/include/c++/4.8.2/bits/stl_tempbuf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/boost/config/no_tr1/utility.hpp:
+
+/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/boost/config/stdlib/libstdcpp3.hpp:
+
+/usr/include/c++/4.8.2/bits/locale_facets.tcc:
+
+/usr/include/boost/config/select_platform_config.hpp:
+
+/usr/include/c++/4.8.2/bits/localefwd.h:
+
+/usr/include/boost/config/platform/linux.hpp:
+
+/usr/local/include/yaml-cpp/emitterdef.h:
+
+/usr/include/boost/config/posix_features.hpp:
+
+/usr/include/boost/type_traits/is_reference.hpp:
+
+/usr/include/c++/4.8.2/valarray:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
+
+/usr/include/boost/type_traits/is_pod.hpp:
+
+/usr/include/limits.h:
+
+/usr/include/boost/numeric/conversion/detail/sign_mixture.hpp:
+
+/usr/include/c++/4.8.2/cstring:
 
 /usr/include/bits/posix1_lim.h:
 
@@ -2039,8 +2075,6 @@ server/singleton.h:
 
 /usr/include/boost/preprocessor/facilities/empty.hpp:
 
-/usr/include/boost/preprocessor/repeat.hpp:
-
 /usr/include/boost/type_traits/is_array.hpp:
 
 /usr/include/boost/preprocessor/detail/auto_rec.hpp:
@@ -2147,8 +2181,6 @@ server/singleton.h:
 
 /usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
 
-/usr/include/boost/type_traits/remove_cv.hpp:
-
 /usr/include/boost/preprocessor/seq/for_each_i.hpp:
 
 /usr/include/boost/range/mutable_iterator.hpp:
@@ -2163,19 +2195,13 @@ server/singleton.h:
 
 /usr/include/boost/type_traits/integral_constant.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
-
-/usr/include/boost/mpl/list/aux_/item.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
-
 /usr/include/boost/mpl/integral_c_fwd.hpp:
 
 /usr/include/boost/iterator.hpp:
 
-/usr/include/c++/4.8.2/climits:
-
 /usr/include/bits/waitstatus.h:
+
+/usr/include/c++/4.8.2/climits:
 
 /usr/include/boost/type_traits/detail/bool_trait_undef.hpp:
 
@@ -2188,10 +2214,6 @@ server/singleton.h:
 /usr/include/c++/4.8.2/bits/list.tcc:
 
 /usr/include/boost/detail/lcast_precision.hpp:
-
-/usr/include/boost/mpl/arg.hpp:
-
-/usr/include/boost/integer_traits.hpp:
 
 /usr/include/boost/type_traits/is_abstract.hpp:
 
@@ -2314,7 +2336,3 @@ server/singleton.h:
 /usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
 
 /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
-
-/usr/include/boost/mpl/tag.hpp:
-
-/usr/include/boost/mpl/aux_/config/forwarding.hpp:

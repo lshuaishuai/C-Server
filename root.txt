@@ -1,0 +1,30 @@
+2024-09-29 12:28:00	name = class.vec_map  description = class map  value = {}
+2024-09-29 12:28:00	name = logs  description = logs config  value = - name: root
+  level: INFO
+  appenders:
+    - type: FileLogAppender
+      file: root.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  appenders:
+    - type: FileLogAppender
+      file: system.txt
+      formatter: "%d%T[%p]%T%m%n"
+    - type: StdoutLogAppender
+2024-09-29 12:28:00	name = class.person  description = class person  value = name: ""
+age: 0
+sex: false
+2024-09-29 12:28:00	name = system.value  description = system value  value = 10.1999998
+2024-09-29 12:28:00	name = system.int_list  description = system int list  value = - 1
+- 2
+2024-09-29 12:28:00	name = system.str_int_map  description = system str int map  value = k: 2
+2024-09-29 12:28:00	name = system.int_vec  description = system int vec  value = - 1
+- 2
+2024-09-29 12:28:00	name = class.map  description = class map  value = {}
+2024-09-29 12:28:00	name = system.port  description = system port  value = 8080
+2024-09-29 12:28:00	name = system.int_set  description = system int set  value = - 1
+- 2
+2024-09-29 12:28:00	name = system.int_uset  description = system int uset  value = - 2
+- 1
+2024-09-29 12:28:00	name = system.str_int_umap  description = system str int umap  value = k: 2

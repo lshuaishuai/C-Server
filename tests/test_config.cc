@@ -195,7 +195,7 @@ void test_class()
         SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << prefix << ": size=" << m.size(); \
     } 
 
-    g_person->addListener(10, [](const Person& old_value, const Person& new_value)
+    g_person->addListener([](const Person& old_value, const Person& new_value)
     {
         SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "old_value=" << old_value.toString() << "new_value=" << new_value.toString();
     });
@@ -224,7 +224,7 @@ void test_log()
     SHUAI_LOG_INFO(system_log) << "hello system" << std::endl;  // 由于这里改了日志打印格式，那么我们这里打印的日志就是新的对应的格式
     system_log->setFormatter("%d - %m%n");
     SHUAI_LOG_INFO(system_log) << "hello system" << std::endl;  
-
+    SHUAI_LOG_INFO(system_log) << "shuaishaui" << std::endl;
 }  
 
 int main(int argc, char** argv)
@@ -233,6 +233,13 @@ int main(int argc, char** argv)
     // test_yaml();
     // test_class();
     // Logger(root)是最先创建的，在main函数之前就创建了 在发生错误输出日志时，生成的root日志器
+    
     test_log();
+    shuai::Config::Visit([](shuai::ConfigVarBase::ptr var)
+    {
+        SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "name = " << var->getName()
+                                 << "  description = " << var->getDescription()
+                                 << "  value = " << var->toString();
+    });
     return 0; 
 }

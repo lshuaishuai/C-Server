@@ -1,4 +1,6 @@
 #pragma once
+#ifndef __SYLAR_LOG_H__
+#define __SYLAR_LOG_H__
 
 #include <string>
 #include <string.h>
@@ -15,6 +17,7 @@
 
 #include "util.h"
 #include "singleton.h"
+#include "thread.h"
 
 #define SHUAI_LOG_LEVEL(logger, level) \
     if(logger->getLevel() <= level) \
@@ -141,18 +144,21 @@ class LogAppender
     friend class Logger;
 public:
     typedef std::shared_ptr<LogAppender> ptr;
+    typedef SpinLock MutexType;
 
     virtual ~LogAppender() {} 
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) = 0;
     virtual std::string toYamlString() = 0;
 
     void setFormatter(LogFormatter::ptr val);
-    LogFormatter::ptr getFormatter() const { return m_formatter; }
+    LogFormatter::ptr getFormatter();
+
     void setLevel(LogLevel::Level level) { m_level = level; }
     LogLevel::Level getLevel() const { return m_level; }
 protected:
     LogLevel::Level m_level = LogLevel::DEBUG;
     bool m_hasFormatter = false;
+    MutexType m_mutex;
     // std::shared_ptr<int> sp; 和 std::unique_ptr<int> up; 创建了未初始化的智能指针，默认情况下它们的值为 nullptr
     LogFormatter::ptr m_formatter;
 };
@@ -163,6 +169,7 @@ class Logger: public std::enable_shared_from_this<Logger>
     friend class LoggerManager;
 public:
     typedef std::shared_ptr<Logger> ptr;
+    typedef SpinLock MutexType;
 
     Logger(const std::string& name = "root");  // 默认为root
     void log(LogLevel::Level level, const LogEvent::ptr event);
@@ -187,6 +194,7 @@ public:
 private:
     std::string m_name;                             // 日志名称
     LogLevel::Level m_level;                        // 日志级别
+    MutexType m_mutex;
     std::list<LogAppender::ptr> m_appenders;        // Appender是个列表
     LogFormatter::ptr m_formatter;
     Logger::ptr m_root;
@@ -216,11 +224,14 @@ public:
 private:
     std::string m_filename;  // 文件名
     std::ofstream m_filestream;
+    uint64_t m_lastTime = 0;
 };
 
 class LoggerManager
 {
 public:
+    typedef SpinLock MutexType;
+
     LoggerManager();
     void init();
     Logger::ptr getRoot() const { return m_root; }
@@ -228,6 +239,7 @@ public:
 
     std::string toYamlString();
 private:
+    MutexType m_mutex;
     std::map<std::string, Logger::ptr> m_loggers;
     Logger::ptr m_root;
 };
@@ -235,3 +247,4 @@ private:
 typedef shuai::Singleton<LoggerManager> LoggerMgr;
 
 }
+#endif

@@ -129,6 +129,13 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
  /home/shuaishuai/project/sylar_server/tests/../server/singleton.h \
+ /home/shuaishuai/project/sylar_server/tests/../server/thread.h \
+ /usr/include/c++/4.8.2/thread /usr/include/c++/4.8.2/chrono \
+ /usr/include/c++/4.8.2/ratio /usr/include/c++/4.8.2/limits \
+ /usr/include/c++/4.8.2/ctime /usr/include/c++/4.8.2/atomic \
+ /usr/include/c++/4.8.2/bits/atomic_base.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
+ /usr/include/semaphore.h /usr/include/bits/semaphore.h \
  /home/shuaishuai/project/sylar_server/tests/../server/config.h \
  /usr/include/boost/lexical_cast.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
@@ -148,8 +155,7 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/c++/4.8.2/cstring /usr/include/boost/limits.hpp \
- /usr/include/c++/4.8.2/limits /usr/include/boost/mpl/if.hpp \
- /usr/include/boost/mpl/aux_/value_wknd.hpp \
+ /usr/include/boost/mpl/if.hpp /usr/include/boost/mpl/aux_/value_wknd.hpp \
  /usr/include/boost/mpl/aux_/static_cast.hpp \
  /usr/include/boost/mpl/aux_/config/workaround.hpp \
  /usr/include/boost/detail/workaround.hpp \
@@ -265,7 +271,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: \
  /usr/include/boost/type_traits/is_volatile.hpp \
  /usr/include/c++/4.8.2/locale \
  /usr/include/c++/4.8.2/bits/locale_facets_nonio.h \
- /usr/include/c++/4.8.2/ctime \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/time_members.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/messages_members.h \
  /usr/include/libintl.h \
@@ -658,8 +663,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: \
  /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
  /usr/local/include/yaml-cpp/node/iterator.h \
  /usr/local/include/yaml-cpp/node/detail/iterator.h \
- /usr/include/c++/4.8.2/atomic /usr/include/c++/4.8.2/bits/atomic_base.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
  /usr/local/include/yaml-cpp/node/convert.h \
  /usr/include/c++/4.8.2/valarray \
  /usr/include/c++/4.8.2/bits/valarray_array.h \

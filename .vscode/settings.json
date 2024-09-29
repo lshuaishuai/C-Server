@@ -61,5 +61,6 @@
         "cstddef": "cpp",
         "typeindex": "cpp",
         "string": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

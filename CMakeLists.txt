@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 project(server)
 
 include ( cmake/utils.cmake)
@@ -18,6 +18,7 @@ set(LIB_SRC
     server/log.cc 
     server/util.cc  
     server/config.cc
+    server/thread.cc
     )
 
 add_library(server SHARED ${LIB_SRC})
@@ -25,15 +26,26 @@ force_redefine_file_macro_for_sources(server) #__FILE__
 # add_library(shuai_static STATIC ${LIB_SRC})
 # SET_TARGET_PROPERTIES (shuai_static PROPERTIES OUTPUT_NAME "shuai")
 
-add_executable(test tests/test.cc)
-add_dependencies(test server)
-force_redefine_file_macro_for_sources(test) #__FILE__
-target_link_libraries(test server ${YAMLCPP})
+set(LIB_LIB
+    server
+    pthread
+    ${YAMLCPP}
+    )
+
+# add_executable(test tests/test.cc)
+# add_dependencies(test server)
+# force_redefine_file_macro_for_sources(test) #__FILE__
+# target_link_libraries(test server ${LIB_LIB})
 
 add_executable(test_config  tests/test_config.cc)
 add_dependencies(test_config server)
 force_redefine_file_macro_for_sources(test_config) #__FILE__
-target_link_libraries(test_config server ${YAMLCPP})
+target_link_libraries(test_config server ${LIB_LIB})
+
+add_executable(test_thread  tests/test_thread.cc)
+add_dependencies(test_thread server)
+force_redefine_file_macro_for_sources(test_thread) #__FILE__
+target_link_libraries(test_thread server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
