@@ -98,7 +98,9 @@ Logger、Appender、Loggermanger都加上锁
 ucontext
 26： 做了一些协程之前的准备工作，assert宏和backtrace函数
 ```
-27:  Thread--->main_fiber <-------> sub_fiber         // 每个线程有一个主协程，这个main协程可以创建、调度协程   子协程执行完或者让出CPU后回到main协程 
+
+27:  Fiber::GetThis(); // 若当前线程没有协程，会创建一个主协程
+     Thread--->main_fiber <-------> sub_fiber         // 每个线程有一个主协程，这个main协程可以创建、调度协程   子协程执行完或者让出CPU后回到main协程 
                    ^                                  // 也就是说在子协程之间调度时，只能是 子协程1->主协程->子协程2  不能直接 子协程1->子协程2
                    |   创建协程要回到main_fiber中
                    v
