@@ -15,10 +15,11 @@ find_library(YAMLCPP yaml-cpp)
 message("***", ${YAMLCPP})
 
 set(LIB_SRC
-    server/log.cc 
-    server/util.cc  
     server/config.cc
+    server/fiber.cc
+    server/log.cc 
     server/thread.cc
+    server/util.cc  
     )
 
 add_library(server SHARED ${LIB_SRC})
@@ -32,10 +33,10 @@ set(LIB_LIB
     ${YAMLCPP}
     )
 
-# add_executable(test tests/test.cc)
-# add_dependencies(test server)
-# force_redefine_file_macro_for_sources(test) #__FILE__
-# target_link_libraries(test server ${LIB_LIB})
+add_executable(test tests/test.cc)
+add_dependencies(test server)
+force_redefine_file_macro_for_sources(test) #__FILE__
+target_link_libraries(test server ${LIB_LIB})
 
 add_executable(test_config  tests/test_config.cc)
 add_dependencies(test_config server)
@@ -51,6 +52,11 @@ add_executable(test_util  tests/test_util.cc)
 add_dependencies(test_util server)
 force_redefine_file_macro_for_sources(test_util) #__FILE__
 target_link_libraries(test_util server ${LIB_LIB})
+
+add_executable(test_fiber  tests/test_fiber.cc)
+add_dependencies(test_fiber server)
+force_redefine_file_macro_for_sources(test_fiber) #__FILE__
+target_link_libraries(test_fiber server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

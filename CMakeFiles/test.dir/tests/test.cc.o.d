@@ -117,7 +117,10 @@ CMakeFiles/test.dir/tests/test.cc.o: \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h \
+ /usr/include/getopt.h /usr/include/c++/4.8.2/vector \
+ /usr/include/c++/4.8.2/bits/stl_vector.h \
+ /usr/include/c++/4.8.2/bits/stl_bvector.h \
+ /usr/include/c++/4.8.2/bits/vector.tcc \
  /home/shuaishuai/project/sylar_server/tests/../server/log.h \
  /usr/include/string.h /usr/include/c++/4.8.2/list \
  /usr/include/c++/4.8.2/bits/stl_list.h \
@@ -126,11 +129,12 @@ CMakeFiles/test.dir/tests/test.cc.o: \
  /usr/include/c++/4.8.2/bits/codecvt.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
- /usr/include/c++/4.8.2/bits/fstream.tcc /usr/include/c++/4.8.2/vector \
- /usr/include/c++/4.8.2/bits/stl_vector.h \
- /usr/include/c++/4.8.2/bits/stl_bvector.h \
- /usr/include/c++/4.8.2/bits/vector.tcc /usr/include/c++/4.8.2/map \
+ /usr/include/c++/4.8.2/bits/fstream.tcc /usr/include/c++/4.8.2/map \
  /usr/include/c++/4.8.2/bits/stl_tree.h \
  /usr/include/c++/4.8.2/bits/stl_map.h \
  /usr/include/c++/4.8.2/bits/stl_multimap.h \
- /home/shuaishuai/project/sylar_server/tests/../server/singleton.h
+ /home/shuaishuai/project/sylar_server/tests/../server/singleton.h \
+ /home/shuaishuai/project/sylar_server/tests/../server/thread.h \
+ /usr/include/c++/4.8.2/atomic /usr/include/c++/4.8.2/bits/atomic_base.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
+ /usr/include/semaphore.h /usr/include/bits/semaphore.h

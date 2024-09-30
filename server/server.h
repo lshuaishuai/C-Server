@@ -6,3 +6,4 @@
 #include "server/thread.h"
 #include "server/singleton.h"
 #include "server/macro.h"
+#include "server/fiber.h"

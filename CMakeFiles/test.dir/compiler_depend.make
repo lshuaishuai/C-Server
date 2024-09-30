@@ -165,6 +165,10 @@ CMakeFiles/test.dir/tests/test.cc.o: tests/test.cc \
   /usr/include/bits/environments.h \
   /usr/include/bits/confname.h \
   /usr/include/getopt.h \
+  /usr/include/c++/4.8.2/vector \
+  /usr/include/c++/4.8.2/bits/stl_vector.h \
+  /usr/include/c++/4.8.2/bits/stl_bvector.h \
+  /usr/include/c++/4.8.2/bits/vector.tcc \
   server/log.h \
   /usr/include/string.h \
   /usr/include/c++/4.8.2/list \
@@ -177,28 +181,38 @@ CMakeFiles/test.dir/tests/test.cc.o: tests/test.cc \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/4.8.2/bits/fstream.tcc \
-  /usr/include/c++/4.8.2/vector \
-  /usr/include/c++/4.8.2/bits/stl_vector.h \
-  /usr/include/c++/4.8.2/bits/stl_bvector.h \
-  /usr/include/c++/4.8.2/bits/vector.tcc \
   /usr/include/c++/4.8.2/map \
   /usr/include/c++/4.8.2/bits/stl_tree.h \
   /usr/include/c++/4.8.2/bits/stl_map.h \
   /usr/include/c++/4.8.2/bits/stl_multimap.h \
-  server/singleton.h
+  server/singleton.h \
+  server/thread.h \
+  /usr/include/c++/4.8.2/atomic \
+  /usr/include/c++/4.8.2/bits/atomic_base.h \
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
+  /usr/include/semaphore.h \
+  /usr/include/bits/semaphore.h
 
+
+/usr/include/bits/semaphore.h:
+
+/usr/include/semaphore.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h:
+
+/usr/include/c++/4.8.2/atomic:
 
 server/singleton.h:
-
-/usr/include/c++/4.8.2/bits/stl_vector.h:
-
-/usr/include/c++/4.8.2/vector:
 
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h:
 
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h:
 
 /usr/include/c++/4.8.2/bits/sstream.tcc:
+
+/usr/include/c++/4.8.2/bits/stl_vector.h:
+
+/usr/include/c++/4.8.2/vector:
 
 /usr/include/bits/confname.h:
 
@@ -263,6 +277,8 @@ server/util.h:
 /usr/include/c++/4.8.2/fstream:
 
 /usr/include/c++/4.8.2/streambuf:
+
+/usr/include/c++/4.8.2/bits/atomic_base.h:
 
 /usr/include/c++/4.8.2/bits/functional_hash.h:
 
@@ -509,6 +525,8 @@ server/log.h:
 /usr/include/bits/timex.h:
 
 /usr/include/bits/time.h:
+
+server/thread.h:
 
 /usr/include/sys/syscall.h:
 

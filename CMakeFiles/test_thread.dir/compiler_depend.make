@@ -780,8 +780,22 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o: tests/test_thread.cc \
   /usr/include/c++/4.8.2/ratio \
   /usr/include/semaphore.h \
   /usr/include/bits/semaphore.h \
-  server/macro.h
+  server/macro.h \
+  server/fiber.h \
+  /usr/include/ucontext.h \
+  /usr/include/sys/ucontext.h \
+  /usr/include/signal.h \
+  /usr/include/bits/signum.h \
+  /usr/include/bits/siginfo.h \
+  /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h \
+  /usr/include/bits/sigstack.h \
+  /usr/include/bits/sigthread.h
 
+
+/usr/include/bits/sigthread.h:
+
+/usr/include/ucontext.h:
 
 /usr/include/semaphore.h:
 
@@ -872,6 +886,8 @@ server/log.h:
 /usr/include/boost/preprocessor/repetition/for.hpp:
 
 /usr/include/boost/concept/assert.hpp:
+
+server/fiber.h:
 
 /usr/include/boost/iterator/iterator_adaptor.hpp:
 
@@ -1109,6 +1125,8 @@ server/macro.h:
 
 /usr/include/boost/mpl/list/aux_/push_back.hpp:
 
+/usr/include/bits/sigaction.h:
+
 /usr/include/boost/mpl/pop_front_fwd.hpp:
 
 /usr/local/include/yaml-cpp/node/convert.h:
@@ -1122,6 +1140,8 @@ server/macro.h:
 /usr/include/boost/mpl/aux_/advance_backward.hpp:
 
 /usr/include/boost/mpl/next.hpp:
+
+/usr/include/bits/siginfo.h:
 
 /usr/include/boost/mpl/push_front_fwd.hpp:
 
@@ -1356,6 +1376,8 @@ server/macro.h:
 /usr/include/c++/4.8.2/limits:
 
 /usr/include/boost/config/user.hpp:
+
+/usr/include/bits/signum.h:
 
 /usr/include/c++/4.8.2/bits/unique_ptr.h:
 
@@ -1833,6 +1855,8 @@ tests/test_thread.cc:
 
 /usr/include/c++/4.8.2/bits/char_traits.h:
 
+/usr/include/sys/ucontext.h:
+
 /usr/include/boost/mpl/eval_if.hpp:
 
 /usr/include/bits/sched.h:
@@ -1895,6 +1919,8 @@ server/singleton.h:
 
 /usr/include/c++/4.8.2/bits/basic_ios.h:
 
+/usr/include/bits/sigstack.h:
+
 /usr/include/boost/mpl/contains_fwd.hpp:
 
 /usr/include/bits/xopen_lim.h:
@@ -1934,6 +1960,8 @@ server/singleton.h:
 /usr/include/boost/preprocessor/punctuation/comma.hpp:
 
 /usr/include/boost/preprocessor/repetition/repeat.hpp:
+
+/usr/include/bits/sigcontext.h:
 
 /usr/include/boost/math/policies/policy.hpp:
 
@@ -2044,6 +2072,8 @@ server/singleton.h:
 /usr/local/include/yaml-cpp/node/detail/node_data.h:
 
 /usr/include/boost/preprocessor/logical/compl.hpp:
+
+/usr/include/signal.h:
 
 /usr/include/boost/preprocessor/list/fold_right.hpp:
 

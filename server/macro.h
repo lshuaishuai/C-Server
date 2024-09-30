@@ -14,6 +14,7 @@
         assert(x); \
     }
 
+// 如果x是假的话，输出其所在的函数栈，并断言停止程序的运行
 #define SHUAI_ASSERT2(x, w) \
     if(!(x)) { \
         SHUAI_LOG_ERROR(SHUAI_LOG_ROOT()) << " ASSERTION: " #x \

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/shuaishuai/project/sylar_server/server/config.cc" "CMakeFiles/server.dir/server/config.cc.o" "gcc" "CMakeFiles/server.dir/server/config.cc.o.d"
+  "/home/shuaishuai/project/sylar_server/server/fiber.cc" "CMakeFiles/server.dir/server/fiber.cc.o" "gcc" "CMakeFiles/server.dir/server/fiber.cc.o.d"
   "/home/shuaishuai/project/sylar_server/server/log.cc" "CMakeFiles/server.dir/server/log.cc.o" "gcc" "CMakeFiles/server.dir/server/log.cc.o.d"
   "/home/shuaishuai/project/sylar_server/server/thread.cc" "CMakeFiles/server.dir/server/thread.cc.o" "gcc" "CMakeFiles/server.dir/server/thread.cc.o.d"
   "/home/shuaishuai/project/sylar_server/server/util.cc" "CMakeFiles/server.dir/server/util.cc.o" "gcc" "CMakeFiles/server.dir/server/util.cc.o.d"
