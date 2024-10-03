@@ -111,3 +111,26 @@ static thread_local Fiber* t_fiber = nullptr;                        // 保存�
 static thread_local Fiber::ptr t_threadFiber = nullptr;  // main协程 // 保存线程主协程指针，智能指针形式。协程模块初始化时，t_thread_fiber指向线程主协程对象。当子协程resume时，通过swapcontext将主协程的上下文保存到t_thread_fiber的ucontext_t成员中，同时激活子协程的ucontext_t上下文。当子协程yield时，从t_thread_fiber中取得主协程的上下文并恢复运行
 a
 ```
+
+## 协程调度模块
+```
+         1 -> N     1 -> M
+scheduler --> thread --> fiber
+1.线程池，分配一组线程
+2.协程调度器，将协程指定到对应的线程上去执行
+N : M
+m_threads
+<function<void()>, fiber, threadid> m_fibers
+
+scheduler(func/fiber)
+
+start()
+stop()
+run()
+
+1.设置当前线程的scheduler
+2.设置当前线程的run、fiber
+3.协程调度循环while(true)
+    a. 协程消息队列里面是否有任务
+    b. 无任务，执行idle
+```
