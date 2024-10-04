@@ -792,4 +792,5 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o
  /usr/include/bits/sigcontext.h
  /usr/include/bits/sigstack.h
  /usr/include/bits/sigthread.h
+ /home/shuaishuai/project/sylar_server/server/scheduler.h
 

@@ -790,8 +790,11 @@ CMakeFiles/test_util.dir/tests/test_util.cc.o: tests/test_util.cc \
   /usr/include/bits/sigaction.h \
   /usr/include/bits/sigcontext.h \
   /usr/include/bits/sigstack.h \
-  /usr/include/bits/sigthread.h
+  /usr/include/bits/sigthread.h \
+  server/scheduler.h
 
+
+server/scheduler.h:
 
 /usr/include/bits/sigthread.h:
 

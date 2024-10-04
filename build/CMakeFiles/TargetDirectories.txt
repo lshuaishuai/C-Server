@@ -4,5 +4,6 @@
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/test_thread.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/test_util.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/test_fiber.dir
+/home/shuaishuai/project/sylar_server/build/CMakeFiles/test_scheduler.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/edit_cache.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/rebuild_cache.dir

@@ -1,6 +1,7 @@
 #include "fiber.h"
 #include "config.h"
 #include "macro.h"
+#include "scheduler.h"
 
 #include <atomic>
 
@@ -58,7 +59,7 @@ Fiber::Fiber()
     SHUAI_LOG_DEBUG(g_logger) << "Fiber::Fiber";
 }
 
-Fiber::Fiber(std::function<void()> cb, size_t stacksize)
+Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool use_caller)
     :m_id(++s_fiber_id)
     ,m_cb(cb)
 {
@@ -76,7 +77,10 @@ Fiber::Fiber(std::function<void()> cb, size_t stacksize)
     m_ctx.uc_stack.ss_sp = m_stack;            // 指定协程使用的栈空间
     m_ctx.uc_stack.ss_size = m_stacksize;      // 设置栈的大小
 
-    makecontext(&m_ctx, &Fiber::MainFunc, 0);  // 设置协程执行的起始函数为 MainFunc。这是协程实际运行时调用的函数 MainFunc执行m_cb
+    if(!use_caller)
+        makecontext(&m_ctx, &Fiber::MainFunc, 0);        // 设置协程执行的起始函数为 MainFunc。这是协程实际运行时调用的函数 MainFunc执行m_cb
+    else
+        makecontext(&m_ctx, &Fiber::CallerMainFunc, 0);  // 设置协程执行的起始函数为 CallerMainFunc。这是协程实际运行时调用的函数 CallerMainFunc执行m_cb
     SHUAI_LOG_DEBUG(g_logger) << "Fiber::Fiber id = " << m_id;
 }
 
@@ -86,7 +90,7 @@ Fiber::~Fiber()
     if(m_stack)
     {
         // 确保协程的状态是 TERM（终止）、INIT（初始化）或 EXCEPT（异常）。这确保在销毁时协程处于合理的状态
-        SHUAI_ASSERT(m_state == TERM || m_state == INIT || m_state == EXCEPT);
+        SHUAI_ASSERT(m_state == TERM || m_state == EXCEPT || m_state == INIT);
         StackAllocator::Dealloc(m_stack, m_stacksize);
     }
     else
@@ -107,6 +111,7 @@ Fiber::~Fiber()
 // 协程执行完或者有问题时 此时内存未释放，基于这个内存，重新设置协程函数并重置状态，省了内存的分配和释放
 void Fiber::reset(std::function<void()> cb)   
 {
+    // SHUAI_LOG_DEBUG(g_logger) << "reset(nullptr)";
     SHUAI_ASSERT(m_stack);
     SHUAI_ASSERT(m_state == TERM || m_state == INIT || m_state == EXCEPT);     // 只有在结束或者INIT状态才能重置
     m_cb = cb;
@@ -123,14 +128,42 @@ void Fiber::reset(std::function<void()> cb)
     m_state = INIT; 
 }
 
+// 在非对称协程里，执行call和swapIn的房前执行环境一定是在主协程里，所以swapcontext操作的结果是将主协程的上下文保存到t_threadFiber->m_ctx中
+// 并激活子协程的上下文，虽然我们有调度协程，但是并不能实现调度协程到子协程(执行任务的协程)的直接转换，还需要通过子协程
+void Fiber::call()
+{
+    SetThis(this);
+    m_state = EXEC;
+    SHUAI_LOG_INFO(g_logger) << getId();
+    
+    if(swapcontext(&t_threadFiber->m_ctx, &m_ctx))   
+    {
+        SHUAI_ASSERT2(false, "swapcontext");
+    }
+    // SHUAI_LOG_INFO(g_logger) << "main fiber execuded " << getId();
+}
+
+// 执行back和swapOut的执行环境也一定是在子协程中 所以这里的swapcontext操作的结果是把子协程的上下文保存到协程自己的m_ctx中，同时从t_thread_fiber获得主协程的上下文并激活
+void Fiber::back()
+{
+    SetThis(t_threadFiber.get());
+    if(swapcontext(&m_ctx, &t_threadFiber->m_ctx))
+    {
+        SHUAI_ASSERT2(false, "swapcontext");
+    }
+}
+
 // 自己开始执行，切换到当前协程执行  即正在操作的协程与正在运行的协程交换 resume
 void Fiber::swapIn()                          
 {
     SetThis(this);
     SHUAI_ASSERT(m_state != EXEC);
 
+    m_state = EXEC;
     // &(*t_threadFiber)->m_ctx：这是即将被切换出去的协程的上下文。它代表当前正在执行的协程的状态；&m_ctx：这是要切换到的协程的上下文，即当前协程的上下文
-    if(swapcontext(&t_threadFiber->m_ctx, &m_ctx))   // 从主协程swap到当前协程   一旦上下文切换成功，目标协程就会开始执行它所绑定的函数
+    // 将调度协程与
+
+    if(swapcontext(&Scheduler::GetMainFiber()->m_ctx, &m_ctx))   // 从主协程swap到当前协程   一旦上下文切换成功，目标协程就会开始执行它所绑定的函数
     {
         SHUAI_ASSERT2(false, "swapcontext");
     }
@@ -139,12 +172,9 @@ void Fiber::swapIn()
 // 让出执行权  切换到后台 yield
 void Fiber::swapOut()
 {
-    SetThis(t_threadFiber.get());
-
-    if(swapcontext(&m_ctx, &t_threadFiber->m_ctx))   // 从当前协程切换到主协程 t_threadFiber为主协程
-    {
+    SetThis(Scheduler::GetMainFiber());
+    if(swapcontext(&m_ctx, &Scheduler::GetMainFiber()->m_ctx))   // 从当前协程切换到主协程 t_threadFiber为主协程
         SHUAI_ASSERT2(false, "swapcontext");
-    }
 }
 
 // 设置当前协程  该函数到底是干什么的呢？ 将该协程设置为当前正在执行的协程
@@ -194,7 +224,10 @@ void Fiber::MainFunc()
     SHUAI_ASSERT(cur);
     try
     {
+        // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc--------------";
+        // SHUAI_LOG_DEBUG(g_logger) << "cur fiber id = " << GetFiberId(); 
         cur->m_cb();
+        // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc--------------";
         cur->m_cb = nullptr;  
         // 函数执行完后，协程的状态就为终止(TERM)了
         cur->m_state = TERM;
@@ -202,17 +235,62 @@ void Fiber::MainFunc()
     catch(const std::exception& e)
     {
         cur->m_state = EXCEPT;
-        SHUAI_LOG_ERROR(g_logger) << "Fiber Except: " << e.what();
+        SHUAI_LOG_ERROR(g_logger) << "Fiber Except: " << e.what() 
+                                  << " fiber_id = " << cur->getId() 
+                                  << std::endl 
+                                  << shuai::BacktraceToString();
     }
     catch(...)
     {
         cur->m_state = EXCEPT;
-        SHUAI_LOG_ERROR(g_logger) << "Fiber Except: ";
+        SHUAI_LOG_ERROR(g_logger) << "Fiber Except: " 
+                                  << " fiber_id = " << cur->getId() 
+                                  << std::endl 
+                                  << shuai::BacktraceToString();
     }
     
     auto raw_ptr = cur.get();  // 手动让t_fiber的引用计数减1
     cur.reset();
     raw_ptr->swapOut();   // 将子协程切换回主协程
+
+    SHUAI_ASSERT2(false, "never reach fiber_id = " + std::to_string(raw_ptr->getId()));
+}
+
+void Fiber::CallerMainFunc()
+{
+    Fiber::ptr cur = GetThis();   // GetThis()的shared_from_this()方法让引用计数加1
+    SHUAI_ASSERT(cur);
+    try
+    {
+        // SHUAI_LOG_DEBUG(g_logger) << "---------------CallerMainFunc---------------";
+        cur->m_cb();     // 这里执行的时Scheduler::run函数
+        // SHUAI_LOG_DEBUG(g_logger) << "---------------CallerMainFunc---------------";
+        cur->m_cb = nullptr;  
+        // 函数执行完后，协程的状态就为终止(TERM)了
+        cur->m_state = TERM;
+    }
+    catch(const std::exception& e)
+    {
+        cur->m_state = EXCEPT;
+        SHUAI_LOG_ERROR(g_logger) << "Fiber Except: " << e.what() 
+                                  << " fiber_id = " << cur->getId() 
+                                  << std::endl 
+                                  << shuai::BacktraceToString();
+    }
+    catch(...)
+    {
+        cur->m_state = EXCEPT;
+        SHUAI_LOG_ERROR(g_logger) << "Fiber Except: " 
+                                  << " fiber_id = " << cur->getId() 
+                                  << std::endl 
+                                  << shuai::BacktraceToString();
+    }
+    
+    auto raw_ptr = cur.get();  // 手动让t_fiber的引用计数减1
+    cur.reset();
+    raw_ptr->back();   // 将子协程切换回主协程
+
+    SHUAI_ASSERT2(false, "never reach fiber_id = " + std::to_string(raw_ptr->getId()));
 }
 
 }

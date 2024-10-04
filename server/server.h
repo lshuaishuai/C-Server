@@ -7,3 +7,4 @@
 #include "server/singleton.h"
 #include "server/macro.h"
 #include "server/fiber.h"
+#include "server/scheduler.h"

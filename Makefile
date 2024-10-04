@@ -197,6 +197,19 @@ test_fiber/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
 .PHONY : test_fiber/fast
 
+#=============================================================================
+# Target rules for targets named test_scheduler
+
+# Build rule for target.
+test_scheduler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scheduler
+.PHONY : test_scheduler
+
+# fast build rule for target.
+test_scheduler/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
+.PHONY : test_scheduler/fast
+
 server/config.o: server/config.cc.o
 .PHONY : server/config.o
 
@@ -268,6 +281,30 @@ server/log.s: server/log.cc.s
 server/log.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/log.cc.s
 .PHONY : server/log.cc.s
+
+server/scheduler.o: server/scheduler.cc.o
+.PHONY : server/scheduler.o
+
+# target to build an object file
+server/scheduler.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/scheduler.cc.o
+.PHONY : server/scheduler.cc.o
+
+server/scheduler.i: server/scheduler.cc.i
+.PHONY : server/scheduler.i
+
+# target to preprocess a source file
+server/scheduler.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/scheduler.cc.i
+.PHONY : server/scheduler.cc.i
+
+server/scheduler.s: server/scheduler.cc.s
+.PHONY : server/scheduler.s
+
+# target to generate assembly for a file
+server/scheduler.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/scheduler.cc.s
+.PHONY : server/scheduler.cc.s
 
 server/thread.o: server/thread.cc.o
 .PHONY : server/thread.o
@@ -389,6 +426,30 @@ tests/test_fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
 .PHONY : tests/test_fiber.cc.s
 
+tests/test_scheduler.o: tests/test_scheduler.cc.o
+.PHONY : tests/test_scheduler.o
+
+# target to build an object file
+tests/test_scheduler.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o
+.PHONY : tests/test_scheduler.cc.o
+
+tests/test_scheduler.i: tests/test_scheduler.cc.i
+.PHONY : tests/test_scheduler.i
+
+# target to preprocess a source file
+tests/test_scheduler.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.i
+.PHONY : tests/test_scheduler.cc.i
+
+tests/test_scheduler.s: tests/test_scheduler.cc.s
+.PHONY : tests/test_scheduler.s
+
+# target to generate assembly for a file
+tests/test_scheduler.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.s
+.PHONY : tests/test_scheduler.cc.s
+
 tests/test_thread.o: tests/test_thread.cc.o
 .PHONY : tests/test_thread.o
 
@@ -449,6 +510,7 @@ help:
 	@echo "... test"
 	@echo "... test_config"
 	@echo "... test_fiber"
+	@echo "... test_scheduler"
 	@echo "... test_thread"
 	@echo "... test_util"
 	@echo "... server/config.o"
@@ -460,6 +522,9 @@ help:
 	@echo "... server/log.o"
 	@echo "... server/log.i"
 	@echo "... server/log.s"
+	@echo "... server/scheduler.o"
+	@echo "... server/scheduler.i"
+	@echo "... server/scheduler.s"
 	@echo "... server/thread.o"
 	@echo "... server/thread.i"
 	@echo "... server/thread.s"
@@ -475,6 +540,9 @@ help:
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_scheduler.o"
+	@echo "... tests/test_scheduler.i"
+	@echo "... tests/test_scheduler.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"

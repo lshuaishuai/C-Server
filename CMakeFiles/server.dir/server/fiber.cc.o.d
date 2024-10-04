@@ -680,4 +680,5 @@ CMakeFiles/server.dir/server/fiber.cc.o: \
  /usr/local/include/yaml-cpp/node/detail/impl.h \
  /usr/local/include/yaml-cpp/node/parse.h \
  /usr/local/include/yaml-cpp/node/emit.h \
- /home/shuaishuai/project/sylar_server/server/macro.h
+ /home/shuaishuai/project/sylar_server/server/macro.h \
+ /home/shuaishuai/project/sylar_server/server/scheduler.h
