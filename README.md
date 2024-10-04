@@ -134,3 +134,14 @@ run()
     a. 协程消息队列里面是否有任务
     b. 无任务，执行idle
 ```
+
+## IO协程调度器
+使前面实现的调度可以实现异步IO
+```
+IOManager(epoll) ---> Scheduler
+      |
+      V
+    idle(epoll_wait)
+一般的线程池： message_queue 使用信号量来通知线程有消息到来 ，若无任务到来，该信号量会将整个线程阻塞(但是我们并不想这样)
+异步IO：等待数据返回时，epoll_wait等待
+```
