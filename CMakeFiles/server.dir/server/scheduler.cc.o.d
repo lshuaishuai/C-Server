@@ -139,7 +139,7 @@ CMakeFiles/server.dir/server/scheduler.cc.o: \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h \
+ /usr/include/getopt.h /usr/include/sys/time.h \
  /home/shuaishuai/project/sylar_server/server/singleton.h \
  /home/shuaishuai/project/sylar_server/server/macro.h \
  /usr/include/assert.h

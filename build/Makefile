@@ -210,6 +210,19 @@ test_scheduler/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
 .PHONY : test_scheduler/fast
 
+#=============================================================================
+# Target rules for targets named test_iomanager
+
+# Build rule for target.
+test_iomanager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_iomanager
+.PHONY : test_iomanager
+
+# fast build rule for target.
+test_iomanager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
+.PHONY : test_iomanager/fast
+
 server/config.o: server/config.cc.o
 .PHONY : server/config.o
 
@@ -257,6 +270,30 @@ server/fiber.s: server/fiber.cc.s
 server/fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/fiber.cc.s
 .PHONY : server/fiber.cc.s
+
+server/iomanager.o: server/iomanager.cc.o
+.PHONY : server/iomanager.o
+
+# target to build an object file
+server/iomanager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/iomanager.cc.o
+.PHONY : server/iomanager.cc.o
+
+server/iomanager.i: server/iomanager.cc.i
+.PHONY : server/iomanager.i
+
+# target to preprocess a source file
+server/iomanager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/iomanager.cc.i
+.PHONY : server/iomanager.cc.i
+
+server/iomanager.s: server/iomanager.cc.s
+.PHONY : server/iomanager.s
+
+# target to generate assembly for a file
+server/iomanager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/iomanager.cc.s
+.PHONY : server/iomanager.cc.s
 
 server/log.o: server/log.cc.o
 .PHONY : server/log.o
@@ -329,6 +366,30 @@ server/thread.s: server/thread.cc.s
 server/thread.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/thread.cc.s
 .PHONY : server/thread.cc.s
+
+server/timer.o: server/timer.cc.o
+.PHONY : server/timer.o
+
+# target to build an object file
+server/timer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/timer.cc.o
+.PHONY : server/timer.cc.o
+
+server/timer.i: server/timer.cc.i
+.PHONY : server/timer.i
+
+# target to preprocess a source file
+server/timer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/timer.cc.i
+.PHONY : server/timer.cc.i
+
+server/timer.s: server/timer.cc.s
+.PHONY : server/timer.s
+
+# target to generate assembly for a file
+server/timer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/timer.cc.s
+.PHONY : server/timer.cc.s
 
 server/util.o: server/util.cc.o
 .PHONY : server/util.o
@@ -426,6 +487,30 @@ tests/test_fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
 .PHONY : tests/test_fiber.cc.s
 
+tests/test_iomanager.o: tests/test_iomanager.cc.o
+.PHONY : tests/test_iomanager.o
+
+# target to build an object file
+tests/test_iomanager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o
+.PHONY : tests/test_iomanager.cc.o
+
+tests/test_iomanager.i: tests/test_iomanager.cc.i
+.PHONY : tests/test_iomanager.i
+
+# target to preprocess a source file
+tests/test_iomanager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.i
+.PHONY : tests/test_iomanager.cc.i
+
+tests/test_iomanager.s: tests/test_iomanager.cc.s
+.PHONY : tests/test_iomanager.s
+
+# target to generate assembly for a file
+tests/test_iomanager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.s
+.PHONY : tests/test_iomanager.cc.s
+
 tests/test_scheduler.o: tests/test_scheduler.cc.o
 .PHONY : tests/test_scheduler.o
 
@@ -510,6 +595,7 @@ help:
 	@echo "... test"
 	@echo "... test_config"
 	@echo "... test_fiber"
+	@echo "... test_iomanager"
 	@echo "... test_scheduler"
 	@echo "... test_thread"
 	@echo "... test_util"
@@ -519,6 +605,9 @@ help:
 	@echo "... server/fiber.o"
 	@echo "... server/fiber.i"
 	@echo "... server/fiber.s"
+	@echo "... server/iomanager.o"
+	@echo "... server/iomanager.i"
+	@echo "... server/iomanager.s"
 	@echo "... server/log.o"
 	@echo "... server/log.i"
 	@echo "... server/log.s"
@@ -528,6 +617,9 @@ help:
 	@echo "... server/thread.o"
 	@echo "... server/thread.i"
 	@echo "... server/thread.s"
+	@echo "... server/timer.o"
+	@echo "... server/timer.i"
+	@echo "... server/timer.s"
 	@echo "... server/util.o"
 	@echo "... server/util.i"
 	@echo "... server/util.s"
@@ -540,6 +632,9 @@ help:
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_iomanager.o"
+	@echo "... tests/test_iomanager.i"
+	@echo "... tests/test_iomanager.s"
 	@echo "... tests/test_scheduler.o"
 	@echo "... tests/test_scheduler.i"
 	@echo "... tests/test_scheduler.s"

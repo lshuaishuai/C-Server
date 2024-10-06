@@ -111,6 +111,8 @@ Fiber::~Fiber()
 // 协程执行完或者有问题时 此时内存未释放，基于这个内存，重新设置协程函数并重置状态，省了内存的分配和释放
 void Fiber::reset(std::function<void()> cb)   
 {
+    // SHUAI_LOG_INFO(g_logger) << "execute reset"; 
+    
     // SHUAI_LOG_DEBUG(g_logger) << "reset(nullptr)";
     SHUAI_ASSERT(m_stack);
     SHUAI_ASSERT(m_state == TERM || m_state == INIT || m_state == EXCEPT);     // 只有在结束或者INIT状态才能重置
@@ -156,12 +158,17 @@ void Fiber::back()
 // 自己开始执行，切换到当前协程执行  即正在操作的协程与正在运行的协程交换 resume
 void Fiber::swapIn()                          
 {
-    SetThis(this);
+    // SHUAI_LOG_DEBUG(g_logger) << "In swapIn";
+    // SHUAI_LOG_DEBUG(g_logger) << "cur fiber: " << GetFiberId();
+    SetThis(this);  // 设置了正在运行的协程t_fiber
     SHUAI_ASSERT(m_state != EXEC);
 
     m_state = EXEC;
     // &(*t_threadFiber)->m_ctx：这是即将被切换出去的协程的上下文。它代表当前正在执行的协程的状态；&m_ctx：这是要切换到的协程的上下文，即当前协程的上下文
     // 将调度协程与
+    // SHUAI_LOG_DEBUG(g_logger) << (&Scheduler::GetMainFiber()->m_ctx == &m_ctx);
+    // SHUAI_LOG_DEBUG(g_logger) << "cur fiber: " << GetFiberId();
+    // SHUAI_LOG_DEBUG(g_logger) << "Main fiber: " << Scheduler::GetMainFiber()->GetFiberId();
 
     if(swapcontext(&Scheduler::GetMainFiber()->m_ctx, &m_ctx))   // 从主协程swap到当前协程   一旦上下文切换成功，目标协程就会开始执行它所绑定的函数
     {
@@ -172,7 +179,9 @@ void Fiber::swapIn()
 // 让出执行权  切换到后台 yield
 void Fiber::swapOut()
 {
+    // SHUAI_LOG_DEBUG(g_logger) << "cur fiber: " << GetFiberId();
     SetThis(Scheduler::GetMainFiber());
+    // SHUAI_LOG_DEBUG(g_logger) << "cur fiber: " << GetFiberId();
     if(swapcontext(&m_ctx, &Scheduler::GetMainFiber()->m_ctx))   // 从当前协程切换到主协程 t_threadFiber为主协程
         SHUAI_ASSERT2(false, "swapcontext");
 }

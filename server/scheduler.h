@@ -34,11 +34,13 @@ public:
         bool need_tickle = false;
         {
             MutexType::Lock lock(m_mutex);
+            // 返回消息队列是否为空
             need_tickle = scheduleNoLock(fc, thread);
         }
         
         if(need_tickle)
         {
+            // SHUAI_LOG_DEBUG(SHUAI_LOG_ROOT()) << "main::tickle";
             tickle();
         }
     }
@@ -51,7 +53,7 @@ public:
             MutexType::Lock lock(m_mutex);
             while(begin != end)
             {
-                need_tickle = scheduleNoLock(&*begin) || need_tickle;
+                need_tickle = scheduleNoLock(&*begin, -1) || need_tickle;
                 ++begin;
             }
         } 
@@ -68,6 +70,8 @@ protected:
     virtual void idle();       // 解决协程调度器无任务做时，又不能使线程终止
 
     void setThis();
+
+    bool hasIdleThreads() { return m_idleThreadCount > 0; }
 
 private:
     // FiberOrCb类型可以有两种：Fiber、std::function<void()>

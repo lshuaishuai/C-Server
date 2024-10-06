@@ -69,7 +69,10 @@ Thread::Thread(std::function<void()> cb, const std::string& name)
         SHUAI_LOG_ERROR(g_logger) << "pthread_create thread fail, rt = " << rt << " name = " << name;
         throw std::logic_error("pthread_create error");
     }
+    // 新线程在创建成功后执行绑定的函数
     m_semaphore.wait();
+    
+    // SHUAI_LOG_ERROR(g_logger) << "pthread_create thread success！";
 }
 
 void* Thread::run(void* arg)

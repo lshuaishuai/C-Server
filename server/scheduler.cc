@@ -36,6 +36,7 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
     }
     else
     {
+        // SHUAI_LOG_INFO(g_logger) << "use caller is false";
         m_rootThread = -1;
     }
     m_threadCount = threads;
@@ -79,6 +80,7 @@ void Scheduler::start()
     {
         // SHUAI_LOG_DEBUG(g_logger) << "create schedule thread";
         m_threads[i].reset(new Thread(std::bind(&Scheduler::run, this), m_name + "_" + std::to_string(i)));
+        // SHUAI_LOG_DEBUG(g_logger) << "created schedule thread";
         m_threadIds.push_back(m_threads[i]->getId());
     }
     lock.unlock();
@@ -119,6 +121,7 @@ void Scheduler::stop()
         tickle();  // 唤醒线程
     }
 
+
     if(m_rootFiber)
     {
         tickle();
@@ -148,6 +151,8 @@ void Scheduler::stop()
         Mutex::Lock lock(m_mutex);
         thrs.swap(m_threads);
     }
+
+    // 线程等待不成功 在线程中出现了问题
     for(auto& i : thrs)
     {
         i->join();
@@ -175,6 +180,7 @@ void Scheduler::run()
         t_scheduler_fiber = Fiber::GetThis().get();  // 每个线程在执行run时都会创建自己的主协程，"但是一个调度器只有一个调度协程id为1,这句话对吗？"
     }
 
+    // SHUAI_LOG_DEBUG(g_logger) << "shuai::GetThreadId() != m_rootThread";
     Fiber::ptr idle_fiber(new Fiber(std::bind(&Scheduler::idle, this)));    // 线程空闲时绑定空闲所对应的函数
     Fiber::ptr cb_fiber;
 
@@ -208,7 +214,7 @@ void Scheduler::run()
 
                 // 这里拿到任务后不需要break吗？
                 ft = *it;   // 从任务队列中取出任务后
-                m_fibers.erase(it);
+                m_fibers.erase(it++);
                 ++m_activateThreadCount;
                 is_active = true;
                 break;
@@ -217,11 +223,13 @@ void Scheduler::run()
 
         if(tickle_me)   // 需要提醒其他线程进行任务调度 
         {
+    // SHUAI_LOG_DEBUG(g_logger) << "tickle";
             tickle();
         }
-        // 任务队列中为协程 并且改协程是可以执行的状态
+        // 任务队列中为协程 并且该协程是可以执行的状态
         if(ft.fiber && (ft.fiber->getState() != Fiber::TERM || ft.fiber->getState() != Fiber::EXCEPT))
         {
+    // SHUAI_LOG_DEBUG(g_logger) << "ft.fiber";
             ft.fiber->swapIn();  // 执行
             --m_activateThreadCount;
             
@@ -239,6 +247,7 @@ void Scheduler::run()
         }
         else if(ft.cb)
         {
+    // SHUAI_LOG_DEBUG(g_logger) << "ft.cb";
             // 用回调协程来执行任务队列中的函数任务？
             if(cb_fiber)
             {
@@ -246,7 +255,7 @@ void Scheduler::run()
             }
             else
             {
-                // 在这里创建执行函数任务的协程
+                // 在这里创建执行函数任务的协程 这里调用的reset为智能指针的reset函数而非Fiber::reset
                 cb_fiber.reset(new Fiber(ft.cb));
             }
             ft.reset();
@@ -258,46 +267,52 @@ void Scheduler::run()
             // 下面是什么？-- 若该任务还处于READY状态，再将其放入任务队列？
             if(cb_fiber->getState() == Fiber::READY)
             {
+                // SHUAI_LOG_INFO(g_logger) << "task is READY stat"; 
                 schedule(cb_fiber);
                 cb_fiber.reset();
             }
             else if(cb_fiber->getState() == Fiber::EXCEPT || cb_fiber->getState() == Fiber::TERM)
             {
-                // SHUAI_LOG_INFO(g_logger) << "executed cb task"; 
                 cb_fiber->reset(nullptr);
-                // SHUAI_LOG_INFO(g_logger) << "reseted cb task"; 
             }
             else // } if(cb_fiber->getState() != Fiber::TERM)
             {
+                // SHUAI_LOG_INFO(g_logger) << "set task state is HOLD"; 
                 cb_fiber->setState(Fiber::HOLD);
                 cb_fiber.reset();
             }
         }
         else  // 知道没有任务时执行idle 线程空闲
         {
+                // SHUAI_LOG_INFO(g_logger) << "该线程的第一次循环结束了，第二次循环进入了idle";
+                // sleep(1000); 
             if(is_active)
             {
-                --m_activateThreadCount;
+                --m_activateThreadCount;  
                 continue;
             }
             if(idle_fiber->getState() == Fiber::TERM)
             { 
                 SHUAI_LOG_INFO(g_logger) << "idle fiber term";
+                // tickle();
                 break;
                 // continue;
             }
             ++m_idleThreadCount;  // 
-            idle_fiber->swapIn();
+    // SHUAI_LOG_DEBUG(g_logger) << "before swapIn";
+            idle_fiber->swapIn();  // 可以是父类或者子类的idle函数 主协程到了调度携程
+    // SHUAI_LOG_DEBUG(g_logger) << "end swapIn";
             --m_idleThreadCount;
             if(idle_fiber->getState() != Fiber::TERM && idle_fiber->getState() != Fiber::EXCEPT)
             {
-                idle_fiber->setState(Fiber::HOLD);
+                idle_fiber->m_state = Fiber::HOLD;
             }
         }
+        
     }
 }
 
-// tickle方法 通知各调度线程的调度协程有新任务来了
+// tickle方法 通知各调度线程的调度协程有新任务来了  若是子类重写了该方法，那么子类对象调用的父类函数中调用的tickle就是子类重写的tickle(stopping\idle也是一样的)
 void Scheduler::tickle()
 {
     SHUAI_LOG_INFO(g_logger) << "tickle";
@@ -313,7 +328,7 @@ bool Scheduler::stopping()
 // 解决协程调度器无任务做时，又不能使线程终止
 void Scheduler::idle()
 {
-    SHUAI_LOG_INFO(g_logger) << "idle";
+    // SHUAI_LOG_INFO(g_logger) << "idle";
     while(!stopping())
     {
         // SHUAI_LOG_DEBUG(g_logger) << "!stopping()";
