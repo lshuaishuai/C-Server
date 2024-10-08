@@ -180,3 +180,15 @@ usleep
 与socket相关的(socket accept connect)
 io相关(read\write\recv\send......)
 fd相关(fcntl ioctl .......)
+
+## socket函数库
+                   [UnixAddress]
+                         |
+                     ---------                   |--[IPv4Address]
+                     |Address| --- [IPAddress] --|
+                     ---------                   |--[IPv6Address]
+                         |
+                         |             
+                     ----------
+                     | Socket |
+                     ----------
