@@ -176,3 +176,7 @@ hook的目的是在不重新编写代码的情况下，把老代码中的socket 
 hook的函数签名与原函数一样，所以对调用方也很方便，只需要以同步的方式编写代码，实现的效果却是异步执行的，效率很高。
 sleep,
 usleep
+
+与socket相关的(socket accept connect)
+io相关(read\write\recv\send......)
+fd相关(fcntl ioctl .......)
