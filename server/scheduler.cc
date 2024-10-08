@@ -1,6 +1,7 @@
 #include "scheduler.h"
 #include "log.h"
 #include "macro.h"
+#include "hook.h"
 
 namespace shuai
 {
@@ -27,7 +28,9 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
          * 在user_caller为true的情况下，初始化caller线程的调度协程
          * caller线程的调度协程不会被调度器调度，而且，caller线程的调度协程停止时，应该返回caller线程的主协程
          */
-        m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));  // use_caller为true时，调度器所在线程的调度协程 切换到n_rootFiber时会自动执行run函数
+        // use_caller为true时，调度器所在线程的调度协程 切换到m_rootFiber时会自动执行run函数
+        // 会用这个m_rootFiber进行协程的调度 caller线程中调度协程为m_rootFiber fiberid!=0
+        m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));  
         shuai::Thread::SetName(m_name);
 
         t_scheduler_fiber = m_rootFiber.get();  // 在线程下声明一个协程调度器，再将当前线程放到调度器中，它的主协程不是线程的主协程而是执行run的主协程
@@ -142,7 +145,7 @@ void Scheduler::stop()
         // }
         if(!stopping())
         {
-            m_rootFiber->call();   // 调度协程执行该函数
+            m_rootFiber->call();   // caller线程的调度协程在调度器停止时才会执行对应的函数
         }   
     }
 
@@ -174,9 +177,13 @@ void Scheduler::run()
 {
     SHUAI_LOG_DEBUG(g_logger) << "run";
     setThis();
+    set_hook_enable(true);
     if(shuai::GetThreadId() != m_rootThread) // 当前线程不是创建协程调度器的线程(caller线程)则将调度协程设置为当前的协程
     {
-        // use_caller==1, 且当只有一个线程时，不会走这里
+        // sleep(1000);
+        // use_caller==1, 第一个线程在
+    // SHUAI_LOG_DEBUG(g_logger) << "shuai::GetThreadId() != m_rootThread";
+        // 用这个进行协程的调度
         t_scheduler_fiber = Fiber::GetThis().get();  // 每个线程在执行run时都会创建自己的主协程，"但是一个调度器只有一个调度协程id为1,这句话对吗？"
     }
 

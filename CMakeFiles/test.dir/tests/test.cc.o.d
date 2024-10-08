@@ -137,4 +137,5 @@ CMakeFiles/test.dir/tests/test.cc.o: \
  /home/shuaishuai/project/sylar_server/tests/../server/thread.h \
  /usr/include/c++/4.8.2/atomic /usr/include/c++/4.8.2/bits/atomic_base.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
- /usr/include/semaphore.h /usr/include/bits/semaphore.h
+ /usr/include/semaphore.h /usr/include/bits/semaphore.h \
+ /home/shuaishuai/project/sylar_server/tests/../server/noncopyable.h

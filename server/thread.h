@@ -8,13 +8,15 @@
 #include <semaphore.h>
 #include <pthread.h>
 
+#include "noncopyable.h"
+
 // pthread_xxx
 // c++11: std::thread库
 
 namespace shuai
 {
 
-class Semaphore
+class Semaphore : Noncopyable
 {
 public:
     Semaphore(uint32_t count = 0);
@@ -140,7 +142,7 @@ private:
     bool m_locked;
 };
 
-class Mutex
+class Mutex : Noncopyable
 {
 public:
     typedef ScopedLockImpl<Mutex> Lock;
@@ -166,7 +168,7 @@ public:
 
 // 读写锁
 // 该代码实现了一个高效的读写锁机制，允许多个线程同时进行读取，而在写入时则需要独占锁
-class RWMutex
+class RWMutex : Noncopyable
 {
 public:
     // 当然除了这两种以外，也可以创建彼得锁
@@ -184,7 +186,7 @@ private:
     pthread_rwlock_t m_lock; 
 };
 
-class NullRWMutex
+class NullRWMutex : Noncopyable
 {
 public:
     typedef ReadScopedLockImpl<NullRWMutex> ReadLock;
@@ -198,7 +200,7 @@ public:
     void unrdlock() {}
 };
 
-class SpinLock
+class SpinLock : Noncopyable
 {
 public:
     typedef ScopedLockImpl<SpinLock> Lock;
@@ -212,7 +214,7 @@ private:
     pthread_spinlock_t m_mutex; 
 };
 
-class CASLock
+class CASLock : Noncopyable
 {
 public:
     typedef ScopedLockImpl<CASLock> Lock;

@@ -118,6 +118,7 @@ CMakeFiles/server.dir/server/fiber.cc.o: \
  /usr/include/c++/4.8.2/bits/atomic_base.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
  /usr/include/semaphore.h /usr/include/bits/semaphore.h \
+ /home/shuaishuai/project/sylar_server/server/noncopyable.h \
  /home/shuaishuai/project/sylar_server/server/log.h /usr/include/string.h \
  /usr/include/c++/4.8.2/list /usr/include/c++/4.8.2/bits/stl_list.h \
  /usr/include/c++/4.8.2/bits/list.tcc /usr/include/c++/4.8.2/sstream \

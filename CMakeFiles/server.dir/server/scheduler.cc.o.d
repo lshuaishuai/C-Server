@@ -125,6 +125,7 @@ CMakeFiles/server.dir/server/scheduler.cc.o: \
  /usr/include/c++/4.8.2/bits/ostream.tcc /usr/include/c++/4.8.2/istream \
  /usr/include/c++/4.8.2/bits/istream.tcc /usr/include/semaphore.h \
  /usr/include/bits/semaphore.h \
+ /home/shuaishuai/project/sylar_server/server/noncopyable.h \
  /home/shuaishuai/project/sylar_server/server/log.h /usr/include/string.h \
  /usr/include/c++/4.8.2/sstream /usr/include/c++/4.8.2/bits/sstream.tcc \
  /usr/include/c++/4.8.2/fstream /usr/include/c++/4.8.2/bits/codecvt.h \
@@ -142,4 +143,17 @@ CMakeFiles/server.dir/server/scheduler.cc.o: \
  /usr/include/getopt.h /usr/include/sys/time.h \
  /home/shuaishuai/project/sylar_server/server/singleton.h \
  /home/shuaishuai/project/sylar_server/server/macro.h \
- /usr/include/assert.h
+ /usr/include/assert.h \
+ /home/shuaishuai/project/sylar_server/server/hook.h \
+ /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
+ /usr/include/linux/falloc.h /usr/include/bits/stat.h \
+ /usr/include/sys/ioctl.h /usr/include/bits/ioctls.h \
+ /usr/include/asm/ioctls.h /usr/include/asm-generic/ioctls.h \
+ /usr/include/linux/ioctl.h /usr/include/asm/ioctl.h \
+ /usr/include/asm-generic/ioctl.h /usr/include/bits/ioctl-types.h \
+ /usr/include/sys/ttydefaults.h

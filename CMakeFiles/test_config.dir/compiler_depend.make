@@ -193,6 +193,7 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
   /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
   /usr/include/semaphore.h \
   /usr/include/bits/semaphore.h \
+  server/noncopyable.h \
   server/config.h \
   /usr/include/boost/lexical_cast.hpp \
   /usr/include/boost/config.hpp \
@@ -820,8 +821,6 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 
 /usr/include/c++/4.8.2/unordered_set:
 
-/usr/include/c++/4.8.2/bits/hashtable.h:
-
 /usr/include/boost/range/detail/misc_concept.hpp:
 
 /usr/include/boost/iterator/iterator_concepts.hpp:
@@ -1235,6 +1234,12 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc \
 /usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
 
 /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
+
+/usr/include/boost/mpl/aux_/msvc_never_true.hpp:
+
+/usr/include/c++/4.8.2/bits/hashtable.h:
+
+server/noncopyable.h:
 
 /usr/include/semaphore.h:
 
@@ -2287,8 +2292,6 @@ server/singleton.h:
 /usr/include/boost/mpl/long_fwd.hpp:
 
 /usr/include/c++/4.8.2/numeric:
-
-/usr/include/boost/mpl/aux_/msvc_never_true.hpp:
 
 /usr/include/boost/range/algorithm/equal.hpp:
 

@@ -192,8 +192,11 @@ CMakeFiles/test.dir/tests/test.cc.o: tests/test.cc \
   /usr/include/c++/4.8.2/bits/atomic_base.h \
   /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
   /usr/include/semaphore.h \
-  /usr/include/bits/semaphore.h
+  /usr/include/bits/semaphore.h \
+  server/noncopyable.h
 
+
+server/noncopyable.h:
 
 /usr/include/bits/semaphore.h:
 

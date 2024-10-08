@@ -223,6 +223,19 @@ test_iomanager/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
 .PHONY : test_iomanager/fast
 
+#=============================================================================
+# Target rules for targets named test_hook
+
+# Build rule for target.
+test_hook: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hook
+.PHONY : test_hook
+
+# fast build rule for target.
+test_hook/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
+.PHONY : test_hook/fast
+
 server/config.o: server/config.cc.o
 .PHONY : server/config.o
 
@@ -247,6 +260,30 @@ server/config.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/config.cc.s
 .PHONY : server/config.cc.s
 
+server/fd_manager.o: server/fd_manager.cc.o
+.PHONY : server/fd_manager.o
+
+# target to build an object file
+server/fd_manager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/fd_manager.cc.o
+.PHONY : server/fd_manager.cc.o
+
+server/fd_manager.i: server/fd_manager.cc.i
+.PHONY : server/fd_manager.i
+
+# target to preprocess a source file
+server/fd_manager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/fd_manager.cc.i
+.PHONY : server/fd_manager.cc.i
+
+server/fd_manager.s: server/fd_manager.cc.s
+.PHONY : server/fd_manager.s
+
+# target to generate assembly for a file
+server/fd_manager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/fd_manager.cc.s
+.PHONY : server/fd_manager.cc.s
+
 server/fiber.o: server/fiber.cc.o
 .PHONY : server/fiber.o
 
@@ -270,6 +307,30 @@ server/fiber.s: server/fiber.cc.s
 server/fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/fiber.cc.s
 .PHONY : server/fiber.cc.s
+
+server/hook.o: server/hook.cc.o
+.PHONY : server/hook.o
+
+# target to build an object file
+server/hook.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/hook.cc.o
+.PHONY : server/hook.cc.o
+
+server/hook.i: server/hook.cc.i
+.PHONY : server/hook.i
+
+# target to preprocess a source file
+server/hook.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/hook.cc.i
+.PHONY : server/hook.cc.i
+
+server/hook.s: server/hook.cc.s
+.PHONY : server/hook.s
+
+# target to generate assembly for a file
+server/hook.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/hook.cc.s
+.PHONY : server/hook.cc.s
 
 server/iomanager.o: server/iomanager.cc.o
 .PHONY : server/iomanager.o
@@ -487,6 +548,30 @@ tests/test_fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
 .PHONY : tests/test_fiber.cc.s
 
+tests/test_hook.o: tests/test_hook.cc.o
+.PHONY : tests/test_hook.o
+
+# target to build an object file
+tests/test_hook.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.o
+.PHONY : tests/test_hook.cc.o
+
+tests/test_hook.i: tests/test_hook.cc.i
+.PHONY : tests/test_hook.i
+
+# target to preprocess a source file
+tests/test_hook.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.i
+.PHONY : tests/test_hook.cc.i
+
+tests/test_hook.s: tests/test_hook.cc.s
+.PHONY : tests/test_hook.s
+
+# target to generate assembly for a file
+tests/test_hook.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
+.PHONY : tests/test_hook.cc.s
+
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 .PHONY : tests/test_iomanager.o
 
@@ -595,6 +680,7 @@ help:
 	@echo "... test"
 	@echo "... test_config"
 	@echo "... test_fiber"
+	@echo "... test_hook"
 	@echo "... test_iomanager"
 	@echo "... test_scheduler"
 	@echo "... test_thread"
@@ -602,9 +688,15 @@ help:
 	@echo "... server/config.o"
 	@echo "... server/config.i"
 	@echo "... server/config.s"
+	@echo "... server/fd_manager.o"
+	@echo "... server/fd_manager.i"
+	@echo "... server/fd_manager.s"
 	@echo "... server/fiber.o"
 	@echo "... server/fiber.i"
 	@echo "... server/fiber.s"
+	@echo "... server/hook.o"
+	@echo "... server/hook.i"
+	@echo "... server/hook.s"
 	@echo "... server/iomanager.o"
 	@echo "... server/iomanager.i"
 	@echo "... server/iomanager.s"
@@ -632,6 +724,9 @@ help:
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_hook.o"
+	@echo "... tests/test_hook.i"
+	@echo "... tests/test_hook.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"

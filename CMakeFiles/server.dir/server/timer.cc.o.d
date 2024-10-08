@@ -136,4 +136,5 @@ CMakeFiles/server.dir/server/timer.cc.o: \
  /usr/include/c++/4.8.2/ctime /usr/include/c++/4.8.2/atomic \
  /usr/include/c++/4.8.2/bits/atomic_base.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
- /usr/include/semaphore.h /usr/include/bits/semaphore.h
+ /usr/include/semaphore.h /usr/include/bits/semaphore.h \
+ /home/shuaishuai/project/sylar_server/server/noncopyable.h

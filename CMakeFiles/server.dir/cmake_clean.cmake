@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/server.dir/server/config.cc.o"
   "CMakeFiles/server.dir/server/config.cc.o.d"
+  "CMakeFiles/server.dir/server/fd_manager.cc.o"
+  "CMakeFiles/server.dir/server/fd_manager.cc.o.d"
   "CMakeFiles/server.dir/server/fiber.cc.o"
   "CMakeFiles/server.dir/server/fiber.cc.o.d"
+  "CMakeFiles/server.dir/server/hook.cc.o"
+  "CMakeFiles/server.dir/server/hook.cc.o.d"
   "CMakeFiles/server.dir/server/iomanager.cc.o"
   "CMakeFiles/server.dir/server/iomanager.cc.o.d"
   "CMakeFiles/server.dir/server/log.cc.o"

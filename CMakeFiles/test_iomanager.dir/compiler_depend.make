@@ -781,6 +781,7 @@ CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: tests/test_iomanager.cc
   /usr/include/c++/4.8.2/ratio \
   /usr/include/semaphore.h \
   /usr/include/bits/semaphore.h \
+  server/noncopyable.h \
   server/macro.h \
   server/fiber.h \
   /usr/include/ucontext.h \
@@ -902,6 +903,8 @@ server/log.h:
 /usr/local/include/yaml-cpp/yaml.h:
 
 /usr/include/c++/4.8.2/unordered_set:
+
+server/noncopyable.h:
 
 /usr/include/c++/4.8.2/bits/hashtable.h:
 

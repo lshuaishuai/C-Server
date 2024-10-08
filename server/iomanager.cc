@@ -35,6 +35,7 @@ void IOManager::FdContext::resetContext(EventContext& ctx)
 */
 void IOManager::FdContext::triggerEvent(IOManager::Event event)
 {
+    // SHUAI_LOG_DEBUG(g_logger) << "triggerEvent";
     SHUAI_ASSERT(events & event);
     events = (Event)(events & ~event);
     EventContext& ctx = getContext(event);
@@ -83,6 +84,7 @@ IOManager::IOManager(size_t threads, bool use_caller, const std::string& name)
 IOManager::~IOManager()
 {
     // SHUAI_LOG_DEBUG(g_logger) << "~IOManager()";
+    // sleep(1000);
     stop();
     // SHUAI_LOG_DEBUG(g_logger) << "have stopped";
 
@@ -381,13 +383,9 @@ void IOManager::idle()
             // ticklefd[0]用于通知协程调度，这时只需要把管道里的内容读完即可，本轮idle结束Scheduler::run会重新执行协程调度
             if(event.data.fd == m_tickleFds[0])
             {
-                // SHUAI_LOG_DEBUG(g_logger) << "read pipeline";
                 uint8_t dummy;
-                while(read(m_tickleFds[0], &dummy, 1) == 1)
-                {
-                // SHUAI_LOG_DEBUG(g_logger) << "read pipeline success";
-                };
-                // SHUAI_LOG_DEBUG(g_logger) << "read pipeline end";
+                // 是让快点从epollwait返回，然后空闲协程去执行新的任务
+                while(read(m_tickleFds[0], &dummy, 1) == 1);   // 当有新任务加入队列，tickle的时候会向管道中写数据，epoll监听到后返回，将空闲线程从idle中返回到run中执行新添加的任务
                 continue;
             }
 

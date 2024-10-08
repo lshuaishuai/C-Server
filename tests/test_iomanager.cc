@@ -51,14 +51,14 @@ void test_fiber() {
 void test1() {
     std::cout << "EPOLLIN=" << EPOLLIN
               << " EPOLLOUT=" << EPOLLOUT << std::endl;
-    shuai::IOManager iom(2, false);
+    shuai::IOManager iom(3, true);
     iom.schedule(&test_fiber);
 }
 
 shuai::Timer::ptr s_timer;
 void test_timer()
 {
-    shuai::IOManager iom(2, false);
+    shuai::IOManager iom(3, true);
     s_timer = iom.addTimer(1000, [](){
         static int i = 0;
         SHUAI_LOG_INFO(g_logger) << "hello timer i = " << i;
@@ -68,7 +68,7 @@ void test_timer()
 }
 
 int main(int argc, char** argv) {
-    // test1();
-    test_timer();
+    test1();
+    // test_timer();
     return 0;
 }

@@ -73,6 +73,8 @@ Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool use_caller)
     {
         SHUAI_ASSERT2(false, "getcontext");    // getcontext失败
     }
+
+    // 如果不赋值uc_link，那func函数结束时必须调用setcontext或swapcontext以重新指定一个有效的上下文，否则程序就跑飞了
     m_ctx.uc_link = nullptr;                   // 设置上下文链接为 nullptr，说明当前上下文结束后不会切换到其他上下文
     m_ctx.uc_stack.ss_sp = m_stack;            // 指定协程使用的栈空间
     m_ctx.uc_stack.ss_size = m_stacksize;      // 设置栈的大小
@@ -130,13 +132,15 @@ void Fiber::reset(std::function<void()> cb)
     m_state = INIT; 
 }
 
-// 在非对称协程里，执行call和swapIn的房前执行环境一定是在主协程里，所以swapcontext操作的结果是将主协程的上下文保存到t_threadFiber->m_ctx中
-// 并激活子协程的上下文，虽然我们有调度协程，但是并不能实现调度协程到子协程(执行任务的协程)的直接转换，还需要通过子协程
+// 在非对称协程里，执行call和swapIn的当前执行环境一定是在主协程里，所以swapcontext操作的结果是将主协程的上下文保存到t_threadFiber->m_ctx中
+// 并激活子协程的上下文，虽然我们有调度协程，但是并不能实现调度协程到子协程(执行任务的协程)的直接转换，还需要通过主协程
+// 从caller的主协程进入到调度协程
 void Fiber::call()
 {
+    // SHUAI_LOG_INFO(g_logger) << t_threadFiber->GetFiberId();
     SetThis(this);
     m_state = EXEC;
-    SHUAI_LOG_INFO(g_logger) << getId();
+    // SHUAI_LOG_INFO(g_logger) << GetFiberId();
     
     if(swapcontext(&t_threadFiber->m_ctx, &m_ctx))   
     {
@@ -158,6 +162,7 @@ void Fiber::back()
 // 自己开始执行，切换到当前协程执行  即正在操作的协程与正在运行的协程交换 resume
 void Fiber::swapIn()                          
 {
+        // SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "schedule fiber id is " << GetFiberId();
     // SHUAI_LOG_DEBUG(g_logger) << "In swapIn";
     // SHUAI_LOG_DEBUG(g_logger) << "cur fiber: " << GetFiberId();
     SetThis(this);  // 设置了正在运行的协程t_fiber
@@ -167,10 +172,10 @@ void Fiber::swapIn()
     // &(*t_threadFiber)->m_ctx：这是即将被切换出去的协程的上下文。它代表当前正在执行的协程的状态；&m_ctx：这是要切换到的协程的上下文，即当前协程的上下文
     // 将调度协程与
     // SHUAI_LOG_DEBUG(g_logger) << (&Scheduler::GetMainFiber()->m_ctx == &m_ctx);
-    // SHUAI_LOG_DEBUG(g_logger) << "cur fiber: " << GetFiberId();
     // SHUAI_LOG_DEBUG(g_logger) << "Main fiber: " << Scheduler::GetMainFiber()->GetFiberId();
 
-    if(swapcontext(&Scheduler::GetMainFiber()->m_ctx, &m_ctx))   // 从主协程swap到当前协程   一旦上下文切换成功，目标协程就会开始执行它所绑定的函数
+    int rt = swapcontext(&Scheduler::GetMainFiber()->m_ctx, &m_ctx);
+    if(rt)   // 从主协程swap到当前协程   一旦上下文切换成功，目标协程就会开始执行它所绑定的函数
     {
         SHUAI_ASSERT2(false, "swapcontext");
     }
@@ -235,7 +240,7 @@ void Fiber::MainFunc()
     {
         // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc--------------";
         // SHUAI_LOG_DEBUG(g_logger) << "cur fiber id = " << GetFiberId(); 
-        cur->m_cb();
+        cur->m_cb();  // 这里执行的为任务或者空闲协程了
         // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc--------------";
         cur->m_cb = nullptr;  
         // 函数执行完后，协程的状态就为终止(TERM)了
@@ -272,7 +277,7 @@ void Fiber::CallerMainFunc()
     try
     {
         // SHUAI_LOG_DEBUG(g_logger) << "---------------CallerMainFunc---------------";
-        cur->m_cb();     // 这里执行的时Scheduler::run函数
+        cur->m_cb();     // 这里执行的是Scheduler::run函数
         // SHUAI_LOG_DEBUG(g_logger) << "---------------CallerMainFunc---------------";
         cur->m_cb = nullptr;  
         // 函数执行完后，协程的状态就为终止(TERM)了

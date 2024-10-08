@@ -6,8 +6,18 @@
 },
 {
   "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/fd_manager.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/fd_manager.cc.o -c /home/shuaishuai/project/sylar_server/server/fd_manager.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/fd_manager.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
   "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/fiber.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/fiber.cc.o -c /home/shuaishuai/project/sylar_server/server/fiber.cc",
   "file": "/home/shuaishuai/project/sylar_server/server/fiber.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/hook.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/hook.cc.o -c /home/shuaishuai/project/sylar_server/server/hook.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/hook.cc"
 },
 {
   "directory": "/home/shuaishuai/project/sylar_server/build",
@@ -73,5 +83,10 @@
   "directory": "/home/shuaishuai/project/sylar_server/build",
   "command": "/usr/bin/c++  -D__FILE__=\\\"tests/test_iomanager.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -o CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o -c /home/shuaishuai/project/sylar_server/tests/test_iomanager.cc",
   "file": "/home/shuaishuai/project/sylar_server/tests/test_iomanager.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/test_hook.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -o CMakeFiles/test_hook.dir/tests/test_hook.cc.o -c /home/shuaishuai/project/sylar_server/tests/test_hook.cc",
+  "file": "/home/shuaishuai/project/sylar_server/tests/test_hook.cc"
 }
 ]

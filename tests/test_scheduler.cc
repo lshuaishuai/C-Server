@@ -16,7 +16,7 @@ void test_fiber()
 int main(int argc, char** argv)
 {
     SHUAI_LOG_INFO(g_logger) << "main";
-    shuai::Scheduler sc(3, false, "test");
+    shuai::Scheduler sc(3, true, "test");
     sc.start(); 
     sleep(2);
     SHUAI_LOG_INFO(g_logger) << "schedule";

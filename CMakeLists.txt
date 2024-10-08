@@ -16,7 +16,9 @@ message("***", ${YAMLCPP})
 
 set(LIB_SRC
     server/config.cc
+    server/fd_manager.cc
     server/fiber.cc
+    server/hook.cc 
     server/iomanager.cc  
     server/log.cc 
     server/scheduler.cc
@@ -31,6 +33,7 @@ force_redefine_file_macro_for_sources(server) #__FILE__
 # SET_TARGET_PROPERTIES (shuai_static PROPERTIES OUTPUT_NAME "shuai")
 
 set(LIB_LIB
+    dl
     server
     pthread
     ${YAMLCPP}
@@ -70,6 +73,11 @@ add_executable(test_iomanager  tests/test_iomanager.cc)
 add_dependencies(test_iomanager server)
 force_redefine_file_macro_for_sources(test_iomanager) #__FILE__
 target_link_libraries(test_iomanager server ${LIB_LIB})
+
+add_executable(test_hook  tests/test_hook.cc)
+add_dependencies(test_hook server)
+force_redefine_file_macro_for_sources(test_hook) #__FILE__
+target_link_libraries(test_hook server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

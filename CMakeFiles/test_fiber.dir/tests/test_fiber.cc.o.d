@@ -677,6 +677,7 @@ CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: \
  /usr/include/c++/4.8.2/thread /usr/include/c++/4.8.2/chrono \
  /usr/include/c++/4.8.2/ratio /usr/include/semaphore.h \
  /usr/include/bits/semaphore.h \
+ /home/shuaishuai/project/sylar_server/./server/noncopyable.h \
  /home/shuaishuai/project/sylar_server/./server/macro.h \
  /home/shuaishuai/project/sylar_server/./server/fiber.h \
  /usr/include/ucontext.h /usr/include/sys/ucontext.h \

@@ -19,7 +19,8 @@ void test_fiber()
         shuai::Fiber::GetThis(); // 此时t_fiber为nullptr，会构造一个主协程
         // sleep(100);
         SHUAI_LOG_INFO(g_logger) << "main begin";
-        shuai::Fiber::ptr fiber(new shuai::Fiber(run_in_fiber));  // 构造了子协程 并绑定所执行的函数
+        shuai::Fiber::ptr fiber(new shuai::Fiber(run_in_fiber, 1024*1024, true));  // 构造了子协程 并绑定所执行的函数
+        // SHUAI_LOG_INFO(g_logger) << "main ////////////////////// swapIn";
         // sleep(100);
         fiber->swapIn();  // 子协程执行  一旦上下文切换成功，目标协程就会开始执行它所绑定的函数
         SHUAI_LOG_INFO(g_logger) << "main after swapIn";
@@ -37,7 +38,7 @@ int main(int argc, char** argv)
     shuai::Thread::SetName("main");
     
     std::vector<shuai::Thread::ptr> thrs;
-    for(int i = 0; i < 3; ++i)
+    for(int i = 0; i < 1; ++i)
     {
         thrs.push_back(shuai::Thread::ptr(new shuai::Thread(test_fiber, "name_" + std::to_string(i))));
     }
