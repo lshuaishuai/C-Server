@@ -8,6 +8,8 @@ CXX_INCLUDES = -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/ya
 
 CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -fPIC
 
+# Custom defines: CMakeFiles/server.dir/server/address.cc.o_DEFINES = __FILE__="server/address.cc"
+
 # Custom defines: CMakeFiles/server.dir/server/config.cc.o_DEFINES = __FILE__="server/config.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/fd_manager.cc.o_DEFINES = __FILE__="server/fd_manager.cc"
@@ -21,6 +23,8 @@ CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unus
 # Custom defines: CMakeFiles/server.dir/server/log.cc.o_DEFINES = __FILE__="server/log.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/scheduler.cc.o_DEFINES = __FILE__="server/scheduler.cc"
+
+# Custom defines: CMakeFiles/server.dir/server/socket.cc.o_DEFINES = __FILE__="server/socket.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/thread.cc.o_DEFINES = __FILE__="server/thread.cc"
 

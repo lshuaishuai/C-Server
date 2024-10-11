@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "../lib/libserver.pdb"
   "../lib/libserver.so"
+  "CMakeFiles/server.dir/server/address.cc.o"
+  "CMakeFiles/server.dir/server/address.cc.o.d"
   "CMakeFiles/server.dir/server/config.cc.o"
   "CMakeFiles/server.dir/server/config.cc.o.d"
   "CMakeFiles/server.dir/server/fd_manager.cc.o"
@@ -15,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/server/log.cc.o.d"
   "CMakeFiles/server.dir/server/scheduler.cc.o"
   "CMakeFiles/server.dir/server/scheduler.cc.o.d"
+  "CMakeFiles/server.dir/server/socket.cc.o"
+  "CMakeFiles/server.dir/server/socket.cc.o.d"
   "CMakeFiles/server.dir/server/thread.cc.o"
   "CMakeFiles/server.dir/server/thread.cc.o.d"
   "CMakeFiles/server.dir/server/timer.cc.o"

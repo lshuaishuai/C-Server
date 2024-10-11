@@ -254,6 +254,11 @@ int socket(int domain, int type, int protocol)
     return fd;
 }
 
+/*等待超时或套接字可写，如果先超时，则条件变量winfo仍然有效，通过winfo来设置超时标志并触发WRITE事件，协程从yield点返回，
+  返回之后通过超时标志设置errno并返回-1；如果在未超时之前套接字就可写了，那么直接取消定时器并返回成功。
+  取消定时器会导致定时器回调被强制执行一次，但这并不会导致问题，因为只有当前协程结束后，定时器回调才会在接下来被调度，
+  由于定时器回调被执行时connect_with_timeout协程已经执行完了，所以理所当然地条件变量也被释放了，所以实际上定时器回调函数什么也没做。
+  这里是sylar条件定时器的巧妙应用，自行体会，感觉说得不是很清楚。*/
 int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms)
 {
     if(!shuai::t_hook_enable) return connect_f(fd, addr, addrlen);
@@ -271,6 +276,8 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
 
     int n = connect_f(fd, addr, addrlen);
     if(n == 0) return 0;
+
+    // 调用系统的connect函数，由于套接字是非阻塞的，这里会直接返回EINPROGRESS错误。
     else if(n != -1 || errno != EINPROGRESS) return n;
 
     shuai::IOManager* iom = shuai::IOManager::GetThis();
@@ -284,7 +291,7 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
                 auto t = winfo.lock();
                 if(!t || t->cancelled) return;
                 t->cancelled = ETIMEDOUT;
-                iom->cancelEvent(fd, shuai::IOManager::WRITE);
+                iom->cancelEvent(fd, shuai::IOManager::WRITE);  // 在定时时间到后通过t->cancelled设置超时标志并触发一次WRITE事件。
         }, winfo);
     }
 
@@ -317,10 +324,10 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
     }
 }
 
-int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
-{
-    return connect_with_timeout(sockfd, addr, addrlen, shuai::s_connect_timeout);
-}
+// int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
+// {
+//     return connect_with_timeout(sockfd, addr, addrlen, shuai::s_connect_timeout);
+// }
 
 int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
 {

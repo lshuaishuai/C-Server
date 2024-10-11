@@ -7,5 +7,7 @@
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/test_scheduler.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/test_iomanager.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/test_hook.dir
+/home/shuaishuai/project/sylar_server/build/CMakeFiles/test_address.dir
+/home/shuaishuai/project/sylar_server/build/CMakeFiles/test_socket.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/edit_cache.dir
 /home/shuaishuai/project/sylar_server/build/CMakeFiles/rebuild_cache.dir

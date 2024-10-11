@@ -26,12 +26,14 @@ CMakeFiles/server.dir/server/hook.cc.o: \
  /usr/include/asm/ioctls.h /usr/include/asm-generic/ioctls.h \
  /usr/include/linux/ioctl.h /usr/include/asm/ioctl.h \
  /usr/include/asm-generic/ioctl.h /usr/include/bits/ioctl-types.h \
- /usr/include/sys/ttydefaults.h \
- /home/shuaishuai/project/sylar_server/server/fiber.h \
- /usr/include/c++/4.8.2/memory /usr/include/c++/4.8.2/bits/stl_algobase.h \
+ /usr/include/sys/ttydefaults.h /usr/include/c++/4.8.2/cstdint \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /home/shuaishuai/project/sylar_server/server/fiber.h \
+ /usr/include/c++/4.8.2/memory /usr/include/c++/4.8.2/bits/stl_algobase.h \
  /usr/include/c++/4.8.2/bits/functexcept.h \
  /usr/include/c++/4.8.2/bits/exception_defines.h \
  /usr/include/c++/4.8.2/bits/cpp_type_traits.h \
@@ -65,7 +67,7 @@ CMakeFiles/server.dir/server/hook.cc.o: \
  /usr/include/c++/4.8.2/bits/postypes.h /usr/include/c++/4.8.2/cwchar \
  /usr/include/wchar.h /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
- /usr/include/bits/wchar.h /usr/include/c++/4.8.2/ext/atomicity.h \
+ /usr/include/c++/4.8.2/ext/atomicity.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
@@ -79,9 +81,8 @@ CMakeFiles/server.dir/server/hook.cc.o: \
  /usr/include/c++/4.8.2/utility /usr/include/c++/4.8.2/bits/stl_relops.h \
  /usr/include/c++/4.8.2/initializer_list /usr/include/c++/4.8.2/array \
  /usr/include/c++/4.8.2/stdexcept /usr/include/c++/4.8.2/string \
- /usr/include/c++/4.8.2/bits/char_traits.h /usr/include/c++/4.8.2/cstdint \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
- /usr/include/stdint.h /usr/include/c++/4.8.2/bits/localefwd.h \
+ /usr/include/c++/4.8.2/bits/char_traits.h \
+ /usr/include/c++/4.8.2/bits/localefwd.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
  /usr/include/c++/4.8.2/clocale /usr/include/locale.h \
  /usr/include/bits/locale.h /usr/include/c++/4.8.2/cctype \

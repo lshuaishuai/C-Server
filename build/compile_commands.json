@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/address.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/address.cc.o -c /home/shuaishuai/project/sylar_server/server/address.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/address.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
   "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/config.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/config.cc.o -c /home/shuaishuai/project/sylar_server/server/config.cc",
   "file": "/home/shuaishuai/project/sylar_server/server/config.cc"
 },
@@ -33,6 +38,11 @@
   "directory": "/home/shuaishuai/project/sylar_server/build",
   "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/scheduler.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/scheduler.cc.o -c /home/shuaishuai/project/sylar_server/server/scheduler.cc",
   "file": "/home/shuaishuai/project/sylar_server/server/scheduler.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++ -Dserver_EXPORTS -D__FILE__=\\\"server/socket.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/server.dir/server/socket.cc.o -c /home/shuaishuai/project/sylar_server/server/socket.cc",
+  "file": "/home/shuaishuai/project/sylar_server/server/socket.cc"
 },
 {
   "directory": "/home/shuaishuai/project/sylar_server/build",
@@ -88,5 +98,15 @@
   "directory": "/home/shuaishuai/project/sylar_server/build",
   "command": "/usr/bin/c++  -D__FILE__=\\\"tests/test_hook.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -o CMakeFiles/test_hook.dir/tests/test_hook.cc.o -c /home/shuaishuai/project/sylar_server/tests/test_hook.cc",
   "file": "/home/shuaishuai/project/sylar_server/tests/test_hook.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/test_address.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -o CMakeFiles/test_address.dir/tests/test_address.cc.o -c /home/shuaishuai/project/sylar_server/tests/test_address.cc",
+  "file": "/home/shuaishuai/project/sylar_server/tests/test_address.cc"
+},
+{
+  "directory": "/home/shuaishuai/project/sylar_server/build",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/test_socket.cc\\\" -I/home/shuaishuai/project/sylar_server/. -I/usr/local/include/yaml-cpp  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g -o CMakeFiles/test_socket.dir/tests/test_socket.cc.o -c /home/shuaishuai/project/sylar_server/tests/test_socket.cc",
+  "file": "/home/shuaishuai/project/sylar_server/tests/test_socket.cc"
 }
 ]

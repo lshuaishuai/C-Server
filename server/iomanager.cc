@@ -368,8 +368,8 @@ void IOManager::idle()
         }while(true);
 
         std::vector<std::function<void()>> cbs;
+        // 从这儿的到定时器的任务 并添加到任务队列
         listExpiredCb(cbs);
-
         if(!cbs.empty()) 
         {
             schedule(cbs.begin(), cbs.end());
@@ -452,6 +452,7 @@ void IOManager::idle()
 
 void IOManager::onTimerInsertedAtFront()
 {
+    SHUAI_LOG_INFO(g_logger) << "addtimer";
     tickle();
 }
 

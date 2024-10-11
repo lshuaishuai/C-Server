@@ -15,6 +15,7 @@ find_library(YAMLCPP yaml-cpp)
 message("***", ${YAMLCPP})
 
 set(LIB_SRC
+    server/address.cc
     server/config.cc
     server/fd_manager.cc
     server/fiber.cc
@@ -22,6 +23,7 @@ set(LIB_SRC
     server/iomanager.cc  
     server/log.cc 
     server/scheduler.cc
+    server/socket.cc
     server/thread.cc
     server/timer.cc  
     server/util.cc  
@@ -78,6 +80,16 @@ add_executable(test_hook  tests/test_hook.cc)
 add_dependencies(test_hook server)
 force_redefine_file_macro_for_sources(test_hook) #__FILE__
 target_link_libraries(test_hook server ${LIB_LIB})
+
+add_executable(test_address  tests/test_address.cc)
+add_dependencies(test_address server)
+force_redefine_file_macro_for_sources(test_address) #__FILE__
+target_link_libraries(test_address server ${LIB_LIB})
+
+add_executable(test_socket  tests/test_socket.cc)
+add_dependencies(test_socket server)
+force_redefine_file_macro_for_sources(test_socket) #__FILE__
+target_link_libraries(test_socket server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

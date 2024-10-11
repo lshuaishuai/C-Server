@@ -30,7 +30,10 @@ CMakeFiles/test_hook.dir/tests/test_hook.cc.o: \
  /usr/include/asm/ioctls.h /usr/include/asm-generic/ioctls.h \
  /usr/include/linux/ioctl.h /usr/include/asm/ioctl.h \
  /usr/include/asm-generic/ioctl.h /usr/include/bits/ioctl-types.h \
- /usr/include/sys/ttydefaults.h \
+ /usr/include/sys/ttydefaults.h /usr/include/c++/4.8.2/cstdint \
+ /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
+ /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
+ /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
  /home/shuaishuai/project/sylar_server/./server/iomanager.h \
  /usr/include/sys/epoll.h /usr/include/bits/epoll.h \
  /home/shuaishuai/project/sylar_server/./server/macro.h \
@@ -45,9 +48,6 @@ CMakeFiles/test_hook.dir/tests/test_hook.cc.o: \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/bits/stdio.h /usr/include/sys/time.h \
  /usr/include/c++/4.8.2/vector /usr/include/c++/4.8.2/bits/stl_algobase.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
  /usr/include/c++/4.8.2/bits/functexcept.h \
  /usr/include/c++/4.8.2/bits/exception_defines.h \
  /usr/include/c++/4.8.2/bits/cpp_type_traits.h \
@@ -84,7 +84,7 @@ CMakeFiles/test_hook.dir/tests/test_hook.cc.o: \
  /usr/include/c++/4.8.2/bits/stringfwd.h \
  /usr/include/c++/4.8.2/bits/char_traits.h \
  /usr/include/c++/4.8.2/bits/postypes.h /usr/include/c++/4.8.2/cwchar \
- /usr/include/c++/4.8.2/cstdint /usr/include/c++/4.8.2/bits/localefwd.h \
+ /usr/include/c++/4.8.2/bits/localefwd.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
  /usr/include/c++/4.8.2/clocale /usr/include/locale.h \
  /usr/include/bits/locale.h /usr/include/c++/4.8.2/iosfwd \

@@ -7,7 +7,7 @@
 namespace shuai
 {
 
-shuai::Logger::ptr g_logger = SHUAI_LOG_NAME("system"); 
+static shuai::Logger::ptr g_logger = SHUAI_LOG_NAME("system"); 
 
 pid_t GetThreadId() { return syscall(SYS_gettid); }
 uint32_t GetFiberId() { return shuai::Fiber::GetFiberId(); }
