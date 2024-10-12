@@ -195,5 +195,8 @@ fd相关(fcntl ioctl .......)
 
 ## 序列化bytearray
 
-write(int/float/int64_t/...)
+write(int/float/int64_t/...)  
 read(int/float/int64_t/...)
+
+## http协议开发
+HTTP/1.1
