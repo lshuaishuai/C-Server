@@ -262,6 +262,19 @@ test_socket/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
 .PHONY : test_socket/fast
 
+#=============================================================================
+# Target rules for targets named test_bytearray
+
+# Build rule for target.
+test_bytearray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bytearray
+.PHONY : test_bytearray
+
+# fast build rule for target.
+test_bytearray/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
+.PHONY : test_bytearray/fast
+
 server/address.o: server/address.cc.o
 .PHONY : server/address.o
 
@@ -285,6 +298,30 @@ server/address.s: server/address.cc.s
 server/address.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/address.cc.s
 .PHONY : server/address.cc.s
+
+server/bytearray.o: server/bytearray.cc.o
+.PHONY : server/bytearray.o
+
+# target to build an object file
+server/bytearray.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/bytearray.cc.o
+.PHONY : server/bytearray.cc.o
+
+server/bytearray.i: server/bytearray.cc.i
+.PHONY : server/bytearray.i
+
+# target to preprocess a source file
+server/bytearray.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/bytearray.cc.i
+.PHONY : server/bytearray.cc.i
+
+server/bytearray.s: server/bytearray.cc.s
+.PHONY : server/bytearray.s
+
+# target to generate assembly for a file
+server/bytearray.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/bytearray.cc.s
+.PHONY : server/bytearray.cc.s
 
 server/config.o: server/config.cc.o
 .PHONY : server/config.o
@@ -598,6 +635,30 @@ tests/test_address.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/tests/test_address.cc.s
 .PHONY : tests/test_address.cc.s
 
+tests/test_bytearray.o: tests/test_bytearray.cc.o
+.PHONY : tests/test_bytearray.o
+
+# target to build an object file
+tests/test_bytearray.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.o
+.PHONY : tests/test_bytearray.cc.o
+
+tests/test_bytearray.i: tests/test_bytearray.cc.i
+.PHONY : tests/test_bytearray.i
+
+# target to preprocess a source file
+tests/test_bytearray.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.i
+.PHONY : tests/test_bytearray.cc.i
+
+tests/test_bytearray.s: tests/test_bytearray.cc.s
+.PHONY : tests/test_bytearray.s
+
+# target to generate assembly for a file
+tests/test_bytearray.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.s
+.PHONY : tests/test_bytearray.cc.s
+
 tests/test_config.o: tests/test_config.cc.o
 .PHONY : tests/test_config.o
 
@@ -801,6 +862,7 @@ help:
 	@echo "... server"
 	@echo "... test"
 	@echo "... test_address"
+	@echo "... test_bytearray"
 	@echo "... test_config"
 	@echo "... test_fiber"
 	@echo "... test_hook"
@@ -812,6 +874,9 @@ help:
 	@echo "... server/address.o"
 	@echo "... server/address.i"
 	@echo "... server/address.s"
+	@echo "... server/bytearray.o"
+	@echo "... server/bytearray.i"
+	@echo "... server/bytearray.s"
 	@echo "... server/config.o"
 	@echo "... server/config.i"
 	@echo "... server/config.s"
@@ -851,6 +916,9 @@ help:
 	@echo "... tests/test_address.o"
 	@echo "... tests/test_address.i"
 	@echo "... tests/test_address.s"
+	@echo "... tests/test_bytearray.o"
+	@echo "... tests/test_bytearray.i"
+	@echo "... tests/test_bytearray.s"
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"

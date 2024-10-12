@@ -16,6 +16,7 @@ message("***", ${YAMLCPP})
 
 set(LIB_SRC
     server/address.cc
+    server/bytearray.cc
     server/config.cc
     server/fd_manager.cc
     server/fiber.cc
@@ -90,6 +91,11 @@ add_executable(test_socket  tests/test_socket.cc)
 add_dependencies(test_socket server)
 force_redefine_file_macro_for_sources(test_socket) #__FILE__
 target_link_libraries(test_socket server ${LIB_LIB})
+
+add_executable(test_bytearray  tests/test_bytearray.cc)
+add_dependencies(test_bytearray server)
+force_redefine_file_macro_for_sources(test_bytearray) #__FILE__
+target_link_libraries(test_bytearray server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

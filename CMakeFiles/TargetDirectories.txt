@@ -9,5 +9,6 @@
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_hook.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_address.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_socket.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/test_bytearray.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/edit_cache.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/rebuild_cache.dir

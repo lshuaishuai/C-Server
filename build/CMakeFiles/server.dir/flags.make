@@ -10,6 +10,8 @@ CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unus
 
 # Custom defines: CMakeFiles/server.dir/server/address.cc.o_DEFINES = __FILE__="server/address.cc"
 
+# Custom defines: CMakeFiles/server.dir/server/bytearray.cc.o_DEFINES = __FILE__="server/bytearray.cc"
+
 # Custom defines: CMakeFiles/server.dir/server/config.cc.o_DEFINES = __FILE__="server/config.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/fd_manager.cc.o_DEFINES = __FILE__="server/fd_manager.cc"
