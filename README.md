@@ -1,4 +1,4 @@
- # C-server
+44 # C-server
  本仓库为重新写了sylar的C++高性能服务器框架，并加了必要的注释，感兴趣的小伙伴可以一起交流
  
  ## 日志系统
@@ -199,4 +199,24 @@ write(int/float/int64_t/...)
 read(int/float/int64_t/...)
 
 ## http协议开发
-HTTP/1.1
+HTTP/1.1 - API
+
+HttpRequest;
+HttpResponse;
+
+GET /uri HTTP/1.1
+Host: www.sylar.top
+
+HTTP/1.0 200 OK
+Pragma: no-cache
+Content-Type: text/html
+Content-Length: 14988
+Connection: close
+
+uri: http://www.sylar.top/page/xxx?id=10&v=20#fr
+     http: 协议
+     www.sylar.top: host
+     80: 端口
+     /page/xxx: path
+     id=10&v=20: param
+     fr: fragment
