@@ -192,3 +192,8 @@ fd相关(fcntl ioctl .......)
                      ----------
                      | Socket |
                      ----------
+
+## 序列化bytearray
+
+write(int/float/int64_t/...)
+read(int/float/int64_t/...)
