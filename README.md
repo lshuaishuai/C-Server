@@ -199,24 +199,24 @@ write(int/float/int64_t/...)
 read(int/float/int64_t/...)
 
 ## http协议开发
-HTTP/1.1 - API
+HTTP/1.1 - API  
+  
+HttpRequest;  
+HttpResponse;  
 
-HttpRequest;
-HttpResponse;
+GET /uri HTTP/1.1  
+Host: www.sylar.top  
 
-GET /uri HTTP/1.1
-Host: www.sylar.top
+HTTP/1.0 200 OK  
+Pragma: no-cache  
+Content-Type: text/html  
+Content-Length: 14988  
+Connection: close  
 
-HTTP/1.0 200 OK
-Pragma: no-cache
-Content-Type: text/html
-Content-Length: 14988
-Connection: close
-
-uri: http://www.sylar.top/page/xxx?id=10&v=20#fr
-     http: 协议
-     www.sylar.top: host
-     80: 端口
-     /page/xxx: path
-     id=10&v=20: param
-     fr: fragment
+uri: http://www.sylar.top/page/xxx?id=10&v=20#fr  
+     http: 协议  
+     www.sylar.top: host  
+     80: 端口  
+     /page/xxx: path  
+     id=10&v=20: param  
+     fr: fragment  
