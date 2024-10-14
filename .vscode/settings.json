@@ -60,7 +60,9 @@
         "valarray": "cpp",
         "cstddef": "cpp",
         "typeindex": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "random": "cpp",
+        "memory": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "makefile.configureOnOpen": false

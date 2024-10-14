@@ -156,10 +156,66 @@ CMakeFiles/server.dir/server/hook.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/hook.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/hook.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/hook.cc -o CMakeFiles/server.dir/server/hook.cc.s
 
+CMakeFiles/server.dir/server/http/http.cc.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/server/http/http.cc.o: server/http/http.cc
+CMakeFiles/server.dir/server/http/http.cc.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/server.dir/server/http/http.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/http/http.cc.o -MF CMakeFiles/server.dir/server/http/http.cc.o.d -o CMakeFiles/server.dir/server/http/http.cc.o -c /home/shuaishuai/project/sylar_server/server/http/http.cc
+
+CMakeFiles/server.dir/server/http/http.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/http/http.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/http/http.cc > CMakeFiles/server.dir/server/http/http.cc.i
+
+CMakeFiles/server.dir/server/http/http.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/http/http.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/http/http.cc -o CMakeFiles/server.dir/server/http/http.cc.s
+
+CMakeFiles/server.dir/server/http/http_parser.cc.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/server/http/http_parser.cc.o: server/http/http_parser.cc
+CMakeFiles/server.dir/server/http/http_parser.cc.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/server.dir/server/http/http_parser.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/http/http_parser.cc.o -MF CMakeFiles/server.dir/server/http/http_parser.cc.o.d -o CMakeFiles/server.dir/server/http/http_parser.cc.o -c /home/shuaishuai/project/sylar_server/server/http/http_parser.cc
+
+CMakeFiles/server.dir/server/http/http_parser.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/http/http_parser.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/http/http_parser.cc > CMakeFiles/server.dir/server/http/http_parser.cc.i
+
+CMakeFiles/server.dir/server/http/http_parser.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/http/http_parser.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/http/http_parser.cc -o CMakeFiles/server.dir/server/http/http_parser.cc.s
+
+CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o: server/http/http11_parser.rl.cc
+CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http11_parser.rl.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o -MF CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o.d -o CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o -c /home/shuaishuai/project/sylar_server/server/http/http11_parser.rl.cc
+
+CMakeFiles/server.dir/server/http/http11_parser.rl.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/http/http11_parser.rl.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http11_parser.rl.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/http/http11_parser.rl.cc > CMakeFiles/server.dir/server/http/http11_parser.rl.cc.i
+
+CMakeFiles/server.dir/server/http/http11_parser.rl.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/http/http11_parser.rl.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/http11_parser.rl.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/http/http11_parser.rl.cc -o CMakeFiles/server.dir/server/http/http11_parser.rl.cc.s
+
+CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o: server/http/httpclient_parser.rl.cc
+CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/httpclient_parser.rl.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o -MF CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o.d -o CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o -c /home/shuaishuai/project/sylar_server/server/http/httpclient_parser.rl.cc
+
+CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/httpclient_parser.rl.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shuaishuai/project/sylar_server/server/http/httpclient_parser.rl.cc > CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.i
+
+CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/http/httpclient_parser.rl.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shuaishuai/project/sylar_server/server/http/httpclient_parser.rl.cc -o CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.s
+
 CMakeFiles/server.dir/server/iomanager.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/iomanager.cc.o: server/iomanager.cc
 CMakeFiles/server.dir/server/iomanager.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/server.dir/server/iomanager.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/server.dir/server/iomanager.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/iomanager.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/iomanager.cc.o -MF CMakeFiles/server.dir/server/iomanager.cc.o.d -o CMakeFiles/server.dir/server/iomanager.cc.o -c /home/shuaishuai/project/sylar_server/server/iomanager.cc
 
 CMakeFiles/server.dir/server/iomanager.cc.i: cmake_force
@@ -173,7 +229,7 @@ CMakeFiles/server.dir/server/iomanager.cc.s: cmake_force
 CMakeFiles/server.dir/server/log.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/log.cc.o: server/log.cc
 CMakeFiles/server.dir/server/log.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/server.dir/server/log.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/server.dir/server/log.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/log.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/log.cc.o -MF CMakeFiles/server.dir/server/log.cc.o.d -o CMakeFiles/server.dir/server/log.cc.o -c /home/shuaishuai/project/sylar_server/server/log.cc
 
 CMakeFiles/server.dir/server/log.cc.i: cmake_force
@@ -187,7 +243,7 @@ CMakeFiles/server.dir/server/log.cc.s: cmake_force
 CMakeFiles/server.dir/server/scheduler.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/scheduler.cc.o: server/scheduler.cc
 CMakeFiles/server.dir/server/scheduler.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/server.dir/server/scheduler.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/server.dir/server/scheduler.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/scheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/scheduler.cc.o -MF CMakeFiles/server.dir/server/scheduler.cc.o.d -o CMakeFiles/server.dir/server/scheduler.cc.o -c /home/shuaishuai/project/sylar_server/server/scheduler.cc
 
 CMakeFiles/server.dir/server/scheduler.cc.i: cmake_force
@@ -201,7 +257,7 @@ CMakeFiles/server.dir/server/scheduler.cc.s: cmake_force
 CMakeFiles/server.dir/server/socket.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/socket.cc.o: server/socket.cc
 CMakeFiles/server.dir/server/socket.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/server.dir/server/socket.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/server.dir/server/socket.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/socket.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/socket.cc.o -MF CMakeFiles/server.dir/server/socket.cc.o.d -o CMakeFiles/server.dir/server/socket.cc.o -c /home/shuaishuai/project/sylar_server/server/socket.cc
 
 CMakeFiles/server.dir/server/socket.cc.i: cmake_force
@@ -215,7 +271,7 @@ CMakeFiles/server.dir/server/socket.cc.s: cmake_force
 CMakeFiles/server.dir/server/thread.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/thread.cc.o: server/thread.cc
 CMakeFiles/server.dir/server/thread.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/server.dir/server/thread.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/server.dir/server/thread.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/thread.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/thread.cc.o -MF CMakeFiles/server.dir/server/thread.cc.o.d -o CMakeFiles/server.dir/server/thread.cc.o -c /home/shuaishuai/project/sylar_server/server/thread.cc
 
 CMakeFiles/server.dir/server/thread.cc.i: cmake_force
@@ -229,7 +285,7 @@ CMakeFiles/server.dir/server/thread.cc.s: cmake_force
 CMakeFiles/server.dir/server/timer.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/timer.cc.o: server/timer.cc
 CMakeFiles/server.dir/server/timer.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/server.dir/server/timer.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/server.dir/server/timer.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/timer.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/timer.cc.o -MF CMakeFiles/server.dir/server/timer.cc.o.d -o CMakeFiles/server.dir/server/timer.cc.o -c /home/shuaishuai/project/sylar_server/server/timer.cc
 
 CMakeFiles/server.dir/server/timer.cc.i: cmake_force
@@ -243,7 +299,7 @@ CMakeFiles/server.dir/server/timer.cc.s: cmake_force
 CMakeFiles/server.dir/server/util.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/util.cc.o: server/util.cc
 CMakeFiles/server.dir/server/util.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/server.dir/server/util.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/server.dir/server/util.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"server/util.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/server/util.cc.o -MF CMakeFiles/server.dir/server/util.cc.o.d -o CMakeFiles/server.dir/server/util.cc.o -c /home/shuaishuai/project/sylar_server/server/util.cc
 
 CMakeFiles/server.dir/server/util.cc.i: cmake_force
@@ -262,6 +318,10 @@ server_OBJECTS = \
 "CMakeFiles/server.dir/server/fd_manager.cc.o" \
 "CMakeFiles/server.dir/server/fiber.cc.o" \
 "CMakeFiles/server.dir/server/hook.cc.o" \
+"CMakeFiles/server.dir/server/http/http.cc.o" \
+"CMakeFiles/server.dir/server/http/http_parser.cc.o" \
+"CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o" \
+"CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o" \
 "CMakeFiles/server.dir/server/iomanager.cc.o" \
 "CMakeFiles/server.dir/server/log.cc.o" \
 "CMakeFiles/server.dir/server/scheduler.cc.o" \
@@ -279,6 +339,10 @@ lib/libserver.so: CMakeFiles/server.dir/server/config.cc.o
 lib/libserver.so: CMakeFiles/server.dir/server/fd_manager.cc.o
 lib/libserver.so: CMakeFiles/server.dir/server/fiber.cc.o
 lib/libserver.so: CMakeFiles/server.dir/server/hook.cc.o
+lib/libserver.so: CMakeFiles/server.dir/server/http/http.cc.o
+lib/libserver.so: CMakeFiles/server.dir/server/http/http_parser.cc.o
+lib/libserver.so: CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o
+lib/libserver.so: CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o
 lib/libserver.so: CMakeFiles/server.dir/server/iomanager.cc.o
 lib/libserver.so: CMakeFiles/server.dir/server/log.cc.o
 lib/libserver.so: CMakeFiles/server.dir/server/scheduler.cc.o
@@ -288,7 +352,7 @@ lib/libserver.so: CMakeFiles/server.dir/server/timer.cc.o
 lib/libserver.so: CMakeFiles/server.dir/server/util.cc.o
 lib/libserver.so: CMakeFiles/server.dir/build.make
 lib/libserver.so: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library lib/libserver.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shuaishuai/project/sylar_server/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX shared library lib/libserver.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

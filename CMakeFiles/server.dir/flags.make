@@ -20,6 +20,14 @@ CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unus
 
 # Custom defines: CMakeFiles/server.dir/server/hook.cc.o_DEFINES = __FILE__="server/hook.cc"
 
+# Custom defines: CMakeFiles/server.dir/server/http/http.cc.o_DEFINES = __FILE__="server/http/http.cc"
+
+# Custom defines: CMakeFiles/server.dir/server/http/http_parser.cc.o_DEFINES = __FILE__="server/http/http_parser.cc"
+
+# Custom defines: CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o_DEFINES = __FILE__="server/http/http11_parser.rl.cc"
+
+# Custom defines: CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o_DEFINES = __FILE__="server/http/httpclient_parser.rl.cc"
+
 # Custom defines: CMakeFiles/server.dir/server/iomanager.cc.o_DEFINES = __FILE__="server/iomanager.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/log.cc.o_DEFINES = __FILE__="server/log.cc"

@@ -275,6 +275,32 @@ test_bytearray/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
 .PHONY : test_bytearray/fast
 
+#=============================================================================
+# Target rules for targets named test_http
+
+# Build rule for target.
+test_http: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http
+.PHONY : test_http
+
+# fast build rule for target.
+test_http/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/build
+.PHONY : test_http/fast
+
+#=============================================================================
+# Target rules for targets named test_httpparser
+
+# Build rule for target.
+test_httpparser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpparser
+.PHONY : test_httpparser
+
+# fast build rule for target.
+test_httpparser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpparser.dir/build.make CMakeFiles/test_httpparser.dir/build
+.PHONY : test_httpparser/fast
+
 server/address.o: server/address.cc.o
 .PHONY : server/address.o
 
@@ -418,6 +444,102 @@ server/hook.s: server/hook.cc.s
 server/hook.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/hook.cc.s
 .PHONY : server/hook.cc.s
+
+server/http/http.o: server/http/http.cc.o
+.PHONY : server/http/http.o
+
+# target to build an object file
+server/http/http.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http.cc.o
+.PHONY : server/http/http.cc.o
+
+server/http/http.i: server/http/http.cc.i
+.PHONY : server/http/http.i
+
+# target to preprocess a source file
+server/http/http.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http.cc.i
+.PHONY : server/http/http.cc.i
+
+server/http/http.s: server/http/http.cc.s
+.PHONY : server/http/http.s
+
+# target to generate assembly for a file
+server/http/http.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http.cc.s
+.PHONY : server/http/http.cc.s
+
+server/http/http11_parser.rl.o: server/http/http11_parser.rl.cc.o
+.PHONY : server/http/http11_parser.rl.o
+
+# target to build an object file
+server/http/http11_parser.rl.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o
+.PHONY : server/http/http11_parser.rl.cc.o
+
+server/http/http11_parser.rl.i: server/http/http11_parser.rl.cc.i
+.PHONY : server/http/http11_parser.rl.i
+
+# target to preprocess a source file
+server/http/http11_parser.rl.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http11_parser.rl.cc.i
+.PHONY : server/http/http11_parser.rl.cc.i
+
+server/http/http11_parser.rl.s: server/http/http11_parser.rl.cc.s
+.PHONY : server/http/http11_parser.rl.s
+
+# target to generate assembly for a file
+server/http/http11_parser.rl.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http11_parser.rl.cc.s
+.PHONY : server/http/http11_parser.rl.cc.s
+
+server/http/http_parser.o: server/http/http_parser.cc.o
+.PHONY : server/http/http_parser.o
+
+# target to build an object file
+server/http/http_parser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_parser.cc.o
+.PHONY : server/http/http_parser.cc.o
+
+server/http/http_parser.i: server/http/http_parser.cc.i
+.PHONY : server/http/http_parser.i
+
+# target to preprocess a source file
+server/http/http_parser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_parser.cc.i
+.PHONY : server/http/http_parser.cc.i
+
+server/http/http_parser.s: server/http/http_parser.cc.s
+.PHONY : server/http/http_parser.s
+
+# target to generate assembly for a file
+server/http/http_parser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_parser.cc.s
+.PHONY : server/http/http_parser.cc.s
+
+server/http/httpclient_parser.rl.o: server/http/httpclient_parser.rl.cc.o
+.PHONY : server/http/httpclient_parser.rl.o
+
+# target to build an object file
+server/http/httpclient_parser.rl.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o
+.PHONY : server/http/httpclient_parser.rl.cc.o
+
+server/http/httpclient_parser.rl.i: server/http/httpclient_parser.rl.cc.i
+.PHONY : server/http/httpclient_parser.rl.i
+
+# target to preprocess a source file
+server/http/httpclient_parser.rl.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.i
+.PHONY : server/http/httpclient_parser.rl.cc.i
+
+server/http/httpclient_parser.rl.s: server/http/httpclient_parser.rl.cc.s
+.PHONY : server/http/httpclient_parser.rl.s
+
+# target to generate assembly for a file
+server/http/httpclient_parser.rl.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.s
+.PHONY : server/http/httpclient_parser.rl.cc.s
 
 server/iomanager.o: server/iomanager.cc.o
 .PHONY : server/iomanager.o
@@ -731,6 +853,54 @@ tests/test_hook.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
 .PHONY : tests/test_hook.cc.s
 
+tests/test_http.o: tests/test_http.cc.o
+.PHONY : tests/test_http.o
+
+# target to build an object file
+tests/test_http.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.o
+.PHONY : tests/test_http.cc.o
+
+tests/test_http.i: tests/test_http.cc.i
+.PHONY : tests/test_http.i
+
+# target to preprocess a source file
+tests/test_http.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.i
+.PHONY : tests/test_http.cc.i
+
+tests/test_http.s: tests/test_http.cc.s
+.PHONY : tests/test_http.s
+
+# target to generate assembly for a file
+tests/test_http.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.s
+.PHONY : tests/test_http.cc.s
+
+tests/test_httpparser.o: tests/test_httpparser.cc.o
+.PHONY : tests/test_httpparser.o
+
+# target to build an object file
+tests/test_httpparser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpparser.dir/build.make CMakeFiles/test_httpparser.dir/tests/test_httpparser.cc.o
+.PHONY : tests/test_httpparser.cc.o
+
+tests/test_httpparser.i: tests/test_httpparser.cc.i
+.PHONY : tests/test_httpparser.i
+
+# target to preprocess a source file
+tests/test_httpparser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpparser.dir/build.make CMakeFiles/test_httpparser.dir/tests/test_httpparser.cc.i
+.PHONY : tests/test_httpparser.cc.i
+
+tests/test_httpparser.s: tests/test_httpparser.cc.s
+.PHONY : tests/test_httpparser.s
+
+# target to generate assembly for a file
+tests/test_httpparser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpparser.dir/build.make CMakeFiles/test_httpparser.dir/tests/test_httpparser.cc.s
+.PHONY : tests/test_httpparser.cc.s
+
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 .PHONY : tests/test_iomanager.o
 
@@ -866,6 +1036,8 @@ help:
 	@echo "... test_config"
 	@echo "... test_fiber"
 	@echo "... test_hook"
+	@echo "... test_http"
+	@echo "... test_httpparser"
 	@echo "... test_iomanager"
 	@echo "... test_scheduler"
 	@echo "... test_socket"
@@ -889,6 +1061,18 @@ help:
 	@echo "... server/hook.o"
 	@echo "... server/hook.i"
 	@echo "... server/hook.s"
+	@echo "... server/http/http.o"
+	@echo "... server/http/http.i"
+	@echo "... server/http/http.s"
+	@echo "... server/http/http11_parser.rl.o"
+	@echo "... server/http/http11_parser.rl.i"
+	@echo "... server/http/http11_parser.rl.s"
+	@echo "... server/http/http_parser.o"
+	@echo "... server/http/http_parser.i"
+	@echo "... server/http/http_parser.s"
+	@echo "... server/http/httpclient_parser.rl.o"
+	@echo "... server/http/httpclient_parser.rl.i"
+	@echo "... server/http/httpclient_parser.rl.s"
 	@echo "... server/iomanager.o"
 	@echo "... server/iomanager.i"
 	@echo "... server/iomanager.s"
@@ -928,6 +1112,12 @@ help:
 	@echo "... tests/test_hook.o"
 	@echo "... tests/test_hook.i"
 	@echo "... tests/test_hook.s"
+	@echo "... tests/test_http.o"
+	@echo "... tests/test_http.i"
+	@echo "... tests/test_http.s"
+	@echo "... tests/test_httpparser.o"
+	@echo "... tests/test_httpparser.i"
+	@echo "... tests/test_httpparser.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"

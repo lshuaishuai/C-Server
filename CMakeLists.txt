@@ -21,6 +21,10 @@ set(LIB_SRC
     server/fd_manager.cc
     server/fiber.cc
     server/hook.cc 
+    server/http/http.cc
+    server/http/http_parser.cc
+    server/http/http11_parser.rl.cc
+    server/http/httpclient_parser.rl.cc
     server/iomanager.cc  
     server/log.cc 
     server/scheduler.cc
@@ -96,6 +100,16 @@ add_executable(test_bytearray  tests/test_bytearray.cc)
 add_dependencies(test_bytearray server)
 force_redefine_file_macro_for_sources(test_bytearray) #__FILE__
 target_link_libraries(test_bytearray server ${LIB_LIB})
+
+add_executable(test_http  tests/test_http.cc)
+add_dependencies(test_http server)
+force_redefine_file_macro_for_sources(test_http) #__FILE__
+target_link_libraries(test_http server ${LIB_LIB})
+
+add_executable(test_httpparser  tests/test_httpparser.cc)
+add_dependencies(test_httpparser server)
+force_redefine_file_macro_for_sources(test_httpparser) #__FILE__
+target_link_libraries(test_httpparser server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
