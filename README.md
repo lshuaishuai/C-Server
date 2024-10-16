@@ -220,3 +220,9 @@ uri: http://www.sylar.top/page/xxx?id=10&v=20#fr
      /page/xxx: path  
      id=10&v=20: param  
      fr: fragment  
+
+## TcpServer封装
+基于TcpServer实现了一个EchoServer
+
+## Stream封装 针对文件/Socket的封装
+read/write/readFix/writeFixSize
