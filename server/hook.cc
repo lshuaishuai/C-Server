@@ -164,9 +164,9 @@ retry:
         }
         else // 添加成功
         {
-    SHUAI_LOG_INFO(g_logger) << "do_io <" << hook_fun_name << ">";
+    // SHUAI_LOG_INFO(g_logger) << "do_io <" << hook_fun_name << ">";
             shuai::Fiber::YieldToHold();
-    SHUAI_LOG_INFO(g_logger) << "do_io <" << hook_fun_name << ">";
+    // SHUAI_LOG_INFO(g_logger) << "do_io <" << hook_fun_name << ">";
             // 从这里协程被唤醒回来有两种情况，一种是真的读到了事件，或者是定时器超时
             if(timer) timer->cancel();
 
@@ -523,6 +523,7 @@ int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t
             }
         }
     }
+    // SHUAI_LOG_DEBUG(g_logger) << "sockfd = " << sockfd << " level = " << level << " optname = " << optname << " optval = " << optval << " optlen = " << optlen;
     return setsockopt_f(sockfd, level, optname, optval, optlen);
 }
 

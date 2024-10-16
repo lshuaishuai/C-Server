@@ -23,12 +23,17 @@ set(LIB_SRC
     server/hook.cc 
     server/http/http.cc
     server/http/http_parser.cc
+    server/http/http_server.cc
+    server/http/http_session.cc
     server/http/http11_parser.rl.cc
     server/http/httpclient_parser.rl.cc
     server/iomanager.cc  
     server/log.cc 
     server/scheduler.cc
     server/socket.cc
+    server/socket_stream.cc
+    server/stream.cc
+    server/tcp_server.cc
     server/thread.cc
     server/timer.cc  
     server/util.cc  
@@ -110,6 +115,21 @@ add_executable(test_httpparser  tests/test_httpparser.cc)
 add_dependencies(test_httpparser server)
 force_redefine_file_macro_for_sources(test_httpparser) #__FILE__
 target_link_libraries(test_httpparser server ${LIB_LIB})
+
+add_executable(test_tcp_server  tests/test_tcp_server.cc)
+add_dependencies(test_tcp_server server)
+force_redefine_file_macro_for_sources(test_tcp_server) #__FILE__
+target_link_libraries(test_tcp_server server ${LIB_LIB})
+
+add_executable(echo_server  examples/echo_server.cc)
+add_dependencies(echo_server server)
+force_redefine_file_macro_for_sources(echo_server) #__FILE__
+target_link_libraries(echo_server server ${LIB_LIB})
+
+add_executable(test_http_server  tests/test_http_server.cc)
+add_dependencies(test_http_server server)
+force_redefine_file_macro_for_sources(test_http_server) #__FILE__
+target_link_libraries(test_http_server server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

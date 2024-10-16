@@ -65,7 +65,8 @@ public:
     void del(int fd);
 
 private:
-    RWMutexType m_mutex;
+    RWMutexType m_rmutex;
+    RWMutexType m_wmutex;
     std::vector<FdCtx::ptr> m_datas;
 };
 

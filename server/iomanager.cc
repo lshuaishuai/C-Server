@@ -333,7 +333,7 @@ bool IOManager::stopping()
 // 实际是idle协程只负责收集所有已触发的fd的回调函数并将其加入调度器的任务队列，真正的执行时机是idle协程退出后，调度器在下一轮调度时执行
 void IOManager::idle()
 {
-    SHUAI_LOG_INFO(g_logger) << "IOManager::idle()";
+    // SHUAI_LOG_INFO(g_logger) << "IOManager::idle()";
     epoll_event* events = new epoll_event[64]();
     // 使用 std::shared_ptr 管理这个数组的内存，确保在结束时自动释放
     std::shared_ptr<epoll_event> shared_events(events, [](epoll_event* ptr){
@@ -452,7 +452,7 @@ void IOManager::idle()
 
 void IOManager::onTimerInsertedAtFront()
 {
-    SHUAI_LOG_INFO(g_logger) << "addtimer";
+    // SHUAI_LOG_INFO(g_logger) << "addtimer";
     tickle();
 }
 

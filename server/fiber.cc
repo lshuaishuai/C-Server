@@ -238,10 +238,10 @@ void Fiber::MainFunc()
     SHUAI_ASSERT(cur);
     try
     {
-        // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc--------------";
+        // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc begin--------------";
         // SHUAI_LOG_DEBUG(g_logger) << "cur fiber id = " << GetFiberId(); 
         cur->m_cb();  // 这里执行的为任务或者空闲协程了
-        // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc--------------";
+        // SHUAI_LOG_DEBUG(g_logger) << "----------------MainFunc end--------------";
         cur->m_cb = nullptr;  
         // 函数执行完后，协程的状态就为终止(TERM)了
         cur->m_state = TERM;

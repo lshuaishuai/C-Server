@@ -98,7 +98,7 @@ void Socket::setRecvTimeout(int64_t v)
 }
 
 // 获取socket句柄上的相关信息
-bool Socket::getOption(int level, int option, void* result, size_t* len)
+bool Socket::getOption(int level, int option, void* result, socklen_t* len)
 {
     int rt = getsockopt(m_sock, level, option, result, (socklen_t*)len);
     if(rt)
@@ -113,7 +113,7 @@ bool Socket::getOption(int level, int option, void* result, size_t* len)
     return true;
 }
 
-bool Socket::setOption(int level, int option, const void* result, size_t len)
+bool Socket::setOption(int level, int option, const void* result, socklen_t len)
 {
     if(setsockopt(m_sock, level, option, result, (socklen_t)len))
     {
@@ -167,6 +167,16 @@ bool Socket::bind(const Address::ptr addr)
             return false;
         }
     }
+    
+    if(addr->getFamily() == AF_UNIX)
+    {
+        int optval = 1;
+        if (setsockopt(m_sock, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval)) < 0) {
+            perror("Failed to set socket options");
+            exit(EXIT_FAILURE);
+        }
+    }
+
 
     if(SHUAI_UNLICKLY(addr->getFamily() != m_family))
     {
@@ -368,6 +378,9 @@ Address::ptr Socket::getRemoteAddress()
     case AF_INET6:
         result.reset(new IPv6Address());
         break;
+    case AF_UNIX:
+        result.reset(new UnixAddress());
+        break;
     default:
         result.reset(new UnknownAddress(m_family));
         break;
@@ -409,6 +422,9 @@ Address::ptr Socket::getLocalAddress()
     case AF_INET6:
         result.reset(new IPv6Address());
         break;
+    case AF_UNIX:
+        result.reset(new UnixAddress());
+        break;
     default:
         result.reset(new UnknownAddress(m_family));
         break;
@@ -445,7 +461,7 @@ bool Socket::isValid() const
 int Socket::getError()
 {
     int error = 0;
-    size_t len = sizeof(errno);
+    socklen_t len = sizeof(errno);
     if(!getOption(SOL_SOCKET, SO_ERROR, &error, &len))
         return -1;
     return error;
@@ -506,5 +522,11 @@ void Socket::newSock()
                                   << " errstr = " << strerror(errno); 
     }
 }
+
+std::ostream& operator<<(std::ostream& os, const Socket& sock)
+{
+    return sock.dump(os);
+}
+
 
 }

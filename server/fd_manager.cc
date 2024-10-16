@@ -75,22 +75,28 @@ FdManager::FdManager()
 // 取一个fd，若fd不存在且auto_create=true则新创建一个fd
 FdCtx::ptr FdManager::get(int fd, bool auto_create)
 {
-    RWMutexType::ReadLock lock(m_mutex);
+    if(fd == -1) return nullptr;
+
+    RWMutexType::ReadLock lock(m_rmutex);
+    // std::cout << "m_datas.size() = " << m_datas.size() << " auto_create = " << auto_create << std::endl;
     if((int)m_datas.size() <= fd)
     {    if(auto_create == false) return nullptr;}
     else
     {    if(m_datas[fd] || !auto_create) return m_datas[fd];}
     lock.unlock();
         
-    RWMutexType::WriteLock lock2(m_mutex);
+    RWMutexType::WriteLock lock2(m_wmutex);
     FdCtx::ptr ctx(new FdCtx(fd));
+    if(fd >= (int)m_datas.size()) m_datas.resize(fd * 1.5);
+
     m_datas[fd] = ctx;
+    lock2.unlock();
     return ctx;
 }
 
 void FdManager::del(int fd)
 {
-    RWMutexType::WriteLock lock(m_mutex);
+    RWMutexType::WriteLock lock(m_wmutex);
     if((int)m_datas.size() <= fd) return;
     m_datas[fd].reset();
 }

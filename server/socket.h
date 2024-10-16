@@ -52,7 +52,7 @@ public:
     void setRecvTimeout(int64_t v);
 
     // 获取socket句柄上的相关信息
-    bool getOption(int level, int option, void* result, size_t* len);
+    bool getOption(int level, int option, void* result, socklen_t* len);
     template<class T>
     bool getOption(int level, int option, T& result)
     {
@@ -60,7 +60,7 @@ public:
         return getOption(level, option, &result, &length);
     }
 
-    bool setOption(int level, int option, const void* result, size_t len);
+    bool setOption(int level, int option, const void* result, socklen_t len);
     template<class T>
     bool setOption(int level, int option, const T& value)
     {
@@ -97,6 +97,7 @@ public:
     int getError();
 
     std::ostream& dump(std::ostream& os) const;
+
     int getSocket() const { return m_sock; }
 
     bool cancelRead();
@@ -118,5 +119,7 @@ private:
     Address::ptr m_localAddress;
     Address::ptr m_remoteAddress;
 };
+
+std::ostream& operator<<(std::ostream& os, const Socket& sock);
 
 }
