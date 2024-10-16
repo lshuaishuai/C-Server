@@ -226,3 +226,14 @@ uri: http://www.sylar.top/page/xxx?id=10&v=20#fr
 
 ## Stream封装 针对文件/Socket的封装
 read/write/readFix/writeFixSize
+
+HttpSession/HttpConnection
+Server.accept, socket -> session
+Client.connect socket -> Connecion
+
+HttpServer : TcpServer
+
+         Serlvet <----- FunctionServlet
+            |
+            V
+     ServletDispatch
