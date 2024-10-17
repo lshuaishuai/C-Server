@@ -1,0 +1,222 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "server",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "echo_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-echo_server-Debug-a31cf529a1130920901e.json",
+					"name" : "echo_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-server-Debug-f338f4236cb127133e8c.json",
+					"name" : "server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-76f00bdcf24256760f12.json",
+					"name" : "test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_address::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_address-Debug-dd3a78ca9f94e6edfeef.json",
+					"name" : "test_address",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_bytearray::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_bytearray-Debug-25b4785eb97f7fa986bc.json",
+					"name" : "test_bytearray",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_config::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_config-Debug-7119930c1239b62278df.json",
+					"name" : "test_config",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_fiber::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_fiber-Debug-7a3278ebd3193ac4d144.json",
+					"name" : "test_fiber",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_hook::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_hook-Debug-6c035ecef560033b6222.json",
+					"name" : "test_hook",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_http::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_http-Debug-735d443ef20f724d29ee.json",
+					"name" : "test_http",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_http_connection::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_http_connection-Debug-99d40076cd63cb47753c.json",
+					"name" : "test_http_connection",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_http_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_http_server-Debug-5bd87ab31a4fef03d13a.json",
+					"name" : "test_http_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_httpparser::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_httpparser-Debug-e9682705e05a0b6690d8.json",
+					"name" : "test_httpparser",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_iomanager::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_iomanager-Debug-70ba789e856652bad429.json",
+					"name" : "test_iomanager",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_scheduler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_scheduler-Debug-9cc622423bb976da4a2f.json",
+					"name" : "test_scheduler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_socket::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_socket-Debug-9f61381abed58bd1d8dd.json",
+					"name" : "test_socket",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_tcp_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_tcp_server-Debug-1c81929c38e7f00cb5e9.json",
+					"name" : "test_tcp_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_thread::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_thread-Debug-fa59347fd12126195727.json",
+					"name" : "test_thread",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_uri::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_uri-Debug-7cbcace55ccf2c5b9ca6.json",
+					"name" : "test_uri",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_util::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_util-Debug-2618cb4046a209b1af95.json",
+					"name" : "test_util",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/shuaishuai/project/sylar_server/build",
+		"source" : "/home/shuaishuai/project/sylar_server"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

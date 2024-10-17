@@ -12,8 +12,8 @@ HttpSession::HttpSession(Socket::ptr sock, bool owner)
 HttpRequest::ptr HttpSession::recvRequest()
 {
     HttpRequestParser::ptr parser(new HttpRequestParser);
-    // uint64_t buffer_size = HttpRequestParser::GetHttpRequestBufferSize();
-    uint64_t buffer_size = 150;
+    uint64_t buffer_size = HttpRequestParser::GetHttpRequestBufferSize();
+    // uint64_t buffer_size = 150;
     std::shared_ptr<char> buffer(
         new char[buffer_size], [](char* ptr){
             delete []ptr;
@@ -26,6 +26,7 @@ HttpRequest::ptr HttpSession::recvRequest()
         int len = read(data, buffer_size - offset);
         if(len <= 0) return nullptr;
 
+        len += offset;
         size_t nparse = parser->execute(data, len);
         if(parser->hasError()) return nullptr;
         offset = len - nparse;
@@ -39,17 +40,24 @@ HttpRequest::ptr HttpSession::recvRequest()
     if(length > 0)
     {
         std::string body;
-        body.reserve(length);
+        body.resize(length);
 
+        int len = 0;
         if(length >= offset)
+        {
             body.append(data, offset);
+            len = offset;
+        }
         else
-            body.append(data, length);
+        {
+            memcpy(&body[0], data, offset);
+            len = length;
+        }
         length -= offset;
 
         if(length > 0)
         {   
-            if(readFixSize(&body[body.size()], length) <= 0) return nullptr;
+            if(readFixSize(&body[len], length) <= 0) return nullptr;
         }
         parser->getData()->setBody(body);
     }

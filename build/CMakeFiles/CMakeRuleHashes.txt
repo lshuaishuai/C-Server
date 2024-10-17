@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+f89cfe979e55efe2133cd8362d6f3ab7 ../server/http/http11_parser.rl.cc
+0ec0b3edb01dcd8a9c022694e91112c7 ../server/http/httpclient_parser.rl.cc
+f64342438223dc668f16a25a75eb6268 ../server/uri.rl.cc

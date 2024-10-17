@@ -26,6 +26,7 @@ public:
     void setError(int v) { m_error = v; }
 
     uint64_t getContentLength();
+    const http_parser& getParser() const { return m_parser; }
 
 public:
     static uint64_t GetHttpRequestBufferSize();
@@ -46,7 +47,7 @@ public:
     typedef std::shared_ptr<HttpResponseParser> ptr;
     HttpResponseParser();
 
-    size_t execute(char* data, size_t len);
+    size_t execute(char* data, size_t len, bool chunk);
     int isFinished();
     int hasError(); 
     
@@ -54,6 +55,11 @@ public:
     void setError(int v) { m_error = v; }
 
     uint64_t getContentLength();
+    const httpclient_parser& getParser() const { return m_parser; }
+
+public:
+    static uint64_t GetHttpResponseBufferSize();
+    static uint64_t GetHttpResponseMaxBodySize();
 
 private:
     httpclient_parser m_parser;

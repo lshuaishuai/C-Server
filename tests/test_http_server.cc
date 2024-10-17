@@ -11,6 +11,17 @@ void run()
     {
         sleep(2);
     }
+    auto sd = server->getServletDispatch();
+    sd->addServlet("/server/xx", [](shuai::http::HttpRequest::ptr req, shuai::http::HttpResponse::ptr rsp, shuai::http::HttpSession::ptr session){
+        rsp->setBody(req->toString());
+        return 0;
+    });
+    
+    sd->addGlobServlet("/server/*", [](shuai::http::HttpRequest::ptr req, shuai::http::HttpResponse::ptr rsp, shuai::http::HttpSession::ptr session){
+        rsp->setBody("Glob:\r\n" + req->toString());
+        return 0;
+    });
+    
     server->start();
 }
 

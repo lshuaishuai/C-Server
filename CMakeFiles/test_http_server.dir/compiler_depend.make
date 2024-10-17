@@ -795,12 +795,14 @@ CMakeFiles/test_http_server.dir/tests/test_http_server.cc.o: tests/test_http_ser
   /usr/include/boost/range/detail/misc_concept.hpp \
   /usr/include/boost/range/detail/safe_bool.hpp \
   /usr/include/boost/container/container_fwd.hpp \
-  server/server.h \
-  server/config.h \
+  server/http/http_servlet.h \
+  /usr/include/fnmatch.h \
   /usr/include/c++/4.8.2/unordered_map \
   /usr/include/c++/4.8.2/bits/hashtable.h \
   /usr/include/c++/4.8.2/bits/hashtable_policy.h \
   /usr/include/c++/4.8.2/bits/unordered_map.h \
+  server/server.h \
+  server/config.h \
   /usr/include/c++/4.8.2/unordered_set \
   /usr/include/c++/4.8.2/bits/unordered_set.h \
   /usr/local/include/yaml-cpp/yaml.h \
@@ -874,6 +876,8 @@ CMakeFiles/test_http_server.dir/tests/test_http_server.cc.o: tests/test_http_ser
 
 /usr/local/include/yaml-cpp/node/detail/node.h:
 
+/usr/local/include/yaml-cpp/node/type.h:
+
 /usr/include/boost/type_traits/is_rvalue_reference.hpp:
 
 /usr/include/boost/mpl/and.hpp:
@@ -893,6 +897,10 @@ CMakeFiles/test_http_server.dir/tests/test_http_server.cc.o: tests/test_http_ser
 /usr/include/boost/type_traits/detail/bool_trait_undef.hpp:
 
 /usr/include/c++/4.8.2/climits:
+
+/usr/local/include/yaml-cpp/node/impl.h:
+
+/usr/include/boost/iterator.hpp:
 
 /usr/include/boost/type_traits/detail/cv_traits_impl.hpp:
 
@@ -933,8 +941,6 @@ CMakeFiles/test_http_server.dir/tests/test_http_server.cc.o: tests/test_http_ser
 /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/fxsrintrin.h:
 
 /usr/include/boost/exception/detail/attribute_noreturn.hpp:
-
-/usr/local/include/yaml-cpp/node/type.h:
 
 /usr/include/boost/throw_exception.hpp:
 
@@ -1497,6 +1503,8 @@ tests/test_http_server.cc:
 /usr/include/c++/4.8.2/cwchar:
 
 /usr/include/boost/mpl/aux_/contains_impl.hpp:
+
+server/http/http_servlet.h:
 
 /usr/include/linux/falloc.h:
 
@@ -2498,6 +2506,8 @@ server/thread.h:
 
 /usr/include/boost/range/detail/misc_concept.hpp:
 
+/usr/include/fnmatch.h:
+
 server/server.h:
 
 server/config.h:
@@ -2527,7 +2537,3 @@ server/config.h:
 /usr/include/c++/4.8.2/bits/istream.tcc:
 
 /usr/local/include/yaml-cpp/node/node.h:
-
-/usr/include/boost/iterator.hpp:
-
-/usr/local/include/yaml-cpp/node/impl.h:

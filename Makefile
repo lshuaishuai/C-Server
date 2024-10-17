@@ -340,6 +340,32 @@ test_http_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/build
 .PHONY : test_http_server/fast
 
+#=============================================================================
+# Target rules for targets named test_http_connection
+
+# Build rule for target.
+test_http_connection: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http_connection
+.PHONY : test_http_connection
+
+# fast build rule for target.
+test_http_connection/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/build
+.PHONY : test_http_connection/fast
+
+#=============================================================================
+# Target rules for targets named test_uri
+
+# Build rule for target.
+test_uri: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_uri
+.PHONY : test_uri
+
+# fast build rule for target.
+test_uri/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/build
+.PHONY : test_uri/fast
+
 examples/echo_server.o: examples/echo_server.cc.o
 .PHONY : examples/echo_server.o
 
@@ -556,6 +582,30 @@ server/http/http11_parser.rl.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http11_parser.rl.cc.s
 .PHONY : server/http/http11_parser.rl.cc.s
 
+server/http/http_connection.o: server/http/http_connection.cc.o
+.PHONY : server/http/http_connection.o
+
+# target to build an object file
+server/http/http_connection.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_connection.cc.o
+.PHONY : server/http/http_connection.cc.o
+
+server/http/http_connection.i: server/http/http_connection.cc.i
+.PHONY : server/http/http_connection.i
+
+# target to preprocess a source file
+server/http/http_connection.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_connection.cc.i
+.PHONY : server/http/http_connection.cc.i
+
+server/http/http_connection.s: server/http/http_connection.cc.s
+.PHONY : server/http/http_connection.s
+
+# target to generate assembly for a file
+server/http/http_connection.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_connection.cc.s
+.PHONY : server/http/http_connection.cc.s
+
 server/http/http_parser.o: server/http/http_parser.cc.o
 .PHONY : server/http/http_parser.o
 
@@ -603,6 +653,30 @@ server/http/http_server.s: server/http/http_server.cc.s
 server/http/http_server.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_server.cc.s
 .PHONY : server/http/http_server.cc.s
+
+server/http/http_servlet.o: server/http/http_servlet.cc.o
+.PHONY : server/http/http_servlet.o
+
+# target to build an object file
+server/http/http_servlet.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_servlet.cc.o
+.PHONY : server/http/http_servlet.cc.o
+
+server/http/http_servlet.i: server/http/http_servlet.cc.i
+.PHONY : server/http/http_servlet.i
+
+# target to preprocess a source file
+server/http/http_servlet.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_servlet.cc.i
+.PHONY : server/http/http_servlet.cc.i
+
+server/http/http_servlet.s: server/http/http_servlet.cc.s
+.PHONY : server/http/http_servlet.s
+
+# target to generate assembly for a file
+server/http/http_servlet.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/http/http_servlet.cc.s
+.PHONY : server/http/http_servlet.cc.s
 
 server/http/http_session.o: server/http/http_session.cc.o
 .PHONY : server/http/http_session.o
@@ -868,6 +942,30 @@ server/timer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/timer.cc.s
 .PHONY : server/timer.cc.s
 
+server/uri.rl.o: server/uri.rl.cc.o
+.PHONY : server/uri.rl.o
+
+# target to build an object file
+server/uri.rl.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/uri.rl.cc.o
+.PHONY : server/uri.rl.cc.o
+
+server/uri.rl.i: server/uri.rl.cc.i
+.PHONY : server/uri.rl.i
+
+# target to preprocess a source file
+server/uri.rl.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/uri.rl.cc.i
+.PHONY : server/uri.rl.cc.i
+
+server/uri.rl.s: server/uri.rl.cc.s
+.PHONY : server/uri.rl.s
+
+# target to generate assembly for a file
+server/uri.rl.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/uri.rl.cc.s
+.PHONY : server/uri.rl.cc.s
+
 server/util.o: server/util.cc.o
 .PHONY : server/util.o
 
@@ -1060,6 +1158,30 @@ tests/test_http.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.s
 .PHONY : tests/test_http.cc.s
 
+tests/test_http_connection.o: tests/test_http_connection.cc.o
+.PHONY : tests/test_http_connection.o
+
+# target to build an object file
+tests/test_http_connection.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cc.o
+.PHONY : tests/test_http_connection.cc.o
+
+tests/test_http_connection.i: tests/test_http_connection.cc.i
+.PHONY : tests/test_http_connection.i
+
+# target to preprocess a source file
+tests/test_http_connection.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cc.i
+.PHONY : tests/test_http_connection.cc.i
+
+tests/test_http_connection.s: tests/test_http_connection.cc.s
+.PHONY : tests/test_http_connection.s
+
+# target to generate assembly for a file
+tests/test_http_connection.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cc.s
+.PHONY : tests/test_http_connection.cc.s
+
 tests/test_http_server.o: tests/test_http_server.cc.o
 .PHONY : tests/test_http_server.o
 
@@ -1228,6 +1350,30 @@ tests/test_thread.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.s
 .PHONY : tests/test_thread.cc.s
 
+tests/test_uri.o: tests/test_uri.cc.o
+.PHONY : tests/test_uri.o
+
+# target to build an object file
+tests/test_uri.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cc.o
+.PHONY : tests/test_uri.cc.o
+
+tests/test_uri.i: tests/test_uri.cc.i
+.PHONY : tests/test_uri.i
+
+# target to preprocess a source file
+tests/test_uri.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cc.i
+.PHONY : tests/test_uri.cc.i
+
+tests/test_uri.s: tests/test_uri.cc.s
+.PHONY : tests/test_uri.s
+
+# target to generate assembly for a file
+tests/test_uri.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cc.s
+.PHONY : tests/test_uri.cc.s
+
 tests/test_util.o: tests/test_util.cc.o
 .PHONY : tests/test_util.o
 
@@ -1269,6 +1415,7 @@ help:
 	@echo "... test_fiber"
 	@echo "... test_hook"
 	@echo "... test_http"
+	@echo "... test_http_connection"
 	@echo "... test_http_server"
 	@echo "... test_httpparser"
 	@echo "... test_iomanager"
@@ -1276,6 +1423,7 @@ help:
 	@echo "... test_socket"
 	@echo "... test_tcp_server"
 	@echo "... test_thread"
+	@echo "... test_uri"
 	@echo "... test_util"
 	@echo "... examples/echo_server.o"
 	@echo "... examples/echo_server.i"
@@ -1304,12 +1452,18 @@ help:
 	@echo "... server/http/http11_parser.rl.o"
 	@echo "... server/http/http11_parser.rl.i"
 	@echo "... server/http/http11_parser.rl.s"
+	@echo "... server/http/http_connection.o"
+	@echo "... server/http/http_connection.i"
+	@echo "... server/http/http_connection.s"
 	@echo "... server/http/http_parser.o"
 	@echo "... server/http/http_parser.i"
 	@echo "... server/http/http_parser.s"
 	@echo "... server/http/http_server.o"
 	@echo "... server/http/http_server.i"
 	@echo "... server/http/http_server.s"
+	@echo "... server/http/http_servlet.o"
+	@echo "... server/http/http_servlet.i"
+	@echo "... server/http/http_servlet.s"
 	@echo "... server/http/http_session.o"
 	@echo "... server/http/http_session.i"
 	@echo "... server/http/http_session.s"
@@ -1343,6 +1497,9 @@ help:
 	@echo "... server/timer.o"
 	@echo "... server/timer.i"
 	@echo "... server/timer.s"
+	@echo "... server/uri.rl.o"
+	@echo "... server/uri.rl.i"
+	@echo "... server/uri.rl.s"
 	@echo "... server/util.o"
 	@echo "... server/util.i"
 	@echo "... server/util.s"
@@ -1367,6 +1524,9 @@ help:
 	@echo "... tests/test_http.o"
 	@echo "... tests/test_http.i"
 	@echo "... tests/test_http.s"
+	@echo "... tests/test_http_connection.o"
+	@echo "... tests/test_http_connection.i"
+	@echo "... tests/test_http_connection.s"
 	@echo "... tests/test_http_server.o"
 	@echo "... tests/test_http_server.i"
 	@echo "... tests/test_http_server.s"
@@ -1388,6 +1548,9 @@ help:
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"
+	@echo "... tests/test_uri.o"
+	@echo "... tests/test_uri.i"
+	@echo "... tests/test_uri.s"
 	@echo "... tests/test_util.o"
 	@echo "... tests/test_util.i"
 	@echo "... tests/test_util.s"

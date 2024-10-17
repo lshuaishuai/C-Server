@@ -22,15 +22,19 @@ CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unus
 
 # Custom defines: CMakeFiles/server.dir/server/http/http.cc.o_DEFINES = __FILE__="server/http/http.cc"
 
+# Custom defines: CMakeFiles/server.dir/server/http/http_connection.cc.o_DEFINES = __FILE__="server/http/http_connection.cc"
+
 # Custom defines: CMakeFiles/server.dir/server/http/http_parser.cc.o_DEFINES = __FILE__="server/http/http_parser.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/http/http_server.cc.o_DEFINES = __FILE__="server/http/http_server.cc"
 
+# Custom defines: CMakeFiles/server.dir/server/http/http_servlet.cc.o_DEFINES = __FILE__="server/http/http_servlet.cc"
+
 # Custom defines: CMakeFiles/server.dir/server/http/http_session.cc.o_DEFINES = __FILE__="server/http/http_session.cc"
 
-# Custom defines: CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o_DEFINES = __FILE__="server/http/http11_parser.rl.cc"
+# Custom defines: CMakeFiles/server.dir/server/http/http11_parser.rl.cc.o_DEFINES = __FILE__="server/http/http11_parser.rl.cc";__FILE__="server/http/http11_parser.rl.cc"
 
-# Custom defines: CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o_DEFINES = __FILE__="server/http/httpclient_parser.rl.cc"
+# Custom defines: CMakeFiles/server.dir/server/http/httpclient_parser.rl.cc.o_DEFINES = __FILE__="server/http/httpclient_parser.rl.cc";__FILE__="server/http/httpclient_parser.rl.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/iomanager.cc.o_DEFINES = __FILE__="server/iomanager.cc"
 
@@ -51,4 +55,6 @@ CXX_FLAGS =  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unus
 # Custom defines: CMakeFiles/server.dir/server/timer.cc.o_DEFINES = __FILE__="server/timer.cc"
 
 # Custom defines: CMakeFiles/server.dir/server/util.cc.o_DEFINES = __FILE__="server/util.cc"
+
+# Custom defines: CMakeFiles/server.dir/server/uri.rl.cc.o_DEFINES = __FILE__="server/uri.rl.cc"
 
