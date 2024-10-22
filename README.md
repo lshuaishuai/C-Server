@@ -237,3 +237,10 @@ HttpServer : TcpServer
             |
             V
      ServletDispatch
+
+## 守护进程 deamon
+```cpp
+fork
+  | ---- 子进程 --> 执行server
+  | ---- 父进程 --> wait(pid)
+```
