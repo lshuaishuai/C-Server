@@ -263,3 +263,8 @@ setenv
 配置的文件夹路径，log.yaml http.yml tcp.tml thread.yml
 ```cpp
 ```
+
+## Server主体框架
+1. 防止重复启动多次
+2. 初始化日志文件路径
+3. 工作目录的路径
