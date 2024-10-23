@@ -17,5 +17,9 @@
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_http_server.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_http_connection.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/test_uri.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/my_http_server.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/test_deamon.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/test_env.dir
+/home/shuaishuai/project/sylar_server/CMakeFiles/test_application.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/edit_cache.dir
 /home/shuaishuai/project/sylar_server/CMakeFiles/rebuild_cache.dir

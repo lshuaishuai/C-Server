@@ -366,6 +366,58 @@ test_uri/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/build
 .PHONY : test_uri/fast
 
+#=============================================================================
+# Target rules for targets named my_http_server
+
+# Build rule for target.
+my_http_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_http_server
+.PHONY : my_http_server
+
+# fast build rule for target.
+my_http_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_http_server.dir/build.make CMakeFiles/my_http_server.dir/build
+.PHONY : my_http_server/fast
+
+#=============================================================================
+# Target rules for targets named test_deamon
+
+# Build rule for target.
+test_deamon: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_deamon
+.PHONY : test_deamon
+
+# fast build rule for target.
+test_deamon/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_deamon.dir/build.make CMakeFiles/test_deamon.dir/build
+.PHONY : test_deamon/fast
+
+#=============================================================================
+# Target rules for targets named test_env
+
+# Build rule for target.
+test_env: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_env
+.PHONY : test_env
+
+# fast build rule for target.
+test_env/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_env.dir/build.make CMakeFiles/test_env.dir/build
+.PHONY : test_env/fast
+
+#=============================================================================
+# Target rules for targets named test_application
+
+# Build rule for target.
+test_application: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_application
+.PHONY : test_application
+
+# fast build rule for target.
+test_application/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_application.dir/build.make CMakeFiles/test_application.dir/build
+.PHONY : test_application/fast
+
 examples/echo_server.o: examples/echo_server.cc.o
 .PHONY : examples/echo_server.o
 
@@ -390,6 +442,30 @@ examples/echo_server.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cc.s
 .PHONY : examples/echo_server.cc.s
 
+samples/my_http_server.o: samples/my_http_server.cc.o
+.PHONY : samples/my_http_server.o
+
+# target to build an object file
+samples/my_http_server.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_http_server.dir/build.make CMakeFiles/my_http_server.dir/samples/my_http_server.cc.o
+.PHONY : samples/my_http_server.cc.o
+
+samples/my_http_server.i: samples/my_http_server.cc.i
+.PHONY : samples/my_http_server.i
+
+# target to preprocess a source file
+samples/my_http_server.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_http_server.dir/build.make CMakeFiles/my_http_server.dir/samples/my_http_server.cc.i
+.PHONY : samples/my_http_server.cc.i
+
+samples/my_http_server.s: samples/my_http_server.cc.s
+.PHONY : samples/my_http_server.s
+
+# target to generate assembly for a file
+samples/my_http_server.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_http_server.dir/build.make CMakeFiles/my_http_server.dir/samples/my_http_server.cc.s
+.PHONY : samples/my_http_server.cc.s
+
 server/address.o: server/address.cc.o
 .PHONY : server/address.o
 
@@ -413,6 +489,30 @@ server/address.s: server/address.cc.s
 server/address.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/address.cc.s
 .PHONY : server/address.cc.s
+
+server/application.o: server/application.cc.o
+.PHONY : server/application.o
+
+# target to build an object file
+server/application.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/application.cc.o
+.PHONY : server/application.cc.o
+
+server/application.i: server/application.cc.i
+.PHONY : server/application.i
+
+# target to preprocess a source file
+server/application.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/application.cc.i
+.PHONY : server/application.cc.i
+
+server/application.s: server/application.cc.s
+.PHONY : server/application.s
+
+# target to generate assembly for a file
+server/application.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/application.cc.s
+.PHONY : server/application.cc.s
 
 server/bytearray.o: server/bytearray.cc.o
 .PHONY : server/bytearray.o
@@ -461,6 +561,54 @@ server/config.s: server/config.cc.s
 server/config.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/config.cc.s
 .PHONY : server/config.cc.s
+
+server/deamon.o: server/deamon.cc.o
+.PHONY : server/deamon.o
+
+# target to build an object file
+server/deamon.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/deamon.cc.o
+.PHONY : server/deamon.cc.o
+
+server/deamon.i: server/deamon.cc.i
+.PHONY : server/deamon.i
+
+# target to preprocess a source file
+server/deamon.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/deamon.cc.i
+.PHONY : server/deamon.cc.i
+
+server/deamon.s: server/deamon.cc.s
+.PHONY : server/deamon.s
+
+# target to generate assembly for a file
+server/deamon.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/deamon.cc.s
+.PHONY : server/deamon.cc.s
+
+server/env.o: server/env.cc.o
+.PHONY : server/env.o
+
+# target to build an object file
+server/env.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/env.cc.o
+.PHONY : server/env.cc.o
+
+server/env.i: server/env.cc.i
+.PHONY : server/env.i
+
+# target to preprocess a source file
+server/env.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/env.cc.i
+.PHONY : server/env.cc.i
+
+server/env.s: server/env.cc.s
+.PHONY : server/env.s
+
+# target to generate assembly for a file
+server/env.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server/env.cc.s
+.PHONY : server/env.cc.s
 
 server/fd_manager.o: server/fd_manager.cc.o
 .PHONY : server/fd_manager.o
@@ -1038,6 +1186,30 @@ tests/test_address.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/tests/test_address.cc.s
 .PHONY : tests/test_address.cc.s
 
+tests/test_application.o: tests/test_application.cc.o
+.PHONY : tests/test_application.o
+
+# target to build an object file
+tests/test_application.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_application.dir/build.make CMakeFiles/test_application.dir/tests/test_application.cc.o
+.PHONY : tests/test_application.cc.o
+
+tests/test_application.i: tests/test_application.cc.i
+.PHONY : tests/test_application.i
+
+# target to preprocess a source file
+tests/test_application.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_application.dir/build.make CMakeFiles/test_application.dir/tests/test_application.cc.i
+.PHONY : tests/test_application.cc.i
+
+tests/test_application.s: tests/test_application.cc.s
+.PHONY : tests/test_application.s
+
+# target to generate assembly for a file
+tests/test_application.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_application.dir/build.make CMakeFiles/test_application.dir/tests/test_application.cc.s
+.PHONY : tests/test_application.cc.s
+
 tests/test_bytearray.o: tests/test_bytearray.cc.o
 .PHONY : tests/test_bytearray.o
 
@@ -1085,6 +1257,54 @@ tests/test_config.s: tests/test_config.cc.s
 tests/test_config.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
 .PHONY : tests/test_config.cc.s
+
+tests/test_deamon.o: tests/test_deamon.cc.o
+.PHONY : tests/test_deamon.o
+
+# target to build an object file
+tests/test_deamon.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_deamon.dir/build.make CMakeFiles/test_deamon.dir/tests/test_deamon.cc.o
+.PHONY : tests/test_deamon.cc.o
+
+tests/test_deamon.i: tests/test_deamon.cc.i
+.PHONY : tests/test_deamon.i
+
+# target to preprocess a source file
+tests/test_deamon.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_deamon.dir/build.make CMakeFiles/test_deamon.dir/tests/test_deamon.cc.i
+.PHONY : tests/test_deamon.cc.i
+
+tests/test_deamon.s: tests/test_deamon.cc.s
+.PHONY : tests/test_deamon.s
+
+# target to generate assembly for a file
+tests/test_deamon.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_deamon.dir/build.make CMakeFiles/test_deamon.dir/tests/test_deamon.cc.s
+.PHONY : tests/test_deamon.cc.s
+
+tests/test_env.o: tests/test_env.cc.o
+.PHONY : tests/test_env.o
+
+# target to build an object file
+tests/test_env.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_env.dir/build.make CMakeFiles/test_env.dir/tests/test_env.cc.o
+.PHONY : tests/test_env.cc.o
+
+tests/test_env.i: tests/test_env.cc.i
+.PHONY : tests/test_env.i
+
+# target to preprocess a source file
+tests/test_env.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_env.dir/build.make CMakeFiles/test_env.dir/tests/test_env.cc.i
+.PHONY : tests/test_env.cc.i
+
+tests/test_env.s: tests/test_env.cc.s
+.PHONY : tests/test_env.s
+
+# target to generate assembly for a file
+tests/test_env.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_env.dir/build.make CMakeFiles/test_env.dir/tests/test_env.cc.s
+.PHONY : tests/test_env.cc.s
 
 tests/test_fiber.o: tests/test_fiber.cc.o
 .PHONY : tests/test_fiber.o
@@ -1407,11 +1627,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... echo_server"
+	@echo "... my_http_server"
 	@echo "... server"
 	@echo "... test"
 	@echo "... test_address"
+	@echo "... test_application"
 	@echo "... test_bytearray"
 	@echo "... test_config"
+	@echo "... test_deamon"
+	@echo "... test_env"
 	@echo "... test_fiber"
 	@echo "... test_hook"
 	@echo "... test_http"
@@ -1428,15 +1652,27 @@ help:
 	@echo "... examples/echo_server.o"
 	@echo "... examples/echo_server.i"
 	@echo "... examples/echo_server.s"
+	@echo "... samples/my_http_server.o"
+	@echo "... samples/my_http_server.i"
+	@echo "... samples/my_http_server.s"
 	@echo "... server/address.o"
 	@echo "... server/address.i"
 	@echo "... server/address.s"
+	@echo "... server/application.o"
+	@echo "... server/application.i"
+	@echo "... server/application.s"
 	@echo "... server/bytearray.o"
 	@echo "... server/bytearray.i"
 	@echo "... server/bytearray.s"
 	@echo "... server/config.o"
 	@echo "... server/config.i"
 	@echo "... server/config.s"
+	@echo "... server/deamon.o"
+	@echo "... server/deamon.i"
+	@echo "... server/deamon.s"
+	@echo "... server/env.o"
+	@echo "... server/env.i"
+	@echo "... server/env.s"
 	@echo "... server/fd_manager.o"
 	@echo "... server/fd_manager.i"
 	@echo "... server/fd_manager.s"
@@ -1509,12 +1745,21 @@ help:
 	@echo "... tests/test_address.o"
 	@echo "... tests/test_address.i"
 	@echo "... tests/test_address.s"
+	@echo "... tests/test_application.o"
+	@echo "... tests/test_application.i"
+	@echo "... tests/test_application.s"
 	@echo "... tests/test_bytearray.o"
 	@echo "... tests/test_bytearray.i"
 	@echo "... tests/test_bytearray.s"
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"
+	@echo "... tests/test_deamon.o"
+	@echo "... tests/test_deamon.i"
+	@echo "... tests/test_deamon.s"
+	@echo "... tests/test_env.o"
+	@echo "... tests/test_env.i"
+	@echo "... tests/test_env.s"
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"

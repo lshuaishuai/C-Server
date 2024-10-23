@@ -139,7 +139,9 @@ CMakeFiles/server.dir/server/socket.cc.o: \
  /home/shuaishuai/project/sylar_server/server/util.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /usr/include/sys/time.h \
+ /usr/include/sys/time.h /usr/include/sys/stat.h /usr/include/dirent.h \
+ /usr/include/bits/dirent.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /home/shuaishuai/project/sylar_server/server/log.h \
  /usr/include/c++/4.8.2/list /usr/include/c++/4.8.2/bits/stl_list.h \
  /usr/include/c++/4.8.2/bits/list.tcc /usr/include/c++/4.8.2/fstream \
@@ -157,7 +159,6 @@ CMakeFiles/server.dir/server/socket.cc.o: \
  /usr/include/semaphore.h /usr/include/bits/semaphore.h \
  /home/shuaishuai/project/sylar_server/server/noncopyable.h \
  /home/shuaishuai/project/sylar_server/server/fd_manager.h \
- /usr/include/sys/stat.h \
  /home/shuaishuai/project/sylar_server/server/iomanager.h \
  /usr/include/sys/epoll.h /usr/include/bits/epoll.h \
  /home/shuaishuai/project/sylar_server/server/scheduler.h \

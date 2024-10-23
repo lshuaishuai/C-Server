@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <unistd.h>
+#include <yaml-cpp/yaml.h>
 
 #include "../server/log.h"
 #include "../server/config.h"
-#include <yaml-cpp/yaml.h>
-
+#include "../server/env.h"
 
 // 还会将这里的数据放入到s_datas中
 shuai::ConfigVar<int>::ptr g_int_value_config = 
@@ -227,6 +227,11 @@ void test_log()
     SHUAI_LOG_INFO(system_log) << "shuaishaui" << std::endl;
 }  
 
+void test_loadconf()
+{
+    shuai::Config::LoadFromConfDir("conf");
+}
+
 int main(int argc, char** argv)
 {
     // test_config();
@@ -234,12 +239,20 @@ int main(int argc, char** argv)
     // test_class();
     // Logger(root)是最先创建的，在main函数之前就创建了 在发生错误输出日志时，生成的root日志器
     
-    test_log();
+    // test_log();
     shuai::Config::Visit([](shuai::ConfigVarBase::ptr var)
     {
         SHUAI_LOG_INFO(SHUAI_LOG_ROOT()) << "name = " << var->getName()
                                  << "  description = " << var->getDescription()
                                  << "  value = " << var->toString();
     });
+
+    std::cout << "===============================================================================================" << std::endl;
+
+    shuai::EnvMgr::GetInstance()->init(argc, argv);
+    test_loadconf();
+    sleep(10);
+    std::cout << "====" << std::endl; 
+    test_loadconf();
     return 0; 
 }

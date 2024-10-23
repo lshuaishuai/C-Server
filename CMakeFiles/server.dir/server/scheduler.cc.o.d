@@ -140,7 +140,10 @@ CMakeFiles/server.dir/server/scheduler.cc.o: \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h /usr/include/sys/time.h \
+ /usr/include/getopt.h /usr/include/sys/time.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /usr/include/dirent.h \
+ /usr/include/bits/dirent.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /home/shuaishuai/project/sylar_server/server/singleton.h \
  /home/shuaishuai/project/sylar_server/server/macro.h \
  /usr/include/assert.h \
@@ -151,9 +154,8 @@ CMakeFiles/server.dir/server/scheduler.cc.o: \
  /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
  /usr/include/asm-generic/sockios.h /usr/include/fcntl.h \
  /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
- /usr/include/linux/falloc.h /usr/include/bits/stat.h \
- /usr/include/sys/ioctl.h /usr/include/bits/ioctls.h \
- /usr/include/asm/ioctls.h /usr/include/asm-generic/ioctls.h \
- /usr/include/linux/ioctl.h /usr/include/asm/ioctl.h \
- /usr/include/asm-generic/ioctl.h /usr/include/bits/ioctl-types.h \
- /usr/include/sys/ttydefaults.h
+ /usr/include/linux/falloc.h /usr/include/sys/ioctl.h \
+ /usr/include/bits/ioctls.h /usr/include/asm/ioctls.h \
+ /usr/include/asm-generic/ioctls.h /usr/include/linux/ioctl.h \
+ /usr/include/asm/ioctl.h /usr/include/asm-generic/ioctl.h \
+ /usr/include/bits/ioctl-types.h /usr/include/sys/ttydefaults.h

@@ -1,8 +1,12 @@
 #include "config.h"
+#include "env.h"
+#include "util.h"
 
 namespace shuai
 {
 // Config::ConfigVarMap Config::s_datas;
+
+static shuai::Logger::ptr g_logger = SHUAI_LOG_NAME("system");
 
 ConfigVarBase::ptr Config::LookupBase(const std::string& name)
 {
@@ -62,6 +66,40 @@ void Config::LoadFromYaml(const YAML::Node& root)
         }
     }
 }
+
+static std::map<std::string, uint64_t> s_file2modifytime;
+static shuai::Mutex s_mutex;
+
+void Config::LoadFromConfDir(const std::string& path)
+{
+    std::string absolute_path = shuai::EnvMgr::GetInstance()->getAbsolutePath(path);  // 绝对路径
+    std::vector<std::string> files;
+    FSUtil::ListAllFile(files, absolute_path, ".yml");
+    
+    for(auto& i : files)
+    {
+        struct stat st;
+        lstat(i.c_str(), &st);
+        {
+            shuai::Mutex::Lock lock(s_mutex);
+            if(s_file2modifytime[i] == (uint64_t)st.st_mtime) continue; // 若文件没有修改则不需要重新加载
+            s_file2modifytime[i] = (uint64_t)st.st_mtime;
+        }
+
+        try
+        {
+            YAML::Node root = YAML::LoadFile(i);
+            LoadFromYaml(root);
+            SHUAI_LOG_ERROR(g_logger) << "LoadConfigFile file = " << i << " seccuss";
+        }
+        catch(const std::exception& e)
+        {
+            SHUAI_LOG_ERROR(g_logger) << "LoadConfigFile file = " << i << " failed";
+            SHUAI_LOG_ERROR(g_logger) << "e = " << e.what();
+        }
+        
+    }
+}    
 
 void Config::Visit(std::function<void(ConfigVarBase::ptr)> cb)
 {

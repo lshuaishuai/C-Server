@@ -16,8 +16,11 @@ message("***", ${YAMLCPP})
 
 set(LIB_SRC
     server/address.cc
+    server/application.cc
     server/bytearray.cc
     server/config.cc
+    server/deamon.cc
+    server/env.cc
     server/fd_manager.cc
     server/fiber.cc
     server/hook.cc 
@@ -147,6 +150,26 @@ add_executable(test_uri  tests/test_uri.cc)
 add_dependencies(test_uri server)
 force_redefine_file_macro_for_sources(test_uri) #__FILE__
 target_link_libraries(test_uri server ${LIB_LIB})
+
+add_executable(my_http_server  samples/my_http_server.cc)
+add_dependencies(my_http_server server)
+force_redefine_file_macro_for_sources(my_http_server) #__FILE__
+target_link_libraries(my_http_server server ${LIB_LIB})
+
+add_executable(test_deamon  tests/test_deamon.cc)
+add_dependencies(test_deamon server)
+force_redefine_file_macro_for_sources(test_deamon) #__FILE__
+target_link_libraries(test_deamon server ${LIB_LIB})
+
+add_executable(test_env  tests/test_env.cc)
+add_dependencies(test_env server)
+force_redefine_file_macro_for_sources(test_env) #__FILE__   
+target_link_libraries(test_env server ${LIB_LIB})
+
+add_executable(test_application  tests/test_application.cc)
+add_dependencies(test_application server)
+force_redefine_file_macro_for_sources(test_application) #__FILE__   
+target_link_libraries(test_application server ${LIB_LIB})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

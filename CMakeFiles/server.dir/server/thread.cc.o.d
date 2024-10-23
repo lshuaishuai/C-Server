@@ -137,5 +137,8 @@ CMakeFiles/server.dir/server/thread.cc.o: \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h /usr/include/sys/time.h \
+ /usr/include/getopt.h /usr/include/sys/time.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /usr/include/dirent.h \
+ /usr/include/bits/dirent.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /home/shuaishuai/project/sylar_server/server/singleton.h

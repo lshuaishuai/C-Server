@@ -47,7 +47,10 @@ CMakeFiles/test_hook.dir/tests/test_hook.cc.o: \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/bits/stdio.h /usr/include/sys/time.h \
- /usr/include/c++/4.8.2/vector /usr/include/c++/4.8.2/bits/stl_algobase.h \
+ /usr/include/sys/stat.h /usr/include/dirent.h /usr/include/bits/dirent.h \
+ /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+ /usr/include/linux/limits.h /usr/include/c++/4.8.2/vector \
+ /usr/include/c++/4.8.2/bits/stl_algobase.h \
  /usr/include/c++/4.8.2/bits/functexcept.h \
  /usr/include/c++/4.8.2/bits/exception_defines.h \
  /usr/include/c++/4.8.2/bits/cpp_type_traits.h \

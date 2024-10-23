@@ -661,7 +661,8 @@ CMakeFiles/server.dir/server/config.cc.o: \
  /usr/include/c++/4.8.2/bits/indirect_array.h \
  /usr/local/include/yaml-cpp/node/detail/impl.h \
  /usr/local/include/yaml-cpp/node/parse.h \
- /usr/local/include/yaml-cpp/node/emit.h \
+ /usr/local/include/yaml-cpp/node/emit.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h \
  /home/shuaishuai/project/sylar_server/server/log.h \
  /usr/include/c++/4.8.2/fstream \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
@@ -670,10 +671,12 @@ CMakeFiles/server.dir/server/config.cc.o: \
  /home/shuaishuai/project/sylar_server/server/util.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /usr/include/sys/time.h \
+ /usr/include/sys/time.h /usr/include/dirent.h /usr/include/bits/dirent.h \
  /home/shuaishuai/project/sylar_server/server/singleton.h \
  /home/shuaishuai/project/sylar_server/server/thread.h \
  /usr/include/c++/4.8.2/thread /usr/include/c++/4.8.2/chrono \
  /usr/include/c++/4.8.2/ratio /usr/include/semaphore.h \
  /usr/include/bits/semaphore.h \
- /home/shuaishuai/project/sylar_server/server/noncopyable.h
+ /home/shuaishuai/project/sylar_server/server/noncopyable.h \
+ /home/shuaishuai/project/sylar_server/server/env.h \
+ /usr/include/c++/4.8.2/iomanip

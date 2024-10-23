@@ -764,6 +764,8 @@ CMakeFiles/test_http.dir/tests/test_http.cc.o: tests/test_http.cc \
   /usr/local/include/yaml-cpp/node/detail/impl.h \
   /usr/local/include/yaml-cpp/node/parse.h \
   /usr/local/include/yaml-cpp/node/emit.h \
+  /usr/include/sys/stat.h \
+  /usr/include/bits/stat.h \
   server/log.h \
   /usr/include/c++/4.8.2/fstream \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
@@ -775,6 +777,8 @@ CMakeFiles/test_http.dir/tests/test_http.cc.o: tests/test_http.cc \
   /usr/include/asm/unistd_64.h \
   /usr/include/bits/syscall.h \
   /usr/include/sys/time.h \
+  /usr/include/dirent.h \
+  /usr/include/bits/dirent.h \
   server/singleton.h \
   server/thread.h \
   /usr/include/c++/4.8.2/thread \
@@ -846,6 +850,8 @@ server/log.h:
 /usr/local/include/yaml-cpp/node/node.h:
 
 /usr/local/include/yaml-cpp/traits.h:
+
+/usr/include/dirent.h:
 
 /usr/local/include/yaml-cpp/stlemitter.h:
 
@@ -1034,6 +1040,8 @@ server/macro.h:
 /usr/include/boost/mpl/O1_size.hpp:
 
 /usr/include/boost/mpl/remove_if.hpp:
+
+/usr/include/bits/dirent.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
 
@@ -1701,6 +1709,8 @@ tests/test_http.cc:
 
 /usr/include/c++/4.8.2/typeinfo:
 
+/usr/include/bits/stat.h:
+
 /usr/include/c++/4.8.2/map:
 
 /usr/local/include/yaml-cpp/emitterstyle.h:
@@ -1878,6 +1888,8 @@ tests/test_http.cc:
 /usr/include/boost/mpl/aux_/msvc_type.hpp:
 
 /usr/include/boost/mpl/has_xxx.hpp:
+
+/usr/include/sys/stat.h:
 
 /usr/include/boost/mpl/list/aux_/pop_front.hpp:
 

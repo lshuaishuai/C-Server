@@ -651,7 +651,8 @@ CMakeFiles/server.dir/server/http/http_servlet.cc.o: \
  /home/shuaishuai/project/sylar_server/./server/util.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /usr/include/sys/time.h \
+ /usr/include/sys/time.h /usr/include/sys/stat.h /usr/include/dirent.h \
+ /usr/include/bits/dirent.h \
  /home/shuaishuai/project/sylar_server/./server/log.h \
  /usr/include/c++/4.8.2/list /usr/include/c++/4.8.2/bits/stl_list.h \
  /usr/include/c++/4.8.2/bits/list.tcc \

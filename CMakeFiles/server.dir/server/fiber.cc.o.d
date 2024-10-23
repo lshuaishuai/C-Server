@@ -138,7 +138,10 @@ CMakeFiles/server.dir/server/fiber.cc.o: \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h /usr/include/sys/time.h \
+ /usr/include/getopt.h /usr/include/sys/time.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /usr/include/dirent.h \
+ /usr/include/bits/dirent.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /home/shuaishuai/project/sylar_server/server/singleton.h \
  /home/shuaishuai/project/sylar_server/server/config.h \
  /usr/include/boost/lexical_cast.hpp /usr/include/boost/config.hpp \
@@ -155,11 +158,10 @@ CMakeFiles/server.dir/server/fiber.cc.o: \
  /usr/include/boost/config/suffix.hpp /usr/include/c++/4.8.2/climits \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/c++/4.8.2/cstring /usr/include/boost/limits.hpp \
- /usr/include/boost/mpl/if.hpp /usr/include/boost/mpl/aux_/value_wknd.hpp \
+ /usr/include/limits.h /usr/include/bits/posix2_lim.h \
+ /usr/include/bits/xopen_lim.h /usr/include/c++/4.8.2/cstring \
+ /usr/include/boost/limits.hpp /usr/include/boost/mpl/if.hpp \
+ /usr/include/boost/mpl/aux_/value_wknd.hpp \
  /usr/include/boost/mpl/aux_/static_cast.hpp \
  /usr/include/boost/mpl/aux_/config/workaround.hpp \
  /usr/include/boost/detail/workaround.hpp \

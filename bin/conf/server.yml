@@ -1,0 +1,10 @@
+http_servers:
+    - address: ["0.0.0.0:8080"]
+      keepalive: 1
+      timeout: 1000
+      name: shuai/1.1
+    - address: ["0.0.0.0:8020"]
+      keepalive: 1
+      timeout: 1000
+      name: shuai/2.1
+        

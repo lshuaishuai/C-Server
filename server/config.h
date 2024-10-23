@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <yaml-cpp/yaml.h>
+#include <string.h>
+#include <sys/stat.h>
 
 #include "log.h"
 #include "thread.h"
@@ -424,6 +426,8 @@ public:
     }
 
     static void LoadFromYaml(const YAML::Node& root);
+    // 加载文件夹里面的配置文件
+    static void LoadFromConfDir(const std::string& path);
     static ConfigVarBase::ptr LookupBase(const std::string& name);
 
     static void Visit(std::function<void(ConfigVarBase::ptr)> cb);

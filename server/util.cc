@@ -66,4 +66,111 @@ uint64_t GetCurrentUS()
     return tv.tv_sec * 1000 * 1000ul + tv.tv_usec;
 }
 
+std::string Timer2Str(time_t ts, const std::string& format)
+{
+    struct tm tm;
+    localtime_r(&ts, &tm);
+    char buf[64];
+    strftime(buf, sizeof(buf), format.c_str(), &tm);
+    return buf;
+}
+
+void FSUtil::ListAllFile(std::vector<std::string>& files, const std::string& path, const std::string& subfix)
+{
+    if(access(path.c_str(), 0) != 0) return;  // 文件路径不存在
+    
+    DIR* dir = opendir(path.c_str());
+    if(dir == nullptr) return;                // 打开失败
+    struct dirent* dp = nullptr;
+    while((dp = readdir(dir)) != nullptr)
+    {
+        if(dp->d_type == DT_DIR)              // 若为目录递归读取
+        {
+            if(!strcmp(dp->d_name, ".") || !strcmp(dp->d_name, "..")) continue;
+            ListAllFile(files, path + "/" + dp->d_name, subfix);
+        } 
+        else if(dp->d_type == DT_REG)         // 普通文件
+        {
+            std::string filename(dp->d_name);
+            if(subfix.empty()) 
+                files.push_back(path + "/" + filename);
+            else
+            {
+                if(filename.size() < subfix.size()) continue;
+                if(filename.substr(filename.length() - subfix.size()) == subfix)
+                {
+                    // SHUAI_LOG_DEBUG(g_logger) << "filename = " << path + "/" + filename;
+                    files.push_back(path + "/" + filename);
+                }
+            }
+        }
+    }
+    closedir(dir);
+}
+
+static int __lstat(const char* file, struct stat* st = nullptr) {
+    struct stat lst;
+    int ret = lstat(file, &lst);
+    if(st) {
+        *st = lst;
+    }
+    return ret;
+}
+
+bool FSUtil::IsRunningPidfile(const std::string& pidfile) {
+    if(__lstat(pidfile.c_str()) != 0) {
+        return false;
+    }
+    std::ifstream ifs(pidfile);
+    std::string line;
+    if(!ifs || !std::getline(ifs, line)) {
+        return false;
+    }
+    if(line.empty()) {
+        return false;
+    }
+    pid_t pid = atoi(line.c_str());
+    if(pid <= 1) {
+        return false;
+    }
+    if(kill(pid, 0) != 0) {
+        return false;
+    }
+    return true;
+}
+
+
+static int __mkdir(const char* dirname) {
+    if(access(dirname, F_OK) == 0) {
+        return 0;
+    }
+    return mkdir(dirname, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+}
+
+bool FSUtil::Mkdir(const std::string& dirname)
+{
+    if(__lstat(dirname.c_str()) == 0) {
+        return true;
+    }
+    char* path = strdup(dirname.c_str());
+    char* ptr = strchr(path + 1, '/');
+    do {
+        for(; ptr; *ptr = '/', ptr = strchr(ptr + 1, '/')) {
+            *ptr = '\0';
+            if(__mkdir(path) != 0) {
+                break;
+            }
+        }
+        if(ptr != nullptr) {
+            break;
+        } else if(__mkdir(path) != 0) {
+            break;
+        }
+        free(path);
+        return true;
+    } while(0);
+    free(path);
+    return false;
+}
+
 }

@@ -152,7 +152,9 @@ CMakeFiles/server.dir/server/hook.cc.o: \
  /home/shuaishuai/project/sylar_server/server/util.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
  /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /usr/include/sys/time.h \
+ /usr/include/sys/time.h /usr/include/sys/stat.h /usr/include/dirent.h \
+ /usr/include/bits/dirent.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /home/shuaishuai/project/sylar_server/server/singleton.h \
  /home/shuaishuai/project/sylar_server/server/iomanager.h \
  /usr/include/sys/epoll.h /usr/include/bits/epoll.h \
@@ -163,7 +165,6 @@ CMakeFiles/server.dir/server/hook.cc.o: \
  /usr/include/c++/4.8.2/set /usr/include/c++/4.8.2/bits/stl_set.h \
  /usr/include/c++/4.8.2/bits/stl_multiset.h \
  /home/shuaishuai/project/sylar_server/server/fd_manager.h \
- /usr/include/sys/stat.h \
  /home/shuaishuai/project/sylar_server/server/config.h \
  /usr/include/boost/lexical_cast.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
@@ -179,11 +180,10 @@ CMakeFiles/server.dir/server/hook.cc.o: \
  /usr/include/boost/config/suffix.hpp /usr/include/c++/4.8.2/climits \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/c++/4.8.2/cstring /usr/include/boost/limits.hpp \
- /usr/include/boost/mpl/if.hpp /usr/include/boost/mpl/aux_/value_wknd.hpp \
+ /usr/include/limits.h /usr/include/bits/posix2_lim.h \
+ /usr/include/bits/xopen_lim.h /usr/include/c++/4.8.2/cstring \
+ /usr/include/boost/limits.hpp /usr/include/boost/mpl/if.hpp \
+ /usr/include/boost/mpl/aux_/value_wknd.hpp \
  /usr/include/boost/mpl/aux_/static_cast.hpp \
  /usr/include/boost/mpl/aux_/config/workaround.hpp \
  /usr/include/boost/detail/workaround.hpp \
