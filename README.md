@@ -268,3 +268,35 @@ setenv
 1. 防止重复启动多次
 2. 初始化日志文件路径
 3. 工作目录的路径
+4. 解析httpserver配置，通过配置启动httpserver
+
+# 通过上述的服务器框架实现一个web聊天室
+
+## httpserver
+支持文件访问，流量访问，index.html
+实现一个文件的Servlet
+
+## Websocket Server
+1. 普通的http实现，周期性轮询
+2. websocket 长连接，服务器可以主动推送数据，效率高
+
+## 协议设计
+协议格式： {type:"协议类型", data:{}}
+```
+1. login协议。
+    Client: {type: "login_request", data: {"name": "昵称"}}
+    Server: {type: "login_response", result: 200, msg: "ok"}
+
+2. send协议
+    Client：{type: "send_request", data: {"msg" : "消息"}}
+    Server: {type: "send_response", result: 200, msg: "ok"}
+
+3. user_enter 通知
+    {type: "user_enter", msg: "xxx 加入聊天室", time: XXXXX}
+
+4. user_leave 通知
+    {type: "user_leave", msg: "xxx 离开聊天室", time: XXXXX}
+
+5. msg 通知
+    {type: "msg", msg: "具体聊天信息"， user: "xxx", time: xxxxx}
+```
